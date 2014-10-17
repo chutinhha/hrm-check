@@ -1,4 +1,4 @@
-using System; using System.Drawing; using System.Collections; using System.ComponentModel; using System.Windows.Forms; using System.Data;  namespace HRM_CHECKER { 	/// <summary> 	/// Summary description for Form1. 	/// </summary> 	public class Form1 : System.Windows.Forms.Form 	{ 		private System.Windows.Forms.ToolBar toolBar1; 		private System.Windows.Forms.ImageList imageList1;
+using System; using System.Drawing; using System.Collections; using System.ComponentModel; using System.Windows.Forms; using System.Data; using System.Data.SqlClient;  namespace HRM_CHECKER { 	/// <summary> 	/// Summary description for Form1. 	/// </summary> 	public class Form1 : System.Windows.Forms.Form 	{ 		private System.Windows.Forms.ToolBar toolBar1; 		private System.Windows.Forms.ImageList imageList1;
 		private System.Windows.Forms.ToolBarButton toolBarButton1;
 		private System.Windows.Forms.ToolBarButton toolBarButton2;
 		private System.Windows.Forms.ToolBarButton toolBarButton3;
@@ -137,7 +137,6 @@ using System; using System.Drawing; using System.Collections; using System
 		private System.Windows.Forms.Panel panel22;
 		private System.Windows.Forms.Splitter splitter3;
 		private System.Windows.Forms.Panel panel23;
-		private System.Windows.Forms.DataGrid dataGrid1;
 		private System.Windows.Forms.Label label35;
 		private System.Windows.Forms.TextBox textBox2;
 		private System.Windows.Forms.Label label36;
@@ -180,7 +179,13 @@ using System; using System.Drawing; using System.Collections; using System
 		private System.Windows.Forms.Panel panel41;
 		private System.Windows.Forms.PictureBox pictureBox22;
 		private System.Windows.Forms.Label label48;
-		private System.Windows.Forms.ErrorProvider errorProvider1; 		private System.ComponentModel.IContainer components;  		public Form1() 		{ 			// 			// Required for Windows Form Designer support 			// 			InitializeComponent();  			// 			// TODO: Add any constructor code after InitializeComponent call 			// 		}  		/// <summary> 		/// Clean up any resources being used. 		/// </summary> 		protected override void Dispose( bool disposing ) 		{ 			if( disposing ) 			{ 				if (components != null)  				{ 					components.Dispose(); 				} 			} 			base.Dispose( disposing ); 		}  		#region Windows Form Designer generated code 		/// <summary> 		/// Required method for Designer support - do not modify 		/// the contents of this method with the code editor. 		/// </summary> 		private void InitializeComponent() 		{ 			this.components = new System.ComponentModel.Container();
+		private System.Windows.Forms.ErrorProvider errorProvider1;
+		private System.Windows.Forms.Label label45;
+		private System.Windows.Forms.TextBox textBox3;
+		private System.Windows.Forms.Label label47;
+		private System.Windows.Forms.TextBox textBox4;
+		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.DataGrid dtgKhachHang; 		private System.ComponentModel.IContainer components;  		public Form1() 		{ 			// 			// Required for Windows Form Designer support 			// 			InitializeComponent();  			// 			// TODO: Add any constructor code after InitializeComponent call 			// 		}  		/// <summary> 		/// Clean up any resources being used. 		/// </summary> 		protected override void Dispose( bool disposing ) 		{ 			if( disposing ) 			{ 				if (components != null)  				{ 					components.Dispose(); 				} 			} 			base.Dispose( disposing ); 		}  		#region Windows Form Designer generated code 		/// <summary> 		/// Required method for Designer support - do not modify 		/// the contents of this method with the code editor. 		/// </summary> 		private void InitializeComponent() 		{ 			this.components = new System.ComponentModel.Container();
 			System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(Form1));
 			this.toolBar1 = new System.Windows.Forms.ToolBar();
 			this.toolBarButton1 = new System.Windows.Forms.ToolBarButton();
@@ -316,7 +321,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.label2 = new System.Windows.Forms.Label();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.panel21 = new System.Windows.Forms.Panel();
-			this.dataGrid1 = new System.Windows.Forms.DataGrid();
+			this.dtgKhachHang = new System.Windows.Forms.DataGrid();
 			this.splitter2 = new System.Windows.Forms.Splitter();
 			this.panel20 = new System.Windows.Forms.Panel();
 			this.panel23 = new System.Windows.Forms.Panel();
@@ -366,6 +371,11 @@ using System; using System.Drawing; using System.Collections; using System
 			this.label35 = new System.Windows.Forms.Label();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.errorProvider1 = new System.Windows.Forms.ErrorProvider();
+			this.label45 = new System.Windows.Forms.Label();
+			this.textBox3 = new System.Windows.Forms.TextBox();
+			this.label47 = new System.Windows.Forms.Label();
+			this.textBox4 = new System.Windows.Forms.TextBox();
+			this.button1 = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.panel2.SuspendLayout();
@@ -395,7 +405,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel7.SuspendLayout();
 			this.tabPage2.SuspendLayout();
 			this.panel21.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dtgKhachHang)).BeginInit();
 			this.panel20.SuspendLayout();
 			this.panel23.SuspendLayout();
 			this.groupBox10.SuspendLayout();
@@ -1778,22 +1788,22 @@ using System; using System.Drawing; using System.Collections; using System
 			// 
 			// panel21
 			// 
-			this.panel21.Controls.Add(this.dataGrid1);
+			this.panel21.Controls.Add(this.dtgKhachHang);
 			this.panel21.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel21.Location = new System.Drawing.Point(0, 248);
 			this.panel21.Name = "panel21";
 			this.panel21.Size = new System.Drawing.Size(976, 386);
 			this.panel21.TabIndex = 2;
 			// 
-			// dataGrid1
+			// dtgKhachHang
 			// 
-			this.dataGrid1.DataMember = "";
-			this.dataGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.dataGrid1.HeaderForeColor = System.Drawing.SystemColors.ControlText;
-			this.dataGrid1.Location = new System.Drawing.Point(0, 0);
-			this.dataGrid1.Name = "dataGrid1";
-			this.dataGrid1.Size = new System.Drawing.Size(976, 386);
-			this.dataGrid1.TabIndex = 0;
+			this.dtgKhachHang.DataMember = "";
+			this.dtgKhachHang.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dtgKhachHang.HeaderForeColor = System.Drawing.SystemColors.ControlText;
+			this.dtgKhachHang.Location = new System.Drawing.Point(0, 0);
+			this.dtgKhachHang.Name = "dtgKhachHang";
+			this.dtgKhachHang.Size = new System.Drawing.Size(976, 386);
+			this.dtgKhachHang.TabIndex = 0;
 			// 
 			// splitter2
 			// 
@@ -2297,6 +2307,11 @@ using System; using System.Drawing; using System.Collections; using System
 			// panel22
 			// 
 			this.panel22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.panel22.Controls.Add(this.button1);
+			this.panel22.Controls.Add(this.label47);
+			this.panel22.Controls.Add(this.textBox4);
+			this.panel22.Controls.Add(this.label45);
+			this.panel22.Controls.Add(this.textBox3);
 			this.panel22.Controls.Add(this.label36);
 			this.panel22.Controls.Add(this.textBox2);
 			this.panel22.Controls.Add(this.label35);
@@ -2313,7 +2328,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.label36.Size = new System.Drawing.Size(72, 23);
 			this.label36.TabIndex = 2;
 			this.label36.Text = "Họ tên";
-			this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// textBox2
 			// 
@@ -2347,6 +2362,56 @@ using System; using System.Drawing; using System.Collections; using System
 			// errorProvider1
 			// 
 			this.errorProvider1.ContainerControl = this;
+			// 
+			// label45
+			// 
+			this.label45.Location = new System.Drawing.Point(8, 72);
+			this.label45.Name = "label45";
+			this.label45.Size = new System.Drawing.Size(72, 23);
+			this.label45.TabIndex = 4;
+			this.label45.Text = "Số TK";
+			this.label45.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// textBox3
+			// 
+			this.textBox3.Location = new System.Drawing.Point(96, 72);
+			this.textBox3.Name = "textBox3";
+			this.textBox3.Size = new System.Drawing.Size(176, 26);
+			this.textBox3.TabIndex = 3;
+			this.textBox3.Text = "textBox3";
+			// 
+			// label47
+			// 
+			this.label47.Location = new System.Drawing.Point(8, 104);
+			this.label47.Name = "label47";
+			this.label47.Size = new System.Drawing.Size(72, 23);
+			this.label47.TabIndex = 6;
+			this.label47.Text = "Số CMND";
+			this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// textBox4
+			// 
+			this.textBox4.Location = new System.Drawing.Point(95, 104);
+			this.textBox4.Name = "textBox4";
+			this.textBox4.Size = new System.Drawing.Size(176, 26);
+			this.textBox4.TabIndex = 5;
+			this.textBox4.Text = "textBox4";
+			// 
+			// button1
+			// 
+			this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+			this.button1.BackColor = System.Drawing.SystemColors.ControlLight;
+			this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.button1.ImageIndex = 31;
+			this.button1.ImageList = this.imageList1;
+			this.button1.Location = new System.Drawing.Point(96, 152);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(104, 32);
+			this.button1.TabIndex = 9;
+			this.button1.Text = "Tìm kiếm";
+			this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// Form1
 			// 
@@ -2390,7 +2455,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel7.ResumeLayout(false);
 			this.tabPage2.ResumeLayout(false);
 			this.panel21.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dtgKhachHang)).EndInit();
 			this.panel20.ResumeLayout(false);
 			this.panel23.ResumeLayout(false);
 			this.groupBox10.ResumeLayout(false);
@@ -2438,4 +2503,4 @@ using System; using System.Drawing; using System.Collections; using System
 			this.pictureBox2.Click+=new EventHandler(ZoomImage);
 			this.pictureBox3.Click+=new EventHandler(ZoomImage); 			this.pictureBox4.Click+=new EventHandler(ZoomImage); 			this.pictureBox5.Click+=new EventHandler(ZoomImage); 			this.pictureBox6.Click+=new EventHandler(ZoomImage); 			this.pictureBox7.Click+=new EventHandler(ZoomImage); 			this.pictureBox8.Click+=new EventHandler(ZoomImage); 			this.pictureBox9.Click+=new EventHandler(ZoomImage); 			this.pictureBox10.Click+=new EventHandler(ZoomImage); 			this.pictureBox11.Click+=new EventHandler(ZoomImage); 			this.pictureBox12.Click+=new EventHandler(ZoomImage);
 			this.pictureBox13.Click+=new EventHandler(ZoomImage);
-			this.pictureBox14.Click+=new EventHandler(ZoomImage); 			this.pictureBox15.Click+=new EventHandler(ZoomImage); 			this.pictureBox16.Click+=new EventHandler(ZoomImage); 			this.pictureBox17.Click+=new EventHandler(ZoomImage); 			this.pictureBox18.Click+=new EventHandler(ZoomImage); 			this.pictureBox22.Click+=new EventHandler(ZoomImage); 			this.pictureBox20.Click+=new EventHandler(ZoomImage);			 		} 	} } 
+			this.pictureBox14.Click+=new EventHandler(ZoomImage); 			this.pictureBox15.Click+=new EventHandler(ZoomImage); 			this.pictureBox16.Click+=new EventHandler(ZoomImage); 			this.pictureBox17.Click+=new EventHandler(ZoomImage); 			this.pictureBox18.Click+=new EventHandler(ZoomImage); 			this.pictureBox22.Click+=new EventHandler(ZoomImage); 			this.pictureBox20.Click+=new EventHandler(ZoomImage);	 			LoadFormData(); 		}  		private void LoadFormData() 		{			 			//string strConn = "Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=HRM_CHECKER;Data Source=QUYDA-PC;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=QUYDA-PC;Use Encryption for Data=False;Tag with column collation when possible=False"; 			string strConn = "Server=QUYDA-PC;Database=HRM_CHECKER;Trusted_Connection=True"; 			SqlConnection conn = new SqlConnection(strConn);			 			//SqlDataReader reader =  SqlHelper.ExecuteReader(conn,CommandType.Text,"Select * from tblKhachHang"); 			DataSet ds = SqlHelper.ExecuteDataset(conn,CommandType.Text,"Select * from tblKhachHang"); 			dtgKhachHang.DataSource = ds.Tables[0]; 			  		} 	} } 

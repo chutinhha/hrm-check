@@ -122,6 +122,11 @@
                     DependentUpon = "frmZoomImage.cs"
                     BuildAction = "EmbeddedResource"
                 />
+                <File
+                    RelPath = "SQLHelper.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
             </Include>
         </Files>
     </CSHARP>
