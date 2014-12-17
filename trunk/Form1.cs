@@ -29,7 +29,6 @@ using System; using System.Drawing; using System.Collections; using System
 		private System.Windows.Forms.Label label13;
 		private System.Windows.Forms.Label label12;
 		private System.Windows.Forms.Label label11;
-		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.Label label7;
@@ -165,8 +164,6 @@ using System; using System.Drawing; using System.Collections; using System
 		private System.Windows.Forms.DataGrid dtgKhachHang;
 		private System.Windows.Forms.RadioButton rbNam;
 		private System.Windows.Forms.RadioButton rbNu;
-		private System.Windows.Forms.RadioButton rb_CT_Co;
-		private System.Windows.Forms.RadioButton rb_CT_Khong;
 		private System.Windows.Forms.CheckBox ck_NN_NghiHuu;
 		private System.Windows.Forms.CheckBox ck_NN_KinhDoanh;
 		private System.Windows.Forms.CheckBox ck_NN_DiLam;
@@ -194,7 +191,8 @@ using System; using System.Drawing; using System.Collections; using System
 		private System.Windows.Forms.MenuItem menuItemSua;
 		private System.Windows.Forms.MenuItem menuItem3;
 		private System.Windows.Forms.MenuItem menuItemLamMoi;
-		private System.Windows.Forms.Label lbThongBao; 		private System.ComponentModel.IContainer components;  		public Form1() 		{ 			// 			// Required for Windows Form Designer support 			// 			InitializeComponent();  			// 			// TODO: Add any constructor code after InitializeComponent call 			// 		}  		/// <summary> 		/// Clean up any resources being used. 		/// </summary> 		protected override void Dispose( bool disposing ) 		{ 			if( disposing ) 			{ 				if (components != null)  				{ 					components.Dispose(); 				} 			} 			base.Dispose( disposing ); 		}  		#region Windows Form Designer generated code 		/// <summary> 		/// Required method for Designer support - do not modify 		/// the contents of this method with the code editor. 		/// </summary> 		private void InitializeComponent() 		{ 			this.components = new System.ComponentModel.Container();
+		private System.Windows.Forms.Label lbThongBao;
+		private System.Windows.Forms.MenuItem menuItemXoa; 		private System.ComponentModel.IContainer components;  		public Form1() 		{ 			// 			// Required for Windows Form Designer support 			// 			InitializeComponent();  			// 			// TODO: Add any constructor code after InitializeComponent call 			// 		}  		/// <summary> 		/// Clean up any resources being used. 		/// </summary> 		protected override void Dispose( bool disposing ) 		{ 			if( disposing ) 			{ 				if (components != null)  				{ 					components.Dispose(); 				} 			} 			base.Dispose( disposing ); 		}  		#region Windows Form Designer generated code 		/// <summary> 		/// Required method for Designer support - do not modify 		/// the contents of this method with the code editor. 		/// </summary> 		private void InitializeComponent() 		{ 			this.components = new System.ComponentModel.Container();
 			System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(Form1));
 			this.toolBar1 = new System.Windows.Forms.ToolBar();
 			this.toolBarButton1 = new System.Windows.Forms.ToolBarButton();
@@ -239,7 +237,6 @@ using System; using System.Drawing; using System.Collections; using System
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.dtNgayCap = new System.Windows.Forms.DateTimePicker();
 			this.dtNgaySinh = new System.Windows.Forms.DateTimePicker();
-			this.rb_CT_Khong = new System.Windows.Forms.RadioButton();
 			this.rbNu = new System.Windows.Forms.RadioButton();
 			this.rbNam = new System.Windows.Forms.RadioButton();
 			this.txtHopThu = new System.Windows.Forms.TextBox();
@@ -262,7 +259,6 @@ using System; using System.Drawing; using System.Collections; using System
 			this.ck_Khac_CMND = new System.Windows.Forms.CheckBox();
 			this.ck_HoChieu = new System.Windows.Forms.CheckBox();
 			this.ck_CMND = new System.Windows.Forms.CheckBox();
-			this.label10 = new System.Windows.Forms.Label();
 			this.txtQuocTich = new System.Windows.Forms.TextBox();
 			this.label9 = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
@@ -271,7 +267,6 @@ using System; using System.Drawing; using System.Collections; using System
 			this.txtHoTen = new System.Windows.Forms.TextBox();
 			this.label6 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
-			this.rb_CT_Co = new System.Windows.Forms.RadioButton();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.ck_LT_Khac = new System.Windows.Forms.CheckBox();
 			this.ck_LT_DoLa = new System.Windows.Forms.CheckBox();
@@ -331,6 +326,11 @@ using System; using System.Drawing; using System.Collections; using System
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.panel21 = new System.Windows.Forms.Panel();
 			this.dtgKhachHang = new System.Windows.Forms.DataGrid();
+			this.contextMenuGrid = new System.Windows.Forms.ContextMenu();
+			this.menuItemThem = new System.Windows.Forms.MenuItem();
+			this.menuItemSua = new System.Windows.Forms.MenuItem();
+			this.menuItem3 = new System.Windows.Forms.MenuItem();
+			this.menuItemLamMoi = new System.Windows.Forms.MenuItem();
 			this.splitter2 = new System.Windows.Forms.Splitter();
 			this.panel20 = new System.Windows.Forms.Panel();
 			this.panel23 = new System.Windows.Forms.Panel();
@@ -385,12 +385,8 @@ using System; using System.Drawing; using System.Collections; using System
 			this.label35 = new System.Windows.Forms.Label();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.errorProvider1 = new System.Windows.Forms.ErrorProvider();
-			this.contextMenuGrid = new System.Windows.Forms.ContextMenu();
-			this.menuItemThem = new System.Windows.Forms.MenuItem();
-			this.menuItemSua = new System.Windows.Forms.MenuItem();
-			this.menuItem3 = new System.Windows.Forms.MenuItem();
-			this.menuItemLamMoi = new System.Windows.Forms.MenuItem();
 			this.lbThongBao = new System.Windows.Forms.Label();
+			this.menuItemXoa = new System.Windows.Forms.MenuItem();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.panel2.SuspendLayout();
@@ -818,7 +814,6 @@ using System; using System.Drawing; using System.Collections; using System
 			// 
 			this.groupBox2.Controls.Add(this.dtNgayCap);
 			this.groupBox2.Controls.Add(this.dtNgaySinh);
-			this.groupBox2.Controls.Add(this.rb_CT_Khong);
 			this.groupBox2.Controls.Add(this.rbNu);
 			this.groupBox2.Controls.Add(this.rbNam);
 			this.groupBox2.Controls.Add(this.txtHopThu);
@@ -841,7 +836,6 @@ using System; using System.Drawing; using System.Collections; using System
 			this.groupBox2.Controls.Add(this.ck_Khac_CMND);
 			this.groupBox2.Controls.Add(this.ck_HoChieu);
 			this.groupBox2.Controls.Add(this.ck_CMND);
-			this.groupBox2.Controls.Add(this.label10);
 			this.groupBox2.Controls.Add(this.txtQuocTich);
 			this.groupBox2.Controls.Add(this.label9);
 			this.groupBox2.Controls.Add(this.label8);
@@ -850,7 +844,6 @@ using System; using System.Drawing; using System.Collections; using System
 			this.groupBox2.Controls.Add(this.txtHoTen);
 			this.groupBox2.Controls.Add(this.label6);
 			this.groupBox2.Controls.Add(this.label5);
-			this.groupBox2.Controls.Add(this.rb_CT_Co);
 			this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
 			this.groupBox2.Location = new System.Drawing.Point(0, 88);
 			this.groupBox2.Name = "groupBox2";
@@ -874,14 +867,6 @@ using System; using System.Drawing; using System.Collections; using System
 			this.dtNgaySinh.Name = "dtNgaySinh";
 			this.dtNgaySinh.TabIndex = 41;
 			// 
-			// rb_CT_Khong
-			// 
-			this.rb_CT_Khong.Location = new System.Drawing.Point(464, 120);
-			this.rb_CT_Khong.Name = "rb_CT_Khong";
-			this.rb_CT_Khong.Size = new System.Drawing.Size(72, 24);
-			this.rb_CT_Khong.TabIndex = 40;
-			this.rb_CT_Khong.Text = "Không";
-			// 
 			// rbNu
 			// 
 			this.rbNu.Location = new System.Drawing.Point(464, 24);
@@ -889,6 +874,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.rbNu.Size = new System.Drawing.Size(56, 24);
 			this.rbNu.TabIndex = 39;
 			this.rbNu.Text = "Nữ";
+			this.rbNu.CheckedChanged += new System.EventHandler(this.rbNu_CheckedChanged);
 			// 
 			// rbNam
 			// 
@@ -897,6 +883,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.rbNam.Size = new System.Drawing.Size(56, 24);
 			this.rbNam.TabIndex = 38;
 			this.rbNam.Text = "Nam";
+			this.rbNam.CheckedChanged += new System.EventHandler(this.rbNam_CheckedChanged);
 			// 
 			// txtHopThu
 			// 
@@ -1067,14 +1054,6 @@ using System; using System.Drawing; using System.Collections; using System
 			this.ck_CMND.TabIndex = 17;
 			this.ck_CMND.Text = "CMND";
 			// 
-			// label10
-			// 
-			this.label10.Location = new System.Drawing.Point(320, 120);
-			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(72, 23);
-			this.label10.TabIndex = 14;
-			this.label10.Text = "Cư trú:";
-			// 
 			// txtQuocTich
 			// 
 			this.txtQuocTich.Location = new System.Drawing.Point(112, 120);
@@ -1135,14 +1114,6 @@ using System; using System.Drawing; using System.Collections; using System
 			this.label5.Name = "label5";
 			this.label5.TabIndex = 0;
 			this.label5.Text = "Họ tên:";
-			// 
-			// rb_CT_Co
-			// 
-			this.rb_CT_Co.Location = new System.Drawing.Point(400, 120);
-			this.rb_CT_Co.Name = "rb_CT_Co";
-			this.rb_CT_Co.Size = new System.Drawing.Size(56, 24);
-			this.rb_CT_Co.TabIndex = 38;
-			this.rb_CT_Co.Text = "Có";
 			// 
 			// groupBox1
 			// 
@@ -1806,6 +1777,7 @@ using System; using System.Drawing; using System.Collections; using System
 			// 
 			// dtgKhachHang
 			// 
+			this.dtgKhachHang.AllowDrop = true;
 			this.dtgKhachHang.ContextMenu = this.contextMenuGrid;
 			this.dtgKhachHang.DataMember = "";
 			this.dtgKhachHang.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1813,8 +1785,42 @@ using System; using System.Drawing; using System.Collections; using System
 			this.dtgKhachHang.HeaderForeColor = System.Drawing.SystemColors.ControlText;
 			this.dtgKhachHang.Location = new System.Drawing.Point(0, 0);
 			this.dtgKhachHang.Name = "dtgKhachHang";
+			this.dtgKhachHang.ReadOnly = true;
 			this.dtgKhachHang.Size = new System.Drawing.Size(976, 365);
 			this.dtgKhachHang.TabIndex = 0;
+			// 
+			// contextMenuGrid
+			// 
+			this.contextMenuGrid.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+																							this.menuItemThem,
+																							this.menuItemSua,
+																							this.menuItemXoa,
+																							this.menuItem3,
+																							this.menuItemLamMoi});
+			// 
+			// menuItemThem
+			// 
+			this.menuItemThem.Index = 0;
+			this.menuItemThem.Shortcut = System.Windows.Forms.Shortcut.Ins;
+			this.menuItemThem.Text = "Thêm khách hàng";
+			this.menuItemThem.Click += new System.EventHandler(this.menuItemThem_Click);
+			// 
+			// menuItemSua
+			// 
+			this.menuItemSua.Index = 1;
+			this.menuItemSua.Text = "Sửa thông tin";
+			this.menuItemSua.Click += new System.EventHandler(this.menuItemSua_Click);
+			// 
+			// menuItem3
+			// 
+			this.menuItem3.Index = 3;
+			this.menuItem3.Text = "-";
+			// 
+			// menuItemLamMoi
+			// 
+			this.menuItemLamMoi.Index = 4;
+			this.menuItemLamMoi.Text = "Làm mới dữ liệu";
+			this.menuItemLamMoi.Click += new System.EventHandler(this.menuItemLamMoi_Click);
 			// 
 			// splitter2
 			// 
@@ -2424,37 +2430,6 @@ using System; using System.Drawing; using System.Collections; using System
 			// 
 			this.errorProvider1.ContainerControl = this;
 			// 
-			// contextMenuGrid
-			// 
-			this.contextMenuGrid.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-																							this.menuItemThem,
-																							this.menuItemSua,
-																							this.menuItem3,
-																							this.menuItemLamMoi});
-			// 
-			// menuItemThem
-			// 
-			this.menuItemThem.Index = 0;
-			this.menuItemThem.Text = "Thêm khách hàng";
-			this.menuItemThem.Click += new System.EventHandler(this.menuItemThem_Click);
-			// 
-			// menuItemSua
-			// 
-			this.menuItemSua.Index = 1;
-			this.menuItemSua.Text = "Sửa thông tin";
-			this.menuItemSua.Click += new System.EventHandler(this.menuItemSua_Click);
-			// 
-			// menuItem3
-			// 
-			this.menuItem3.Index = 2;
-			this.menuItem3.Text = "-";
-			// 
-			// menuItemLamMoi
-			// 
-			this.menuItemLamMoi.Index = 3;
-			this.menuItemLamMoi.Text = "Làm mới dữ liệu";
-			this.menuItemLamMoi.Click += new System.EventHandler(this.menuItemLamMoi_Click);
-			// 
 			// lbThongBao
 			// 
 			this.lbThongBao.AutoSize = true;
@@ -2462,6 +2437,12 @@ using System; using System.Drawing; using System.Collections; using System
 			this.lbThongBao.Name = "lbThongBao";
 			this.lbThongBao.Size = new System.Drawing.Size(0, 22);
 			this.lbThongBao.TabIndex = 3;
+			// 
+			// menuItemXoa
+			// 
+			this.menuItemXoa.Index = 2;
+			this.menuItemXoa.Shortcut = System.Windows.Forms.Shortcut.Del;
+			this.menuItemXoa.Text = "Xóa khách hàng";
 			// 
 			// Form1
 			// 
@@ -2554,84 +2535,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.pictureBox2.Click+=new EventHandler(ZoomImage);
 			this.pictureBox3.Click+=new EventHandler(ZoomImage); 			this.pictureBox4.Click+=new EventHandler(ZoomImage); 			this.pictureBox5.Click+=new EventHandler(ZoomImage); 			this.pictureBox6.Click+=new EventHandler(ZoomImage); 			this.pictureBox7.Click+=new EventHandler(ZoomImage); 			this.pictureBox8.Click+=new EventHandler(ZoomImage); 			this.pictureBox9.Click+=new EventHandler(ZoomImage); 			this.pictureBox10.Click+=new EventHandler(ZoomImage); 			this.pictureBox11.Click+=new EventHandler(ZoomImage); 			this.pictureBox12.Click+=new EventHandler(ZoomImage);
 			this.pictureBox13.Click+=new EventHandler(ZoomImage);
-			this.pictureBox14.Click+=new EventHandler(ZoomImage); 			this.pictureBox15.Click+=new EventHandler(ZoomImage); 			this.pictureBox16.Click+=new EventHandler(ZoomImage); 			this.pictureBox17.Click+=new EventHandler(ZoomImage); 			this.pictureBox18.Click+=new EventHandler(ZoomImage); 			this.pictureBox22.Click+=new EventHandler(ZoomImage); 			this.pictureBox20.Click+=new EventHandler(ZoomImage);							 			LoadFormData();						 			//SettingGrid(); 			dtgKhachHang.ContextMenu = contextMenuGrid; 		}  		private void SettingGrid(string tableName) 		{ 			DataGridTableStyle aGridTableStyle = new DataGridTableStyle();
-			aGridTableStyle.MappingName = tableName; 			//
-			// Create GridColumnStyle objects for the grid columns 
-			//
-			DataGridTextBoxColumn aCol1 = new DataGridTextBoxColumn();
-			DataGridTextBoxColumn aCol2 = new DataGridTextBoxColumn();
-			DataGridTextBoxColumn aCol3 = new DataGridTextBoxColumn();
-			DataGridBoolColumn aCol4 = new DataGridBoolColumn(); 			DataGridTextBoxColumn aCol5 = new DataGridTextBoxColumn(); 			DataGridTextBoxColumn aCol6 = new DataGridTextBoxColumn(); 			//
-			// Hide column 1 by setting its width to 0.
-			//
-			aCol1.MappingName = "MaKhachHang";
-			aCol1.Width = 0;
-			//
-			// Set column 2's caption, width and disable editing.			// 		
-			aCol2.MappingName = "HoTen";
-			aCol2.HeaderText = "Họ tên";
-			aCol2.Width = 65;
-			aCol2.Alignment = HorizontalAlignment.Left;
-			aCol2.TextBox.Enabled = false;
-			//
-			// Set column 3 and 4's caption, width and enable editing.
-			// Since these values are optional set their Null values.
-			//
-			aCol3.MappingName = "NgaySinh";
-			aCol3.HeaderText = "Ngày sinh";
-			aCol3.Width = 50;
-			aCol3.Alignment = HorizontalAlignment.Center;
-			aCol3.NullText = "";
-			aCol3.TextBox.Enabled = false;
-			aCol3.Format = "dd-MM-yyyy";
-
-			aCol4.MappingName = "GioiTinh";
-			aCol4.HeaderText = "Giới tính";
-			aCol4.Width = 50;
-			aCol4.Alignment = HorizontalAlignment.Center;
-			//aCol4.NullText = "";
-			//aCol4.TextBox.Enabled = false;
-			
-
-
-			aCol5.MappingName = "CMND";
-			aCol5.HeaderText = "Số CMT";
-			aCol5.Width = 50;
-			aCol5.Alignment = HorizontalAlignment.Left;
-			aCol5.NullText = "";
-			aCol5.TextBox.Enabled = true;			
-
-
-			aCol6.MappingName = "DiaChiLienHe";
-			aCol6.HeaderText = "Địa chỉ liên hệ";
-			aCol6.Width = 70;
-			aCol6.Alignment = HorizontalAlignment.Left;
-			aCol6.NullText = "";
-			aCol6.TextBox.Enabled = true;			
-
-			aCol6.MappingName = "DienThoaiDiDong";
-			aCol6.HeaderText = "Điện thoại";
-			aCol6.Width = 65;
-			aCol6.Alignment = HorizontalAlignment.Left;
-			aCol6.NullText = "";
-			aCol6.TextBox.Enabled = true;	
-			//aCol4.Format = "#0.00";
-
-			aGridTableStyle.GridColumnStyles.Add(aCol2);
-			aGridTableStyle.GridColumnStyles.Add(aCol3);
-			aGridTableStyle.GridColumnStyles.Add(aCol4);
-			aGridTableStyle.GridColumnStyles.Add(aCol1);
-			aGridTableStyle.GridColumnStyles.Add(aCol5);
-			aGridTableStyle.GridColumnStyles.Add(aCol6);
-
-			  			aGridTableStyle.AlternatingBackColor = Color.Gainsboro;
-			aGridTableStyle.AllowSorting = false;
-			aGridTableStyle.ReadOnly = true;
-			// The Clear() method is called to ensure that
-			// the previous style is removed.
-			dtgKhachHang.TableStyles.Clear();
-			// Add the new DataGridTableStyle collection to
-			// the TableStyles collection			 			dtgKhachHang.TableStyles.Add(aGridTableStyle); 		 		}  		clsBusPersonal bus = new clsBusPersonal(); 		private void LoadFormData() 		{			 			SetMessage("",false); 			//string strConn = "Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=HRM_CHECKER;Data Source=QUYDA-PC;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=QUYDA-PC;Use Encryption for Data=False;Tag with column collation when possible=False"; 			//string strConn = "Server=QUYDA-PC;Database=HRM_CHECKER;Trusted_Connection=True"; 			//SqlConnection conn = new SqlConnection(strConn);			 			//SqlDataReader reader =  SqlHelper.ExecuteReader(conn,CommandType.Text,"Select * from tblKhachHang"); 			//DataSet ds = SqlHelper.ExecuteDataset(conn,CommandType.Text,"Select * from tblKhachHang"); 			DataSet ds = bus.LoadPersonal(); 			if(ds!=null && ds.Tables[0].Rows.Count > 0) 			{ 				dtgKhachHang.DataSource = AutoNumberedTable(ds.Tables[0]);				  				if (! dtgKhachHang.TableStyles.Contains ("Style_Person"))
+			this.pictureBox14.Click+=new EventHandler(ZoomImage); 			this.pictureBox15.Click+=new EventHandler(ZoomImage); 			this.pictureBox16.Click+=new EventHandler(ZoomImage); 			this.pictureBox17.Click+=new EventHandler(ZoomImage); 			this.pictureBox18.Click+=new EventHandler(ZoomImage); 			this.pictureBox22.Click+=new EventHandler(ZoomImage); 			this.pictureBox20.Click+=new EventHandler(ZoomImage);	 			dtgKhachHang.ContextMenu = contextMenuGrid; 			ResetControl();			 			LoadFormData();												 		}  		 		clsBusPersonal bus = new clsBusPersonal(); 		private void LoadFormData() 		{			 			SetMessage("",false); 			//string strConn = "Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=HRM_CHECKER;Data Source=QUYDA-PC;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=QUYDA-PC;Use Encryption for Data=False;Tag with column collation when possible=False"; 			//string strConn = "Server=QUYDA-PC;Database=HRM_CHECKER;Trusted_Connection=True"; 			//SqlConnection conn = new SqlConnection(strConn);			 			//SqlDataReader reader =  SqlHelper.ExecuteReader(conn,CommandType.Text,"Select * from tblKhachHang"); 			//DataSet ds = SqlHelper.ExecuteDataset(conn,CommandType.Text,"Select * from tblKhachHang"); 			DataSet ds = bus.LoadPersonal(); 			if(ds!=null && ds.Tables[0].Rows.Count > 0) 			{ 				dtgKhachHang.DataSource = AutoNumberedTable(ds.Tables[0]);		 				dtgKhachHang.TableStyles.Clear();  				if (! dtgKhachHang.TableStyles.Contains ("Style_Person"))
 				{				
 					DataGridTableStyle dbgStyle = new DataGridTableStyle ();
 					dbgStyle.MappingName = ds.Tables[0].TableName;
@@ -2652,7 +2556,7 @@ using System; using System.Drawing; using System.Collections; using System
 					DataGridTextBoxColumn aCol1 = new DataGridTextBoxColumn();
 					DataGridTextBoxColumn aCol2 = new DataGridTextBoxColumn();
 					DataGridTextBoxColumn aCol3 = new DataGridTextBoxColumn();
-					DataGridBoolColumn aCol4 = new DataGridBoolColumn(); 					DataGridTextBoxColumn aCol5 = new DataGridTextBoxColumn(); 					DataGridTextBoxColumn aCol6 = new DataGridTextBoxColumn(); 					DataGridTextBoxColumn aCol7 = new DataGridTextBoxColumn(); 					//
+					DataGridBoolColumn aCol4 = new DataGridBoolColumn(); 					DataGridTextBoxColumn aCol5 = new DataGridTextBoxColumn(); 					DataGridTextBoxColumn aCol6 = new DataGridTextBoxColumn(); 					DataGridTextBoxColumn aCol7 = new DataGridTextBoxColumn(); 					DataGridBoolColumn aCol8 = new DataGridBoolColumn(); 					//
 					// Hide column 1 by setting its width to 0.
 					//
 					aCol1.MappingName = "MaKhachHang";
@@ -2710,6 +2614,15 @@ using System; using System.Drawing; using System.Collections; using System
 					aCol7.Alignment = HorizontalAlignment.Center;
 					aCol7.TextBox.Enabled = false;
 
+					aCol8.MappingName = "TT";
+					aCol8.HeaderText = "Chọn";
+					aCol8.Width = 80;
+					aCol8.Alignment = HorizontalAlignment.Center;
+					aCol8.AllowNull = false;
+					//aCol8.TrueValue.Enabled = false;
+					//aCol8.ReadOnly = false;
+
+					dbgStyle.GridColumnStyles.Add(aCol8);
 					dbgStyle.GridColumnStyles.Add(aCol7);
 					dbgStyle.GridColumnStyles.Add(aCol2);
 					dbgStyle.GridColumnStyles.Add(aCol3);
@@ -2721,7 +2634,6 @@ using System; using System.Drawing; using System.Collections; using System
 					dtgKhachHang.TableStyles.Add (dbgStyle);			 				} 			} 			else 			{ 				SetMessage("Có lỗi trong quá trình truy vấn dữ liệu!",true); 			}			 		}
 
 		private DataTable AutoNumberedTable(DataTable SourceTable)
-
 		{
 
 			DataTable ResultTable = new DataTable();
@@ -2733,11 +2645,18 @@ using System; using System.Drawing; using System.Collections; using System
 			AutoNumberColumn.AutoIncrementSeed = 1;		
 			AutoNumberColumn.AutoIncrementStep = 1;
 			ResultTable.Columns.Add(AutoNumberColumn);			
-			//ResultTable.Merge(SourceTable);
+			//ResultTable.Merge(SourceTable);			
+
+			DataColumn clTT = new DataColumn();
+			clTT.ColumnName="TT";
+			clTT.DataType = typeof(bool);
+			ResultTable.Columns.Add(clTT);			
+
 			int j = 1;
 			for(int i=0;i<ResultTable.Rows.Count;i++)
 			{				
 				ResultTable.Rows[i][29] = j;
+				//ResultTable.Rows[i][30] = false;
 				j++;
 			}
 			return ResultTable;
@@ -2817,6 +2736,30 @@ using System; using System.Drawing; using System.Collections; using System
 		
 		}
 
+		private void ResetControl()
+		{
+			rbNam.Checked = true;
+			rbNu.Checked = false;
+//			rb_CT_Co.Checked = false;
+//			rb_CT_Khong.Checked = true;			
+			foreach(Control tb in groupBox2.Controls)
+			{
+				if(tb is TextBox)
+				{
+					//here is where you access all the textboxs.
+					tb.Text = "";
+				}
+			}
+			foreach(Control tb in groupBox3.Controls)
+			{
+				if(tb is TextBox)
+				{
+					//here is where you access all the textboxs.
+					tb.Text = "";
+				}
+			}
+		}
+
 		private void menuItemThem_Click(object sender, System.EventArgs e)
 		{
 			tabControl1.SelectedIndex = 0;
@@ -2824,10 +2767,35 @@ using System; using System.Drawing; using System.Collections; using System
 
 		private void menuItemSua_Click(object sender, System.EventArgs e)
 		{
-		
+			//int indexRow = dtgKhachHang
 		}
 
 		private void menuItemLamMoi_Click(object sender, System.EventArgs e)
 		{
-		
-		} 	} } 
+			LoadFormData();
+		}
+
+		private void rbNam_CheckedChanged(object sender, System.EventArgs e)
+		{
+			if(rbNam.Checked)
+			{
+				rbNu.Checked = false;
+			}
+			else
+			{
+				rbNu.Checked = true;
+			}
+		}
+
+		private void rbNu_CheckedChanged(object sender, System.EventArgs e)
+		{
+			if(rbNam.Checked)
+			{
+				rbNu.Checked = false;
+			}
+			else
+			{
+				rbNu.Checked = true;
+			}
+		}
+	 	} } 
