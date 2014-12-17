@@ -7,7 +7,7 @@
     >
         <Build>
             <Settings
-                ApplicationIcon = "App.ico"
+                ApplicationIcon = ""
                 AssemblyKeyContainerName = ""
                 AssemblyName = "HRM_CHECKER"
                 AssemblyOriginatorKeyFile = ""
@@ -94,11 +94,20 @@
         <Files>
             <Include>
                 <File
+                    RelPath = "App.config"
+                    BuildAction = "None"
+                />
+                <File
                     RelPath = "App.ico"
                     BuildAction = "Content"
                 />
                 <File
                     RelPath = "AssemblyInfo.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "clsBusPersonal.cs"
                     SubType = "Code"
                     BuildAction = "Compile"
                 />
