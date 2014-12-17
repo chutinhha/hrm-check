@@ -89,31 +89,23 @@ namespace HRM_CHECKER
 			catch(Exception ex)
 			{
 				pError = ex.Message;
-			}
-		
-		 			//			if(ds!=null) 			//			{ 			//				ds.Tables[0].TableName = "tblKhachHang"; 			//				return ds; 			//			} 			//			else 			//			{ 			//				return null; 			//			}
-
-			//			,<NgayCapCMND, date,>
-			//			,<NoiCapCMND, nvarchar(256),>
-			//			,<DiaChiLienHe, nvarchar(256),>
-			//			,<DiaChiThuongTru, nvarchar(256),>
-			//			,<DiaChiNuocNgoai, nvarchar(256),>
-			//			,<DienThoaiNha, nchar(15),>
-			//			,<DienThoaiDiDong, nchar(15),>
-			//			,<HopThu, nchar(256),>
-			//			,<IsDiHoc, bit,>
-			//			,<IsDiLam, bit,>
-			//			,<IsTuKinhDoanh, bit,>
-			//			,<IsNghiHuu, bit,>
-			//			,<NganhNghe, nvarchar(256),>
-			//			,<ChucVu, nvarchar(256),>
-			//			,<DienThoaiCoQuan, nchar(10),>
-			//			,<TenCoQuan, nvarchar(256),>
-			//			,<TinhTrangHonNhan, nvarchar(50),>
-			//			,<TrinhDoHocVan, nvarchar(50),>
-			//			,<ThuNhap, nvarchar(50),>
-			//			,<MaTaiKhoan, int,>)";
+			}				
 
 		}		
+
+		public void DeletePersonal(string maKH,ref string strError)
+		{
+			try
+			{
+				string strQuery = @"DELETE FROM [HRM_CHECKER].[dbo].[tblKhachHang] WHERE MaKhachHang = "+maKH+"";
+				SqlConnection conn = new SqlConnection(StrConn); 				int kq = SqlHelper.ExecuteNonQuery(conn,CommandType.Text,strQuery);
+				strError = "";
+				
+			}
+			catch(Exception ex)
+			{
+				strError = ex.Message;				
+			}
+		}
 	}
 }
