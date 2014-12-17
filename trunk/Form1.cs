@@ -83,10 +83,6 @@ using System; using System.Drawing; using System.Collections; using System
 		private System.Windows.Forms.Label label32;
 		private System.Windows.Forms.TextBox textBox17;
 		private System.Windows.Forms.GroupBox groupBox7;
-		private System.Windows.Forms.CheckBox checkBox18;
-		private System.Windows.Forms.CheckBox checkBox19;
-		private System.Windows.Forms.CheckBox checkBox20;
-		private System.Windows.Forms.CheckBox checkBox21;
 		private System.Windows.Forms.Label label33;
 		private System.Windows.Forms.Label label34;
 		private System.Windows.Forms.CheckBox checkBox26;
