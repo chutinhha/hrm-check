@@ -2552,21 +2552,190 @@ using System; using System.Drawing; using System.Collections; using System
 			this.pictureBox2.Click+=new EventHandler(ZoomImage);
 			this.pictureBox3.Click+=new EventHandler(ZoomImage); 			this.pictureBox4.Click+=new EventHandler(ZoomImage); 			this.pictureBox5.Click+=new EventHandler(ZoomImage); 			this.pictureBox6.Click+=new EventHandler(ZoomImage); 			this.pictureBox7.Click+=new EventHandler(ZoomImage); 			this.pictureBox8.Click+=new EventHandler(ZoomImage); 			this.pictureBox9.Click+=new EventHandler(ZoomImage); 			this.pictureBox10.Click+=new EventHandler(ZoomImage); 			this.pictureBox11.Click+=new EventHandler(ZoomImage); 			this.pictureBox12.Click+=new EventHandler(ZoomImage);
 			this.pictureBox13.Click+=new EventHandler(ZoomImage);
-			this.pictureBox14.Click+=new EventHandler(ZoomImage); 			this.pictureBox15.Click+=new EventHandler(ZoomImage); 			this.pictureBox16.Click+=new EventHandler(ZoomImage); 			this.pictureBox17.Click+=new EventHandler(ZoomImage); 			this.pictureBox18.Click+=new EventHandler(ZoomImage); 			this.pictureBox22.Click+=new EventHandler(ZoomImage); 			this.pictureBox20.Click+=new EventHandler(ZoomImage);	 			LoadFormData();			 			dtgKhachHang.ContextMenu = contextMenuGrid; 		}  		private void SettingGrid() 		{ 			DataGridTableStyle aGridTableStyle = new DataGridTableStyle();
-			aGridTableStyle.MappingName = "Customers"; 			//
+			this.pictureBox14.Click+=new EventHandler(ZoomImage); 			this.pictureBox15.Click+=new EventHandler(ZoomImage); 			this.pictureBox16.Click+=new EventHandler(ZoomImage); 			this.pictureBox17.Click+=new EventHandler(ZoomImage); 			this.pictureBox18.Click+=new EventHandler(ZoomImage); 			this.pictureBox22.Click+=new EventHandler(ZoomImage); 			this.pictureBox20.Click+=new EventHandler(ZoomImage);							 			LoadFormData();						 			//SettingGrid(); 			dtgKhachHang.ContextMenu = contextMenuGrid; 		}  		private void SettingGrid(string tableName) 		{ 			DataGridTableStyle aGridTableStyle = new DataGridTableStyle();
+			aGridTableStyle.MappingName = tableName; 			//
 			// Create GridColumnStyle objects for the grid columns 
 			//
 			DataGridTextBoxColumn aCol1 = new DataGridTextBoxColumn();
 			DataGridTextBoxColumn aCol2 = new DataGridTextBoxColumn();
 			DataGridTextBoxColumn aCol3 = new DataGridTextBoxColumn();
-			DataGridTextBoxColumn aCol4 = new DataGridTextBoxColumn(); 			//
+			DataGridBoolColumn aCol4 = new DataGridBoolColumn(); 			DataGridTextBoxColumn aCol5 = new DataGridTextBoxColumn(); 			DataGridTextBoxColumn aCol6 = new DataGridTextBoxColumn(); 			//
 			// Hide column 1 by setting its width to 0.
 			//
-			aCol1.MappingName = "Customer_ID";
+			aCol1.MappingName = "MaKhachHang";
 			aCol1.Width = 0;
 			//
-			// Set column 2's caption, width and disable editing.
-			// 		}  		clsBusPersonal bus = new clsBusPersonal(); 		private void LoadFormData() 		{			 			SetMessage("",false); 			//string strConn = "Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=HRM_CHECKER;Data Source=QUYDA-PC;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=QUYDA-PC;Use Encryption for Data=False;Tag with column collation when possible=False"; 			//string strConn = "Server=QUYDA-PC;Database=HRM_CHECKER;Trusted_Connection=True"; 			//SqlConnection conn = new SqlConnection(strConn);			 			//SqlDataReader reader =  SqlHelper.ExecuteReader(conn,CommandType.Text,"Select * from tblKhachHang"); 			//DataSet ds = SqlHelper.ExecuteDataset(conn,CommandType.Text,"Select * from tblKhachHang"); 			DataSet ds = bus.LoadPersonal(); 			if(ds!=null) 			{ 				dtgKhachHang.DataSource = ds.Tables[0]; 			} 			else 			{ 				SetMessage("Có lỗi trong quá trình truy vấn dữ liệu!",true); 			} 			  		}
+			// Set column 2's caption, width and disable editing.			// 		
+			aCol2.MappingName = "HoTen";
+			aCol2.HeaderText = "Họ tên";
+			aCol2.Width = 65;
+			aCol2.Alignment = HorizontalAlignment.Left;
+			aCol2.TextBox.Enabled = false;
+			//
+			// Set column 3 and 4's caption, width and enable editing.
+			// Since these values are optional set their Null values.
+			//
+			aCol3.MappingName = "NgaySinh";
+			aCol3.HeaderText = "Ngày sinh";
+			aCol3.Width = 50;
+			aCol3.Alignment = HorizontalAlignment.Center;
+			aCol3.NullText = "";
+			aCol3.TextBox.Enabled = false;
+			aCol3.Format = "dd-MM-yyyy";
+
+			aCol4.MappingName = "GioiTinh";
+			aCol4.HeaderText = "Giới tính";
+			aCol4.Width = 50;
+			aCol4.Alignment = HorizontalAlignment.Center;
+			//aCol4.NullText = "";
+			//aCol4.TextBox.Enabled = false;
+			
+
+
+			aCol5.MappingName = "CMND";
+			aCol5.HeaderText = "Số CMT";
+			aCol5.Width = 50;
+			aCol5.Alignment = HorizontalAlignment.Left;
+			aCol5.NullText = "";
+			aCol5.TextBox.Enabled = true;			
+
+
+			aCol6.MappingName = "DiaChiLienHe";
+			aCol6.HeaderText = "Địa chỉ liên hệ";
+			aCol6.Width = 70;
+			aCol6.Alignment = HorizontalAlignment.Left;
+			aCol6.NullText = "";
+			aCol6.TextBox.Enabled = true;			
+
+			aCol6.MappingName = "DienThoaiDiDong";
+			aCol6.HeaderText = "Điện thoại";
+			aCol6.Width = 65;
+			aCol6.Alignment = HorizontalAlignment.Left;
+			aCol6.NullText = "";
+			aCol6.TextBox.Enabled = true;	
+			//aCol4.Format = "#0.00";
+
+			aGridTableStyle.GridColumnStyles.Add(aCol2);
+			aGridTableStyle.GridColumnStyles.Add(aCol3);
+			aGridTableStyle.GridColumnStyles.Add(aCol4);
+			aGridTableStyle.GridColumnStyles.Add(aCol1);
+			aGridTableStyle.GridColumnStyles.Add(aCol5);
+			aGridTableStyle.GridColumnStyles.Add(aCol6);
+
+			  			aGridTableStyle.AlternatingBackColor = Color.Gainsboro;
+			aGridTableStyle.AllowSorting = false;
+			aGridTableStyle.ReadOnly = true;
+			// The Clear() method is called to ensure that
+			// the previous style is removed.
+			dtgKhachHang.TableStyles.Clear();
+			// Add the new DataGridTableStyle collection to
+			// the TableStyles collection			 			dtgKhachHang.TableStyles.Add(aGridTableStyle); 		 		}  		clsBusPersonal bus = new clsBusPersonal(); 		private void LoadFormData() 		{			 			SetMessage("",false); 			//string strConn = "Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=HRM_CHECKER;Data Source=QUYDA-PC;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=QUYDA-PC;Use Encryption for Data=False;Tag with column collation when possible=False"; 			//string strConn = "Server=QUYDA-PC;Database=HRM_CHECKER;Trusted_Connection=True"; 			//SqlConnection conn = new SqlConnection(strConn);			 			//SqlDataReader reader =  SqlHelper.ExecuteReader(conn,CommandType.Text,"Select * from tblKhachHang"); 			//DataSet ds = SqlHelper.ExecuteDataset(conn,CommandType.Text,"Select * from tblKhachHang"); 			DataSet ds = bus.LoadPersonal(); 			if(ds!=null && ds.Tables[0].Rows.Count > 0) 			{ 				dtgKhachHang.DataSource = AutoNumberedTable(ds.Tables[0]);				  				if (! dtgKhachHang.TableStyles.Contains ("Style_Person"))
+				{				
+					DataGridTableStyle dbgStyle = new DataGridTableStyle ();
+					dbgStyle.MappingName = ds.Tables[0].TableName;
+					
+					dbgStyle.RowHeadersVisible = false;
+					dbgStyle.HeaderBackColor = Color.LightSteelBlue;
+					dbgStyle.AllowSorting = false;
+					dbgStyle.HeaderBackColor = Color.FromArgb (8, 36,107);					
+					dbgStyle.RowHeadersVisible = false;
+					dbgStyle.HeaderForeColor = Color.White;
+					dbgStyle.HeaderFont = new System.Drawing.Font ( "Microsoft Sans Serif", 9F,
+					System.Drawing.FontStyle.Bold,
+					System.Drawing.GraphicsUnit.Point, ((System.Byte) ( 0)));
+					dbgStyle.GridLineColor = Color.DarkGray;
+					dbgStyle.PreferredRowHeight = 22;
+					dtgKhachHang.BackgroundColor = Color.White;
+
+					DataGridTextBoxColumn aCol1 = new DataGridTextBoxColumn();
+					DataGridTextBoxColumn aCol2 = new DataGridTextBoxColumn();
+					DataGridTextBoxColumn aCol3 = new DataGridTextBoxColumn();
+					DataGridBoolColumn aCol4 = new DataGridBoolColumn(); 					DataGridTextBoxColumn aCol5 = new DataGridTextBoxColumn(); 					DataGridTextBoxColumn aCol6 = new DataGridTextBoxColumn(); 					DataGridTextBoxColumn aCol7 = new DataGridTextBoxColumn(); 					//
+					// Hide column 1 by setting its width to 0.
+					//
+					aCol1.MappingName = "MaKhachHang";
+					aCol1.Width = 0;
+					//
+					// Set column 2's caption, width and disable editing.			// 		
+					aCol2.MappingName = "HoTen";
+					aCol2.HeaderText = "Họ tên";
+					aCol2.Width = 165;
+					aCol2.Alignment = HorizontalAlignment.Left;
+					aCol2.TextBox.Enabled = false;
+					//
+					// Set column 3 and 4's caption, width and enable editing.
+					// Since these values are optional set their Null values.
+					//
+					aCol3.MappingName = "NgaySinh";
+					aCol3.HeaderText = "Ngày sinh";
+					aCol3.Width = 150;
+					aCol3.Alignment = HorizontalAlignment.Center;
+					aCol3.NullText = "";
+					aCol3.TextBox.Enabled = false;
+					aCol3.Format = "dd-MM-yyyy";
+
+					aCol4.MappingName = "GioiTinh";
+					aCol4.HeaderText = "Giới tính";
+					aCol4.Width = 80;
+					aCol4.Alignment = HorizontalAlignment.Center;
+					//aCol4.NullText = "";
+					//aCol4.TextBox.Enabled = false;			
+
+					aCol5.MappingName = "CMND";
+					aCol5.HeaderText = "Số CMT";
+					aCol5.Width = 150;
+					aCol5.Alignment = HorizontalAlignment.Left;
+					aCol5.NullText = "";
+					aCol5.TextBox.Enabled = true;			
+
+					aCol6.MappingName = "DiaChiLienHe";
+					aCol6.HeaderText = "Địa chỉ liên hệ";
+					aCol6.Width = 170;
+					aCol6.Alignment = HorizontalAlignment.Left;
+					aCol6.NullText = "";
+					aCol6.TextBox.Enabled = true;			
+
+					aCol6.MappingName = "DienThoaiDiDong";
+					aCol6.HeaderText = "Điện thoại";
+					aCol6.Width = 170;
+					aCol6.Alignment = HorizontalAlignment.Left;
+					aCol6.NullText = "";
+					aCol6.TextBox.Enabled = true;	
+					//aCol4.Format = "#0.00";
+					aCol7.MappingName = "STT";
+					aCol7.HeaderText = "STT";
+					aCol7.Width = 50;
+					aCol7.Alignment = HorizontalAlignment.Center;
+					aCol7.TextBox.Enabled = false;
+
+					dbgStyle.GridColumnStyles.Add(aCol7);
+					dbgStyle.GridColumnStyles.Add(aCol2);
+					dbgStyle.GridColumnStyles.Add(aCol3);
+					dbgStyle.GridColumnStyles.Add(aCol4);
+					dbgStyle.GridColumnStyles.Add(aCol1);
+					dbgStyle.GridColumnStyles.Add(aCol5);
+					dbgStyle.GridColumnStyles.Add(aCol6);
+					
+					dtgKhachHang.TableStyles.Add (dbgStyle);			 				} 			} 			else 			{ 				SetMessage("Có lỗi trong quá trình truy vấn dữ liệu!",true); 			}			 		}
+
+		private DataTable AutoNumberedTable(DataTable SourceTable)
+
+		{
+
+			DataTable ResultTable = new DataTable();
+			ResultTable = SourceTable.Copy();
+			DataColumn AutoNumberColumn = new DataColumn();
+			AutoNumberColumn.ColumnName="STT";
+			AutoNumberColumn.DataType = typeof(int);
+			AutoNumberColumn.AutoIncrement = true;
+			AutoNumberColumn.AutoIncrementSeed = 1;		
+			AutoNumberColumn.AutoIncrementStep = 1;
+			ResultTable.Columns.Add(AutoNumberColumn);			
+			//ResultTable.Merge(SourceTable);
+			ResultTable.Rows[0][29] = 1;
+			return ResultTable;
+
+		}
 
 		private void SetMessage(string msg,bool tt)
 		{
