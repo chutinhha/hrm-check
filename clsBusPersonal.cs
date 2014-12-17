@@ -41,6 +41,72 @@ namespace HRM_CHECKER
 		{
 			
 		}
-		
+
+		/// <summary>
+		/// Thêm khách hàng vào cở sở dữ liệu
+		/// </summary>
+		public void InsertPersonal(string HoTen,string TenTat,string NgaySinh,bool GioiTinh,string QuocTich,string CMND,string HoChieu,string SoKhac,string ngayCap,string noiCap,string dcLienHe,string dcThuongTru,string dcNuocNgoai,string dtNha,string dtDiDong,string HopThu,bool DiHoc,bool DiLam,bool tuKinhDoanh,bool nghiHuu,string nganhNghe,string chucVu,string dtCoQuan,string tenCoQuan,string ttHonNhan,string ttHocVan,string thuNhap,int maTK)
+		{
+			DateTime dtNgaySinh = DateTime.Parse(NgaySinh);
+			string strInsert = @"INSERT INTO [HRM_CHECKER].[dbo].[tblKhachHang]
+			([HoTen]
+			,[TenVietTat]
+			,[NgaySinh]
+			,[GioiTinh]
+			,[QuocTich]
+			,[CMND]
+			,[HoChieu]
+			,[SoKhac]
+			,[NgayCapCMND]
+			,[NoiCapCMND]
+			,[DiaChiLienHe]
+			,[DiaChiThuongTru]
+			,[DiaChiNuocNgoai]
+			,[DienThoaiNha]
+			,[DienThoaiDiDong]
+			,[HopThu]
+			,[IsDiHoc]
+			,[IsDiLam]
+			,[IsTuKinhDoanh]
+			,[IsNghiHuu]
+			,[NganhNghe]
+			,[ChucVu]
+			,[DienThoaiCoQuan]
+			,[TenCoQuan]
+			,[TinhTrangHonNhan]
+			,[TrinhDoHocVan]
+			,[ThuNhap]
+			,[MaTaiKhoan])
+		VALUES
+			(<HoTen, nvarchar(256),>
+			,<TenVietTat, nvarchar(256),>
+			,<NgaySinh, date,>
+			,<GioiTinh, bit,>
+			,<QuocTich, nvarchar(256),>
+			,<CMND, nchar(15),>
+			,<HoChieu, nchar(15),>
+			,<SoKhac, nchar(15),>
+			,<NgayCapCMND, date,>
+			,<NoiCapCMND, nvarchar(256),>
+			,<DiaChiLienHe, nvarchar(256),>
+			,<DiaChiThuongTru, nvarchar(256),>
+			,<DiaChiNuocNgoai, nvarchar(256),>
+			,<DienThoaiNha, nchar(15),>
+			,<DienThoaiDiDong, nchar(15),>
+			,<HopThu, nchar(256),>
+			,<IsDiHoc, bit,>
+			,<IsDiLam, bit,>
+			,<IsTuKinhDoanh, bit,>
+			,<IsNghiHuu, bit,>
+			,<NganhNghe, nvarchar(256),>
+			,<ChucVu, nvarchar(256),>
+			,<DienThoaiCoQuan, nchar(10),>
+			,<TenCoQuan, nvarchar(256),>
+			,<TinhTrangHonNhan, nvarchar(50),>
+			,<TrinhDoHocVan, nvarchar(50),>
+			,<ThuNhap, nvarchar(50),>
+			,<MaTaiKhoan, int,>)";
+
+		}		
 	}
 }
