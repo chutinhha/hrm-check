@@ -1120,7 +1120,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.txtHoTen.Name = "txtHoTen";
 			this.txtHoTen.Size = new System.Drawing.Size(200, 26);
 			this.txtHoTen.TabIndex = 2;
-			this.txtHoTen.Text = "textBox2";
+			this.txtHoTen.Text = "";
 			// 
 			// label6
 			// 
@@ -2457,8 +2457,10 @@ using System; using System.Drawing; using System.Collections; using System
 			// 
 			// lbThongBao
 			// 
+			this.lbThongBao.AutoSize = true;
 			this.lbThongBao.Location = new System.Drawing.Point(528, 16);
 			this.lbThongBao.Name = "lbThongBao";
+			this.lbThongBao.Size = new System.Drawing.Size(0, 22);
 			this.lbThongBao.TabIndex = 3;
 			// 
 			// Form1
@@ -2732,7 +2734,12 @@ using System; using System.Drawing; using System.Collections; using System
 			AutoNumberColumn.AutoIncrementStep = 1;
 			ResultTable.Columns.Add(AutoNumberColumn);			
 			//ResultTable.Merge(SourceTable);
-			ResultTable.Rows[0][29] = 1;
+			int j = 1;
+			for(int i=0;i<ResultTable.Rows.Count;i++)
+			{				
+				ResultTable.Rows[i][29] = j;
+				j++;
+			}
 			return ResultTable;
 
 		}
