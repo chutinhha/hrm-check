@@ -1788,9 +1788,9 @@ using System; using System.Drawing; using System.Collections; using System
 			this.tabPage2.Controls.Add(this.panel21);
 			this.tabPage2.Controls.Add(this.splitter2);
 			this.tabPage2.Controls.Add(this.panel20);
-			this.tabPage2.Location = new System.Drawing.Point(4, 22);
+			this.tabPage2.Location = new System.Drawing.Point(4, 27);
 			this.tabPage2.Name = "tabPage2";
-			this.tabPage2.Size = new System.Drawing.Size(976, 618);
+			this.tabPage2.Size = new System.Drawing.Size(976, 613);
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "Kiểm tra thông tin ";
 			this.tabPage2.Visible = false;
@@ -1801,17 +1801,19 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel21.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel21.Location = new System.Drawing.Point(0, 248);
 			this.panel21.Name = "panel21";
-			this.panel21.Size = new System.Drawing.Size(976, 370);
+			this.panel21.Size = new System.Drawing.Size(976, 365);
 			this.panel21.TabIndex = 2;
 			// 
 			// dtgKhachHang
 			// 
+			this.dtgKhachHang.ContextMenu = this.contextMenuGrid;
 			this.dtgKhachHang.DataMember = "";
 			this.dtgKhachHang.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dtgKhachHang.FlatMode = true;
 			this.dtgKhachHang.HeaderForeColor = System.Drawing.SystemColors.ControlText;
 			this.dtgKhachHang.Location = new System.Drawing.Point(0, 0);
 			this.dtgKhachHang.Name = "dtgKhachHang";
-			this.dtgKhachHang.Size = new System.Drawing.Size(976, 370);
+			this.dtgKhachHang.Size = new System.Drawing.Size(976, 365);
 			this.dtgKhachHang.TabIndex = 0;
 			// 
 			// splitter2
@@ -1858,7 +1860,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.groupBox10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.groupBox10.Location = new System.Drawing.Point(704, 0);
 			this.groupBox10.Name = "groupBox10";
-			this.groupBox10.Size = new System.Drawing.Size(180, 238);
+			this.groupBox10.Size = new System.Drawing.Size(180, 221);
 			this.groupBox10.TabIndex = 2;
 			this.groupBox10.TabStop = false;
 			this.groupBox10.Text = "Ảnh vân tay sống";
@@ -1870,7 +1872,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel36.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel36.Location = new System.Drawing.Point(3, 122);
 			this.panel36.Name = "panel36";
-			this.panel36.Size = new System.Drawing.Size(174, 113);
+			this.panel36.Size = new System.Drawing.Size(174, 96);
 			this.panel36.TabIndex = 1;
 			// 
 			// panel38
@@ -1882,7 +1884,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel38.DockPadding.All = 2;
 			this.panel38.Location = new System.Drawing.Point(0, 0);
 			this.panel38.Name = "panel38";
-			this.panel38.Size = new System.Drawing.Size(173, 113);
+			this.panel38.Size = new System.Drawing.Size(173, 96);
 			this.panel38.TabIndex = 4;
 			// 
 			// pictureBox20
@@ -1892,7 +1894,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.pictureBox20.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox20.Image")));
 			this.pictureBox20.Location = new System.Drawing.Point(2, 2);
 			this.pictureBox20.Name = "pictureBox20";
-			this.pictureBox20.Size = new System.Drawing.Size(167, 84);
+			this.pictureBox20.Size = new System.Drawing.Size(167, 67);
 			this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox20.TabIndex = 2;
 			this.pictureBox20.TabStop = false;
@@ -1901,7 +1903,7 @@ using System; using System.Drawing; using System.Collections; using System
 			// 
 			this.label46.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.label46.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.label46.Location = new System.Drawing.Point(2, 86);
+			this.label46.Location = new System.Drawing.Point(2, 69);
 			this.label46.Name = "label46";
 			this.label46.Size = new System.Drawing.Size(167, 23);
 			this.label46.TabIndex = 0;
@@ -1962,7 +1964,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.groupBox9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.groupBox9.Location = new System.Drawing.Point(352, 0);
 			this.groupBox9.Name = "groupBox9";
-			this.groupBox9.Size = new System.Drawing.Size(352, 238);
+			this.groupBox9.Size = new System.Drawing.Size(352, 221);
 			this.groupBox9.TabIndex = 1;
 			this.groupBox9.TabStop = false;
 			this.groupBox9.Text = "Ảnh CMND mới";
@@ -1975,7 +1977,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel30.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel30.Location = new System.Drawing.Point(3, 122);
 			this.panel30.Name = "panel30";
-			this.panel30.Size = new System.Drawing.Size(346, 113);
+			this.panel30.Size = new System.Drawing.Size(346, 96);
 			this.panel30.TabIndex = 1;
 			// 
 			// panel31
@@ -1987,7 +1989,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel31.DockPadding.All = 2;
 			this.panel31.Location = new System.Drawing.Point(173, 0);
 			this.panel31.Name = "panel31";
-			this.panel31.Size = new System.Drawing.Size(173, 113);
+			this.panel31.Size = new System.Drawing.Size(173, 96);
 			this.panel31.TabIndex = 5;
 			// 
 			// pictureBox15
@@ -1997,7 +1999,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.pictureBox15.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox15.Image")));
 			this.pictureBox15.Location = new System.Drawing.Point(2, 2);
 			this.pictureBox15.Name = "pictureBox15";
-			this.pictureBox15.Size = new System.Drawing.Size(167, 84);
+			this.pictureBox15.Size = new System.Drawing.Size(167, 67);
 			this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox15.TabIndex = 2;
 			this.pictureBox15.TabStop = false;
@@ -2006,7 +2008,7 @@ using System; using System.Drawing; using System.Collections; using System
 			// 
 			this.label41.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.label41.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.label41.Location = new System.Drawing.Point(2, 86);
+			this.label41.Location = new System.Drawing.Point(2, 69);
 			this.label41.Name = "label41";
 			this.label41.Size = new System.Drawing.Size(167, 23);
 			this.label41.TabIndex = 0;
@@ -2022,7 +2024,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel32.DockPadding.All = 2;
 			this.panel32.Location = new System.Drawing.Point(0, 0);
 			this.panel32.Name = "panel32";
-			this.panel32.Size = new System.Drawing.Size(173, 113);
+			this.panel32.Size = new System.Drawing.Size(173, 96);
 			this.panel32.TabIndex = 4;
 			// 
 			// pictureBox16
@@ -2032,7 +2034,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.pictureBox16.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox16.Image")));
 			this.pictureBox16.Location = new System.Drawing.Point(2, 2);
 			this.pictureBox16.Name = "pictureBox16";
-			this.pictureBox16.Size = new System.Drawing.Size(167, 84);
+			this.pictureBox16.Size = new System.Drawing.Size(167, 67);
 			this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox16.TabIndex = 2;
 			this.pictureBox16.TabStop = false;
@@ -2041,7 +2043,7 @@ using System; using System.Drawing; using System.Collections; using System
 			// 
 			this.label42.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.label42.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.label42.Location = new System.Drawing.Point(2, 86);
+			this.label42.Location = new System.Drawing.Point(2, 69);
 			this.label42.Name = "label42";
 			this.label42.Size = new System.Drawing.Size(167, 23);
 			this.label42.TabIndex = 0;
@@ -2138,7 +2140,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.groupBox8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.groupBox8.Location = new System.Drawing.Point(0, 0);
 			this.groupBox8.Name = "groupBox8";
-			this.groupBox8.Size = new System.Drawing.Size(352, 238);
+			this.groupBox8.Size = new System.Drawing.Size(352, 221);
 			this.groupBox8.TabIndex = 0;
 			this.groupBox8.TabStop = false;
 			this.groupBox8.Text = "Ảnh CMND cũ";
@@ -2151,7 +2153,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel25.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel25.Location = new System.Drawing.Point(3, 122);
 			this.panel25.Name = "panel25";
-			this.panel25.Size = new System.Drawing.Size(346, 113);
+			this.panel25.Size = new System.Drawing.Size(346, 96);
 			this.panel25.TabIndex = 1;
 			// 
 			// panel29
@@ -2163,7 +2165,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel29.DockPadding.All = 2;
 			this.panel29.Location = new System.Drawing.Point(173, 0);
 			this.panel29.Name = "panel29";
-			this.panel29.Size = new System.Drawing.Size(173, 113);
+			this.panel29.Size = new System.Drawing.Size(173, 96);
 			this.panel29.TabIndex = 5;
 			// 
 			// pictureBox14
@@ -2173,7 +2175,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
 			this.pictureBox14.Location = new System.Drawing.Point(2, 2);
 			this.pictureBox14.Name = "pictureBox14";
-			this.pictureBox14.Size = new System.Drawing.Size(167, 84);
+			this.pictureBox14.Size = new System.Drawing.Size(167, 67);
 			this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox14.TabIndex = 2;
 			this.pictureBox14.TabStop = false;
@@ -2182,7 +2184,7 @@ using System; using System.Drawing; using System.Collections; using System
 			// 
 			this.label40.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.label40.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.label40.Location = new System.Drawing.Point(2, 86);
+			this.label40.Location = new System.Drawing.Point(2, 69);
 			this.label40.Name = "label40";
 			this.label40.Size = new System.Drawing.Size(167, 23);
 			this.label40.TabIndex = 0;
@@ -2198,7 +2200,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel28.DockPadding.All = 2;
 			this.panel28.Location = new System.Drawing.Point(0, 0);
 			this.panel28.Name = "panel28";
-			this.panel28.Size = new System.Drawing.Size(173, 113);
+			this.panel28.Size = new System.Drawing.Size(173, 96);
 			this.panel28.TabIndex = 4;
 			// 
 			// pictureBox13
@@ -2208,7 +2210,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
 			this.pictureBox13.Location = new System.Drawing.Point(2, 2);
 			this.pictureBox13.Name = "pictureBox13";
-			this.pictureBox13.Size = new System.Drawing.Size(167, 84);
+			this.pictureBox13.Size = new System.Drawing.Size(167, 67);
 			this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox13.TabIndex = 2;
 			this.pictureBox13.TabStop = false;
@@ -2217,7 +2219,7 @@ using System; using System.Drawing; using System.Collections; using System
 			// 
 			this.label39.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.label39.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.label39.Location = new System.Drawing.Point(2, 86);
+			this.label39.Location = new System.Drawing.Point(2, 69);
 			this.label39.Name = "label39";
 			this.label39.Size = new System.Drawing.Size(167, 23);
 			this.label39.TabIndex = 0;
@@ -2550,7 +2552,21 @@ using System; using System.Drawing; using System.Collections; using System
 			this.pictureBox2.Click+=new EventHandler(ZoomImage);
 			this.pictureBox3.Click+=new EventHandler(ZoomImage); 			this.pictureBox4.Click+=new EventHandler(ZoomImage); 			this.pictureBox5.Click+=new EventHandler(ZoomImage); 			this.pictureBox6.Click+=new EventHandler(ZoomImage); 			this.pictureBox7.Click+=new EventHandler(ZoomImage); 			this.pictureBox8.Click+=new EventHandler(ZoomImage); 			this.pictureBox9.Click+=new EventHandler(ZoomImage); 			this.pictureBox10.Click+=new EventHandler(ZoomImage); 			this.pictureBox11.Click+=new EventHandler(ZoomImage); 			this.pictureBox12.Click+=new EventHandler(ZoomImage);
 			this.pictureBox13.Click+=new EventHandler(ZoomImage);
-			this.pictureBox14.Click+=new EventHandler(ZoomImage); 			this.pictureBox15.Click+=new EventHandler(ZoomImage); 			this.pictureBox16.Click+=new EventHandler(ZoomImage); 			this.pictureBox17.Click+=new EventHandler(ZoomImage); 			this.pictureBox18.Click+=new EventHandler(ZoomImage); 			this.pictureBox22.Click+=new EventHandler(ZoomImage); 			this.pictureBox20.Click+=new EventHandler(ZoomImage);	 			LoadFormData(); 			dtgKhachHang.ContextMenu = contextMenuGrid; 		}  		clsBusPersonal bus = new clsBusPersonal(); 		private void LoadFormData() 		{			 			SetMessage("",false); 			//string strConn = "Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=HRM_CHECKER;Data Source=QUYDA-PC;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=QUYDA-PC;Use Encryption for Data=False;Tag with column collation when possible=False"; 			//string strConn = "Server=QUYDA-PC;Database=HRM_CHECKER;Trusted_Connection=True"; 			//SqlConnection conn = new SqlConnection(strConn);			 			//SqlDataReader reader =  SqlHelper.ExecuteReader(conn,CommandType.Text,"Select * from tblKhachHang"); 			//DataSet ds = SqlHelper.ExecuteDataset(conn,CommandType.Text,"Select * from tblKhachHang"); 			DataSet ds = bus.LoadPersonal(); 			if(ds!=null) 			{ 				dtgKhachHang.DataSource = ds.Tables[0]; 			} 			else 			{ 				SetMessage("Có lỗi trong quá trình truy vấn dữ liệu!",true); 			} 			  		}
+			this.pictureBox14.Click+=new EventHandler(ZoomImage); 			this.pictureBox15.Click+=new EventHandler(ZoomImage); 			this.pictureBox16.Click+=new EventHandler(ZoomImage); 			this.pictureBox17.Click+=new EventHandler(ZoomImage); 			this.pictureBox18.Click+=new EventHandler(ZoomImage); 			this.pictureBox22.Click+=new EventHandler(ZoomImage); 			this.pictureBox20.Click+=new EventHandler(ZoomImage);	 			LoadFormData();			 			dtgKhachHang.ContextMenu = contextMenuGrid; 		}  		private void SettingGrid() 		{ 			DataGridTableStyle aGridTableStyle = new DataGridTableStyle();
+			aGridTableStyle.MappingName = "Customers"; 			//
+			// Create GridColumnStyle objects for the grid columns 
+			//
+			DataGridTextBoxColumn aCol1 = new DataGridTextBoxColumn();
+			DataGridTextBoxColumn aCol2 = new DataGridTextBoxColumn();
+			DataGridTextBoxColumn aCol3 = new DataGridTextBoxColumn();
+			DataGridTextBoxColumn aCol4 = new DataGridTextBoxColumn(); 			//
+			// Hide column 1 by setting its width to 0.
+			//
+			aCol1.MappingName = "Customer_ID";
+			aCol1.Width = 0;
+			//
+			// Set column 2's caption, width and disable editing.
+			// 		}  		clsBusPersonal bus = new clsBusPersonal(); 		private void LoadFormData() 		{			 			SetMessage("",false); 			//string strConn = "Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=HRM_CHECKER;Data Source=QUYDA-PC;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=QUYDA-PC;Use Encryption for Data=False;Tag with column collation when possible=False"; 			//string strConn = "Server=QUYDA-PC;Database=HRM_CHECKER;Trusted_Connection=True"; 			//SqlConnection conn = new SqlConnection(strConn);			 			//SqlDataReader reader =  SqlHelper.ExecuteReader(conn,CommandType.Text,"Select * from tblKhachHang"); 			//DataSet ds = SqlHelper.ExecuteDataset(conn,CommandType.Text,"Select * from tblKhachHang"); 			DataSet ds = bus.LoadPersonal(); 			if(ds!=null) 			{ 				dtgKhachHang.DataSource = ds.Tables[0]; 			} 			else 			{ 				SetMessage("Có lỗi trong quá trình truy vấn dữ liệu!",true); 			} 			  		}
 
 		private void SetMessage(string msg,bool tt)
 		{
