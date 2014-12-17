@@ -1785,9 +1785,9 @@ using System; using System.Drawing; using System.Collections; using System
 			this.dtgKhachHang.HeaderForeColor = System.Drawing.SystemColors.ControlText;
 			this.dtgKhachHang.Location = new System.Drawing.Point(0, 0);
 			this.dtgKhachHang.Name = "dtgKhachHang";
-			this.dtgKhachHang.ReadOnly = true;
 			this.dtgKhachHang.Size = new System.Drawing.Size(976, 365);
 			this.dtgKhachHang.TabIndex = 0;
+			this.dtgKhachHang.CurrentCellChanged += new System.EventHandler(this.dtgKhachHang_CurrentCellChanged);
 			// 
 			// contextMenuGrid
 			// 
@@ -2443,6 +2443,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.menuItemXoa.Index = 2;
 			this.menuItemXoa.Shortcut = System.Windows.Forms.Shortcut.Del;
 			this.menuItemXoa.Text = "Xóa khách hàng";
+			this.menuItemXoa.Click += new System.EventHandler(this.menuItemXoa_Click);
 			// 
 			// Form1
 			// 
@@ -2618,8 +2619,9 @@ using System; using System.Drawing; using System.Collections; using System
 					aCol8.HeaderText = "Chọn";
 					aCol8.Width = 80;
 					aCol8.Alignment = HorizontalAlignment.Center;
+					aCol8.NullValue = false;
 					aCol8.AllowNull = false;
-					//aCol8.TrueValue.Enabled = false;
+					aCol8.ReadOnly = false;
 					//aCol8.ReadOnly = false;
 
 					dbgStyle.GridColumnStyles.Add(aCol8);
@@ -2656,7 +2658,7 @@ using System; using System.Drawing; using System.Collections; using System
 			for(int i=0;i<ResultTable.Rows.Count;i++)
 			{				
 				ResultTable.Rows[i][29] = j;
-				//ResultTable.Rows[i][30] = false;
+				ResultTable.Rows[i][30] = false;
 				j++;
 			}
 			return ResultTable;
@@ -2768,6 +2770,7 @@ using System; using System.Drawing; using System.Collections; using System
 		private void menuItemSua_Click(object sender, System.EventArgs e)
 		{
 			//int indexRow = dtgKhachHang
+			//for(int i =0;i< 
 		}
 
 		private void menuItemLamMoi_Click(object sender, System.EventArgs e)
@@ -2797,5 +2800,58 @@ using System; using System.Drawing; using System.Collections; using System
 			{
 				rbNu.Checked = true;
 			}
+		}
+
+		private void dtgKhachHang_CurrentCellChanged(object sender, System.EventArgs e)
+		{
+			// if click on a discontinued row, then set currentcell to checkbox
+			// String variable used to show message. 
+			string myString = "CurrentCellChanged event raised, cell focus is at ";
+			// Get the co-ordinates of the focussed cell. 
+			string myPoint  = dtgKhachHang.CurrentCell.ColumnNumber + "," +
+				dtgKhachHang.CurrentCell.RowNumber;
+			// Create the alert message.
+			myString = myString + "(" + myPoint + ")";
+			// Show Co-ordinates when CurrentCellChanged event is raised.
+			//MessageBox.Show(myString, "Current cell co-ordinates");		
+			
+		}
+
+		private void menuItemXoa_Click(object sender, System.EventArgs e)
+		{
+			if(dtgKhachHang.DataSource!=null)
+			{
+				string strError = "";
+				DataTable tblState = (DataTable) dtgKhachHang.DataSource;
+				
+				if(tblState.Rows.Count>0)
+				{
+					//MessageBox.Show("Chac la xoa dc");
+					DataRow[] drs = tblState.Select("TT = 1");
+					string[] maKHs = new string[drs.Length];
+					for(int i=0;i<drs.Length;i++)
+					{
+						bus.DeletePersonal(drs[i]["MaKhachHang"].ToString(),ref strError);
+						if(strError!="")
+						{
+							maKHs[i] = drs[i]["MaKhachHang"].ToString();
+						}
+					}
+					if(maKHs.Length>0)
+					{
+						string sMaKhang="";
+						for(int i=0;i<maKHs.Length;i++)
+						{
+							sMaKhang+=maKHs;
+						}
+						SetMessage("Không xóa được dữ liệu các khách hàng sau: "+ sMaKhang,true);
+					}
+					else
+					{
+						SetMessage("Xóa danh sách khách hàng thành công!",false);
+					}
+				}
+			}
+
 		}
 	 	} } 
