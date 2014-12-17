@@ -2752,7 +2752,52 @@ using System; using System.Drawing; using System.Collections; using System
 
 		private void btThemKH_Click(object sender, System.EventArgs e)
 		{
-		
+			string strHoTen = txtHoTen.Text.Trim();
+			string strNgaySinh = dtNgaySinh.Text;			
+			string strTenTat = txtTenVietTat.Text.Trim();
+			int GioiTinh = 1;
+			if(rbNam.Checked)
+			{
+				GioiTinh = 1;
+			}
+			else
+			{
+				GioiTinh = 0;
+			}						
+			string QuocTich = txtQuocTich.Text.Trim();
+			string CMND = txtSo_CMND.Text.Trim();
+			string HoChieu = txtSo_CMND.Text.Trim();
+			string SoKhac = txtSo_CMND.Text.Trim();
+			string ngayCap = dtNgayCap.Text;
+			string noiCap = txtNoiCap_CMND.Text.Trim();
+			string dcLienHe = txtDiaChiLienHe.Text.Trim();
+			string dcThuongTru = txtDiaChiCuTru.Text.Trim();
+			string dcNuocNgoai = txtDiaChiNuocNgoai.Text.Trim();
+			string dtNha = txtDienThoaiNha.Text.Trim();
+			string dtDiDong = txtDienThoaiDD.Text.Trim();
+			string HopThu = txtHopThu.Text.Trim();
+			int DiHoc = 0;
+			int DiLam = 0;
+			int tuKinhDoanh = 0;
+			int nghiHuu = 0;
+			string nganhNghe = "NV";
+			string chucVu = "NV";
+			string dtCoQuan = "";
+			string tenCoQuan = txtCoQuan.Text.Trim();
+			string ttHonNhan = "";
+			string ttHocVan = "";
+			string thuNhap = "";
+			int maTK = 0;
+			string strError = "";
+			bus.InsertPersonal(strHoTen,strTenTat,strNgaySinh,GioiTinh,QuocTich,CMND,HoChieu,SoKhac,ngayCap,noiCap,dcLienHe,dcThuongTru,dcNuocNgoai,dtNha,dtCoQuan,HopThu,DiHoc,DiLam,tuKinhDoanh,nghiHuu,nganhNghe,chucVu,dtCoQuan,tenCoQuan,ttHonNhan,ttHocVan,thuNhap,maTK,ref strError);
+			if(strError =="")
+			{
+				SetMessage("Thêm khách hàng thành công!",false);
+			}
+			else
+			{
+				SetMessage("Có lỗi trong quá trình thêm dữ liệu:"+strError,true);
+			}
 		}
 
 		private void txtSuaKH_Click(object sender, System.EventArgs e)
