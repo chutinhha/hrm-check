@@ -177,7 +177,11 @@ using System; using System.Drawing; using System.Collections; using System
 		private System.Windows.Forms.CheckBox ck_NN_NghiHuu;
 		private System.Windows.Forms.CheckBox ck_NN_KinhDoanh;
 		private System.Windows.Forms.CheckBox ck_NN_DiLam;
-		private System.Windows.Forms.CheckBox ck_NN_DiHoc; 		private System.ComponentModel.IContainer components;  		public Form1() 		{ 			// 			// Required for Windows Form Designer support 			// 			InitializeComponent();  			// 			// TODO: Add any constructor code after InitializeComponent call 			// 		}  		/// <summary> 		/// Clean up any resources being used. 		/// </summary> 		protected override void Dispose( bool disposing ) 		{ 			if( disposing ) 			{ 				if (components != null)  				{ 					components.Dispose(); 				} 			} 			base.Dispose( disposing ); 		}  		#region Windows Form Designer generated code 		/// <summary> 		/// Required method for Designer support - do not modify 		/// the contents of this method with the code editor. 		/// </summary> 		private void InitializeComponent() 		{ 			this.components = new System.ComponentModel.Container();
+		private System.Windows.Forms.CheckBox ck_NN_DiHoc;
+		private System.Windows.Forms.RadioButton rb_HN_GiaDinh;
+		private System.Windows.Forms.RadioButton rb_HN_DocTHan;
+		private System.Windows.Forms.RadioButton rb_HN_LyDi;
+		private System.Windows.Forms.RadioButton rb_HN_Goa; 		private System.ComponentModel.IContainer components;  		public Form1() 		{ 			// 			// Required for Windows Form Designer support 			// 			InitializeComponent();  			// 			// TODO: Add any constructor code after InitializeComponent call 			// 		}  		/// <summary> 		/// Clean up any resources being used. 		/// </summary> 		protected override void Dispose( bool disposing ) 		{ 			if( disposing ) 			{ 				if (components != null)  				{ 					components.Dispose(); 				} 			} 			base.Dispose( disposing ); 		}  		#region Windows Form Designer generated code 		/// <summary> 		/// Required method for Designer support - do not modify 		/// the contents of this method with the code editor. 		/// </summary> 		private void InitializeComponent() 		{ 			this.components = new System.ComponentModel.Container();
 			System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(Form1));
 			this.toolBar1 = new System.Windows.Forms.ToolBar();
 			this.toolBarButton1 = new System.Windows.Forms.ToolBarButton();
@@ -198,25 +202,20 @@ using System; using System.Drawing; using System.Collections; using System
 			this.checkBox27 = new System.Windows.Forms.CheckBox();
 			this.checkBox28 = new System.Windows.Forms.CheckBox();
 			this.checkBox29 = new System.Windows.Forms.CheckBox();
-			this.checkBox22 = new System.Windows.Forms.CheckBox();
 			this.label33 = new System.Windows.Forms.Label();
 			this.label34 = new System.Windows.Forms.Label();
 			this.groupBox7 = new System.Windows.Forms.GroupBox();
-			this.checkBox21 = new System.Windows.Forms.CheckBox();
-			this.checkBox20 = new System.Windows.Forms.CheckBox();
-			this.checkBox19 = new System.Windows.Forms.CheckBox();
-			this.checkBox18 = new System.Windows.Forms.CheckBox();
 			this.label32 = new System.Windows.Forms.Label();
-			this.txtCoQuan = new System.Windows.Forms.TextBox();
 			this.label31 = new System.Windows.Forms.Label();
-			this.txtChucVu = new System.Windows.Forms.TextBox();
 			this.ck_NN_NghiHuu = new System.Windows.Forms.CheckBox();
 			this.ck_NN_KinhDoanh = new System.Windows.Forms.CheckBox();
 			this.ck_NN_DiLam = new System.Windows.Forms.CheckBox();
 			this.ck_NN_DiHoc = new System.Windows.Forms.CheckBox();
 			this.label30 = new System.Windows.Forms.Label();
-			this.txtNganhNghe = new System.Windows.Forms.TextBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.rb_CT_Khong = new System.Windows.Forms.RadioButton();
+			this.rbNu = new System.Windows.Forms.RadioButton();
+			this.rbNam = new System.Windows.Forms.RadioButton();
 			this.txtHopThu = new System.Windows.Forms.TextBox();
 			this.label19 = new System.Windows.Forms.Label();
 			this.txtDienThoaiDD = new System.Windows.Forms.TextBox();
@@ -248,6 +247,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.txtHoTen = new System.Windows.Forms.TextBox();
 			this.label6 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
+			this.rb_CT_Co = new System.Windows.Forms.RadioButton();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.ck_LT_Khac = new System.Windows.Forms.CheckBox();
 			this.ck_LT_DoLa = new System.Windows.Forms.CheckBox();
@@ -361,17 +361,15 @@ using System; using System.Drawing; using System.Collections; using System
 			this.label35 = new System.Windows.Forms.Label();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.errorProvider1 = new System.Windows.Forms.ErrorProvider();
-			this.rbNam = new System.Windows.Forms.RadioButton();
-			this.rbNu = new System.Windows.Forms.RadioButton();
-			this.rb_CT_Co = new System.Windows.Forms.RadioButton();
-			this.rb_CT_Khong = new System.Windows.Forms.RadioButton();
-			this.radioButton1 = new System.Windows.Forms.RadioButton();
+			this.rb_HN_GiaDinh = new System.Windows.Forms.RadioButton();
+			this.rb_HN_DocTHan = new System.Windows.Forms.RadioButton();
+			this.rb_HN_LyDi = new System.Windows.Forms.RadioButton();
+			this.rb_HN_Goa = new System.Windows.Forms.RadioButton();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			this.panel5.SuspendLayout();
 			this.groupBox3.SuspendLayout();
-			this.groupBox7.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			this.panel3.SuspendLayout();
@@ -534,26 +532,25 @@ using System; using System.Drawing; using System.Collections; using System
 			// 
 			// groupBox3
 			// 
-			this.groupBox3.Controls.Add(this.radioButton1);
+			this.groupBox3.Controls.Add(this.rb_HN_Goa);
+			this.groupBox3.Controls.Add(this.rb_HN_LyDi);
+			this.groupBox3.Controls.Add(this.rb_HN_DocTHan);
+			this.groupBox3.Controls.Add(this.rb_HN_GiaDinh);
 			this.groupBox3.Controls.Add(this.checkBox30);
 			this.groupBox3.Controls.Add(this.checkBox26);
 			this.groupBox3.Controls.Add(this.checkBox27);
 			this.groupBox3.Controls.Add(this.checkBox28);
 			this.groupBox3.Controls.Add(this.checkBox29);
-			this.groupBox3.Controls.Add(this.checkBox22);
 			this.groupBox3.Controls.Add(this.label33);
 			this.groupBox3.Controls.Add(this.label34);
 			this.groupBox3.Controls.Add(this.groupBox7);
 			this.groupBox3.Controls.Add(this.label32);
-			this.groupBox3.Controls.Add(this.txtCoQuan);
 			this.groupBox3.Controls.Add(this.label31);
-			this.groupBox3.Controls.Add(this.txtChucVu);
 			this.groupBox3.Controls.Add(this.ck_NN_NghiHuu);
 			this.groupBox3.Controls.Add(this.ck_NN_KinhDoanh);
 			this.groupBox3.Controls.Add(this.ck_NN_DiLam);
 			this.groupBox3.Controls.Add(this.ck_NN_DiHoc);
 			this.groupBox3.Controls.Add(this.label30);
-			this.groupBox3.Controls.Add(this.txtNganhNghe);
 			this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
 			this.groupBox3.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.groupBox3.Location = new System.Drawing.Point(0, 472);
@@ -608,15 +605,6 @@ using System; using System.Drawing; using System.Collections; using System
 			this.checkBox29.TabIndex = 51;
 			this.checkBox29.Text = "Sau đại học";
 			// 
-			// checkBox22
-			// 
-			this.checkBox22.Location = new System.Drawing.Point(376, 176);
-			this.checkBox22.Name = "checkBox22";
-			this.checkBox22.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-			this.checkBox22.Size = new System.Drawing.Size(112, 24);
-			this.checkBox22.TabIndex = 50;
-			this.checkBox22.Text = "Góa";
-			// 
 			// label33
 			// 
 			this.label33.Font = new System.Drawing.Font("Tahoma", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
@@ -637,52 +625,12 @@ using System; using System.Drawing; using System.Collections; using System
 			// 
 			// groupBox7
 			// 
-			this.groupBox7.Controls.Add(this.checkBox21);
-			this.groupBox7.Controls.Add(this.checkBox20);
-			this.groupBox7.Controls.Add(this.checkBox19);
-			this.groupBox7.Controls.Add(this.checkBox18);
 			this.groupBox7.Location = new System.Drawing.Point(320, 48);
 			this.groupBox7.Name = "groupBox7";
 			this.groupBox7.Size = new System.Drawing.Size(232, 100);
 			this.groupBox7.TabIndex = 44;
 			this.groupBox7.TabStop = false;
 			this.groupBox7.Text = "Thu nhập hàng năm";
-			// 
-			// checkBox21
-			// 
-			this.checkBox21.Location = new System.Drawing.Point(136, 64);
-			this.checkBox21.Name = "checkBox21";
-			this.checkBox21.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-			this.checkBox21.Size = new System.Drawing.Size(88, 24);
-			this.checkBox21.TabIndex = 48;
-			this.checkBox21.Text = "Trên 60tr";
-			// 
-			// checkBox20
-			// 
-			this.checkBox20.Location = new System.Drawing.Point(112, 24);
-			this.checkBox20.Name = "checkBox20";
-			this.checkBox20.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-			this.checkBox20.Size = new System.Drawing.Size(112, 24);
-			this.checkBox20.TabIndex = 47;
-			this.checkBox20.Text = "Từ 12tr-36tr";
-			// 
-			// checkBox19
-			// 
-			this.checkBox19.Location = new System.Drawing.Point(8, 64);
-			this.checkBox19.Name = "checkBox19";
-			this.checkBox19.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-			this.checkBox19.Size = new System.Drawing.Size(112, 24);
-			this.checkBox19.TabIndex = 46;
-			this.checkBox19.Text = "Từ 36tr-60tr";
-			// 
-			// checkBox18
-			// 
-			this.checkBox18.Location = new System.Drawing.Point(16, 24);
-			this.checkBox18.Name = "checkBox18";
-			this.checkBox18.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-			this.checkBox18.Size = new System.Drawing.Size(96, 24);
-			this.checkBox18.TabIndex = 45;
-			this.checkBox18.Text = "Dưới 12tr";
 			// 
 			// label32
 			// 
@@ -692,14 +640,6 @@ using System; using System.Drawing; using System.Collections; using System
 			this.label32.TabIndex = 42;
 			this.label32.Text = "Tên cơ quan:";
 			// 
-			// txtCoQuan
-			// 
-			this.txtCoQuan.Location = new System.Drawing.Point(112, 119);
-			this.txtCoQuan.Name = "txtCoQuan";
-			this.txtCoQuan.Size = new System.Drawing.Size(200, 26);
-			this.txtCoQuan.TabIndex = 43;
-			this.txtCoQuan.Text = "textBox17";
-			// 
 			// label31
 			// 
 			this.label31.Location = new System.Drawing.Point(40, 88);
@@ -707,14 +647,6 @@ using System; using System.Drawing; using System.Collections; using System
 			this.label31.Size = new System.Drawing.Size(72, 23);
 			this.label31.TabIndex = 40;
 			this.label31.Text = "Chức vụ:";
-			// 
-			// txtChucVu
-			// 
-			this.txtChucVu.Location = new System.Drawing.Point(112, 88);
-			this.txtChucVu.Name = "txtChucVu";
-			this.txtChucVu.Size = new System.Drawing.Size(200, 26);
-			this.txtChucVu.TabIndex = 41;
-			this.txtChucVu.Text = "textBox16";
 			// 
 			// ck_NN_NghiHuu
 			// 
@@ -760,14 +692,6 @@ using System; using System.Drawing; using System.Collections; using System
 			this.label30.TabIndex = 38;
 			this.label30.Text = "Ngành nghề:";
 			// 
-			// txtNganhNghe
-			// 
-			this.txtNganhNghe.Location = new System.Drawing.Point(112, 56);
-			this.txtNganhNghe.Name = "txtNganhNghe";
-			this.txtNganhNghe.Size = new System.Drawing.Size(200, 26);
-			this.txtNganhNghe.TabIndex = 39;
-			this.txtNganhNghe.Text = "textBox15";
-			// 
 			// groupBox2
 			// 
 			this.groupBox2.Controls.Add(this.rb_CT_Khong);
@@ -812,6 +736,30 @@ using System; using System.Drawing; using System.Collections; using System
 			this.groupBox2.TabIndex = 8;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Thông tin về chủ tài khoản";
+			// 
+			// rb_CT_Khong
+			// 
+			this.rb_CT_Khong.Location = new System.Drawing.Point(464, 120);
+			this.rb_CT_Khong.Name = "rb_CT_Khong";
+			this.rb_CT_Khong.Size = new System.Drawing.Size(72, 24);
+			this.rb_CT_Khong.TabIndex = 40;
+			this.rb_CT_Khong.Text = "Không";
+			// 
+			// rbNu
+			// 
+			this.rbNu.Location = new System.Drawing.Point(464, 24);
+			this.rbNu.Name = "rbNu";
+			this.rbNu.Size = new System.Drawing.Size(56, 24);
+			this.rbNu.TabIndex = 39;
+			this.rbNu.Text = "Nữ";
+			// 
+			// rbNam
+			// 
+			this.rbNam.Location = new System.Drawing.Point(400, 24);
+			this.rbNam.Name = "rbNam";
+			this.rbNam.Size = new System.Drawing.Size(56, 24);
+			this.rbNam.TabIndex = 38;
+			this.rbNam.Text = "Nam";
 			// 
 			// txtHopThu
 			// 
@@ -1066,6 +1014,14 @@ using System; using System.Drawing; using System.Collections; using System
 			this.label5.Name = "label5";
 			this.label5.TabIndex = 0;
 			this.label5.Text = "Họ tên:";
+			// 
+			// rb_CT_Co
+			// 
+			this.rb_CT_Co.Location = new System.Drawing.Point(400, 120);
+			this.rb_CT_Co.Name = "rb_CT_Co";
+			this.rb_CT_Co.Size = new System.Drawing.Size(56, 24);
+			this.rb_CT_Co.TabIndex = 38;
+			this.rb_CT_Co.Text = "Có";
 			// 
 			// groupBox1
 			// 
@@ -2345,45 +2301,37 @@ using System; using System.Drawing; using System.Collections; using System
 			// 
 			this.errorProvider1.ContainerControl = this;
 			// 
-			// rbNam
+			// rb_HN_GiaDinh
 			// 
-			this.rbNam.Location = new System.Drawing.Point(400, 24);
-			this.rbNam.Name = "rbNam";
-			this.rbNam.Size = new System.Drawing.Size(56, 24);
-			this.rbNam.TabIndex = 38;
-			this.rbNam.Text = "Nam";
+			this.rb_HN_GiaDinh.Location = new System.Drawing.Point(24, 176);
+			this.rb_HN_GiaDinh.Name = "rb_HN_GiaDinh";
+			this.rb_HN_GiaDinh.Size = new System.Drawing.Size(128, 24);
+			this.rb_HN_GiaDinh.TabIndex = 56;
+			this.rb_HN_GiaDinh.Text = "Đã lập gia đình";
 			// 
-			// rbNu
+			// rb_HN_DocTHan
 			// 
-			this.rbNu.Location = new System.Drawing.Point(464, 24);
-			this.rbNu.Name = "rbNu";
-			this.rbNu.Size = new System.Drawing.Size(56, 24);
-			this.rbNu.TabIndex = 39;
-			this.rbNu.Text = "Nữ";
+			this.rb_HN_DocTHan.Location = new System.Drawing.Point(160, 176);
+			this.rb_HN_DocTHan.Name = "rb_HN_DocTHan";
+			this.rb_HN_DocTHan.Size = new System.Drawing.Size(96, 24);
+			this.rb_HN_DocTHan.TabIndex = 57;
+			this.rb_HN_DocTHan.Text = "Độc thân";
 			// 
-			// rb_CT_Co
+			// rb_HN_LyDi
 			// 
-			this.rb_CT_Co.Location = new System.Drawing.Point(400, 120);
-			this.rb_CT_Co.Name = "rb_CT_Co";
-			this.rb_CT_Co.Size = new System.Drawing.Size(56, 24);
-			this.rb_CT_Co.TabIndex = 38;
-			this.rb_CT_Co.Text = "Có";
+			this.rb_HN_LyDi.Location = new System.Drawing.Point(264, 176);
+			this.rb_HN_LyDi.Name = "rb_HN_LyDi";
+			this.rb_HN_LyDi.Size = new System.Drawing.Size(96, 24);
+			this.rb_HN_LyDi.TabIndex = 58;
+			this.rb_HN_LyDi.Text = "Ly Dị";
 			// 
-			// rb_CT_Khong
+			// rb_HN_Goa
 			// 
-			this.rb_CT_Khong.Location = new System.Drawing.Point(464, 120);
-			this.rb_CT_Khong.Name = "rb_CT_Khong";
-			this.rb_CT_Khong.Size = new System.Drawing.Size(72, 24);
-			this.rb_CT_Khong.TabIndex = 40;
-			this.rb_CT_Khong.Text = "Không";
-			// 
-			// radioButton1
-			// 
-			this.radioButton1.Location = new System.Drawing.Point(24, 176);
-			this.radioButton1.Name = "radioButton1";
-			this.radioButton1.Size = new System.Drawing.Size(128, 24);
-			this.radioButton1.TabIndex = 56;
-			this.radioButton1.Text = "Đã lập gia đình";
+			this.rb_HN_Goa.Location = new System.Drawing.Point(368, 176);
+			this.rb_HN_Goa.Name = "rb_HN_Goa";
+			this.rb_HN_Goa.Size = new System.Drawing.Size(96, 24);
+			this.rb_HN_Goa.TabIndex = 59;
+			this.rb_HN_Goa.Text = "Góa";
 			// 
 			// Form1
 			// 
@@ -2403,7 +2351,6 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel2.ResumeLayout(false);
 			this.panel5.ResumeLayout(false);
 			this.groupBox3.ResumeLayout(false);
-			this.groupBox7.ResumeLayout(false);
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox1.ResumeLayout(false);
 			this.panel3.ResumeLayout(false);
