@@ -2656,7 +2656,7 @@ using System; using System.Drawing; using System.Collections; using System
 					aCol1.MappingName = "MaKhachHang";
 					aCol1.Width = 0;
 					//
-					// Set column 2's caption, width and disable editing.			// 		
+					// Set column 2's caption, width and disable editing.			//					
 					aCol2.MappingName = "HoTen";
 					aCol2.HeaderText = "Họ tên";
 					aCol2.Width = 165;
@@ -2690,7 +2690,7 @@ using System; using System.Drawing; using System.Collections; using System
 
 					aCol6.MappingName = "DiaChiLienHe";
 					aCol6.HeaderText = "Địa chỉ liên hệ";
-					aCol6.Width = 170;
+					aCol6.Width = 200;
 					aCol6.Alignment = HorizontalAlignment.Left;
 					aCol6.NullText = "";
 					aCol6.TextBox.Enabled = true;			
