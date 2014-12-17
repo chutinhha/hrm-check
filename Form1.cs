@@ -519,6 +519,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.tabControl1.SelectedIndex = 0;
 			this.tabControl1.Size = new System.Drawing.Size(984, 644);
 			this.tabControl1.TabIndex = 2;
+			this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
 			// 
 			// tabPage1
 			// 
@@ -2821,37 +2822,56 @@ using System; using System.Drawing; using System.Collections; using System
 		{
 			if(dtgKhachHang.DataSource!=null)
 			{
-				string strError = "";
-				DataTable tblState = (DataTable) dtgKhachHang.DataSource;
+				dtgKhachHang.Update();
+				dtgKhachHang.Refresh();
+				dtgKhachHang.Select(0);
+			}
+			if(MessageBox.Show("Bạn có chắc chắn muốn xóa?","Cảnh báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+			{
+				if(dtgKhachHang.DataSource!=null)
+				{					
+					string strError = "";
+					DataTable tblState = (DataTable) dtgKhachHang.DataSource;
 				
-				if(tblState.Rows.Count>0)
-				{
-					//MessageBox.Show("Chac la xoa dc");
-					DataRow[] drs = tblState.Select("TT = 1");
-					string[] maKHs = new string[drs.Length];
-					for(int i=0;i<drs.Length;i++)
+					if(tblState.Rows.Count>0)
 					{
-						bus.DeletePersonal(drs[i]["MaKhachHang"].ToString(),ref strError);
-						if(strError!="")
+						//MessageBox.Show("Chac la xoa dc");
+						DataRow[] drs = tblState.Select("TT = 1");
+						string[] maKHs = new string[drs.Length];
+						for(int i=0;i<drs.Length;i++)
 						{
-							maKHs[i] = drs[i]["MaKhachHang"].ToString();
+							bus.DeletePersonal(drs[i]["MaKhachHang"].ToString(),ref strError);
+							if(strError!="")
+							{
+								maKHs[i] = drs[i]["MaKhachHang"].ToString();
+							}
 						}
-					}
-					if(maKHs.Length>0)
-					{
-						string sMaKhang="";
-						for(int i=0;i<maKHs.Length;i++)
+						if(maKHs.Length>0)
 						{
-							sMaKhang+=maKHs;
-						}
-						SetMessage("Không xóa được dữ liệu các khách hàng sau: "+ sMaKhang,true);
-					}
-					else
-					{
-						SetMessage("Xóa danh sách khách hàng thành công!",false);
+							string sMaKhang="";
+							for(int i=0;i<maKHs.Length;i++)
+							{
+								if(maKHs[i]!= null)
+								{
+									sMaKhang+=maKHs[i].ToString();
+								}
+							}
+							if(sMaKhang!="")
+								SetMessage("Không xóa được dữ liệu các khách hàng sau: "+ sMaKhang,true);
+							else
+							{
+								SetMessage("Xóa danh sách khách hàng thành công!",false);
+							}
+							LoadFormData();
+						}					
 					}
 				}
 			}
 
+		}
+
+		private void tabControl1_SelectedIndexChanged(object sender, System.EventArgs e)
+		{
+			SetMessage("",false);
 		}
 	 	} } 
