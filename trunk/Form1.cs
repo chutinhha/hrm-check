@@ -1,10 +1,4 @@
-using System; using System.Drawing; using System.Collections; using System.ComponentModel; using System.Windows.Forms; using System.Data; using System.Data.SqlClient;  namespace HRM_CHECKER { 	/// <summary> 	/// Summary description for Form1. 	/// </summary> 	public class Form1 : System.Windows.Forms.Form 	{ 		private System.Windows.Forms.ToolBar toolBar1; 		private System.Windows.Forms.ImageList imageList1;
-		private System.Windows.Forms.ToolBarButton toolBarButton1;
-		private System.Windows.Forms.ToolBarButton toolBarButton2;
-		private System.Windows.Forms.ToolBarButton toolBarButton3;
-		private System.Windows.Forms.ToolBarButton toolBarButton4;
-		private System.Windows.Forms.ToolBarButton toolBarButton5;
-		private System.Windows.Forms.ToolBarButton toolBarButton6;
+using System; using System.Drawing; using System.Collections; using System.ComponentModel; using System.Windows.Forms; using System.Data; using System.Data.SqlClient;   namespace HRM_CHECKER { 	/// <summary> 	/// Summary description for Form1. 	/// </summary> 	public class Form1 : System.Windows.Forms.Form 	{ 		private System.Windows.Forms.ToolBar toolBar1; 		private System.Windows.Forms.ImageList imageList1;
 		private System.Windows.Forms.StatusBar statusBar1;
 		private System.Windows.Forms.TabControl tabControl1;
 		private System.Windows.Forms.TabPage tabPage1;
@@ -192,15 +186,22 @@ using System; using System.Drawing; using System.Collections; using System
 		private System.Windows.Forms.MenuItem menuItem3;
 		private System.Windows.Forms.MenuItem menuItemLamMoi;
 		private System.Windows.Forms.Label lbThongBao;
-		private System.Windows.Forms.MenuItem menuItemXoa; 		private System.ComponentModel.IContainer components;  		public Form1() 		{ 			// 			// Required for Windows Form Designer support 			// 			InitializeComponent();  			// 			// TODO: Add any constructor code after InitializeComponent call 			// 		}  		/// <summary> 		/// Clean up any resources being used. 		/// </summary> 		protected override void Dispose( bool disposing ) 		{ 			if( disposing ) 			{ 				if (components != null)  				{ 					components.Dispose(); 				} 			} 			base.Dispose( disposing ); 		}  		#region Windows Form Designer generated code 		/// <summary> 		/// Required method for Designer support - do not modify 		/// the contents of this method with the code editor. 		/// </summary> 		private void InitializeComponent() 		{ 			this.components = new System.ComponentModel.Container();
+		private System.Windows.Forms.MenuItem menuItemXoa;
+		private System.Windows.Forms.ToolBarButton tbbtHeThong;
+		private System.Windows.Forms.ToolBarButton tbbtNhapDs;
+		private System.Windows.Forms.ToolBarButton tbbtKhaiThac;
+		private System.Windows.Forms.ToolBarButton tbbtBaoCao;
+		private System.Windows.Forms.ToolBarButton ttbtSepe;
+		private System.Windows.Forms.ToolBarButton tbbtBanQuyen;
+		private System.Windows.Forms.MenuItem menuItem1; 		private System.ComponentModel.IContainer components;  		public Form1() 		{ 			// 			// Required for Windows Form Designer support 			// 			InitializeComponent();  			// 			// TODO: Add any constructor code after InitializeComponent call 			// 		}  		/// <summary> 		/// Clean up any resources being used. 		/// </summary> 		protected override void Dispose( bool disposing ) 		{ 			if( disposing ) 			{ 				if (components != null)  				{ 					components.Dispose(); 				} 			} 			base.Dispose( disposing ); 		}  		#region Windows Form Designer generated code 		/// <summary> 		/// Required method for Designer support - do not modify 		/// the contents of this method with the code editor. 		/// </summary> 		private void InitializeComponent() 		{ 			this.components = new System.ComponentModel.Container();
 			System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(Form1));
 			this.toolBar1 = new System.Windows.Forms.ToolBar();
-			this.toolBarButton1 = new System.Windows.Forms.ToolBarButton();
-			this.toolBarButton2 = new System.Windows.Forms.ToolBarButton();
-			this.toolBarButton3 = new System.Windows.Forms.ToolBarButton();
-			this.toolBarButton4 = new System.Windows.Forms.ToolBarButton();
-			this.toolBarButton5 = new System.Windows.Forms.ToolBarButton();
-			this.toolBarButton6 = new System.Windows.Forms.ToolBarButton();
+			this.tbbtHeThong = new System.Windows.Forms.ToolBarButton();
+			this.tbbtNhapDs = new System.Windows.Forms.ToolBarButton();
+			this.tbbtKhaiThac = new System.Windows.Forms.ToolBarButton();
+			this.tbbtBaoCao = new System.Windows.Forms.ToolBarButton();
+			this.ttbtSepe = new System.Windows.Forms.ToolBarButton();
+			this.tbbtBanQuyen = new System.Windows.Forms.ToolBarButton();
 			this.imageList1 = new System.Windows.Forms.ImageList(this.components);
 			this.statusBar1 = new System.Windows.Forms.StatusBar();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -329,6 +330,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.contextMenuGrid = new System.Windows.Forms.ContextMenu();
 			this.menuItemThem = new System.Windows.Forms.MenuItem();
 			this.menuItemSua = new System.Windows.Forms.MenuItem();
+			this.menuItemXoa = new System.Windows.Forms.MenuItem();
 			this.menuItem3 = new System.Windows.Forms.MenuItem();
 			this.menuItemLamMoi = new System.Windows.Forms.MenuItem();
 			this.splitter2 = new System.Windows.Forms.Splitter();
@@ -386,7 +388,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.errorProvider1 = new System.Windows.Forms.ErrorProvider();
 			this.lbThongBao = new System.Windows.Forms.Label();
-			this.menuItemXoa = new System.Windows.Forms.MenuItem();
+			this.menuItem1 = new System.Windows.Forms.MenuItem();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.panel2.SuspendLayout();
@@ -444,12 +446,12 @@ using System; using System.Drawing; using System.Collections; using System
 			// toolBar1
 			// 
 			this.toolBar1.Buttons.AddRange(new System.Windows.Forms.ToolBarButton[] {
-																						this.toolBarButton1,
-																						this.toolBarButton2,
-																						this.toolBarButton3,
-																						this.toolBarButton4,
-																						this.toolBarButton5,
-																						this.toolBarButton6});
+																						this.tbbtHeThong,
+																						this.tbbtNhapDs,
+																						this.tbbtKhaiThac,
+																						this.tbbtBaoCao,
+																						this.ttbtSepe,
+																						this.tbbtBanQuyen});
 			this.toolBar1.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.toolBar1.DropDownArrows = true;
 			this.toolBar1.ImageList = this.imageList1;
@@ -458,40 +460,41 @@ using System; using System.Drawing; using System.Collections; using System
 			this.toolBar1.ShowToolTips = true;
 			this.toolBar1.Size = new System.Drawing.Size(984, 55);
 			this.toolBar1.TabIndex = 0;
+			this.toolBar1.ButtonClick += new System.Windows.Forms.ToolBarButtonClickEventHandler(this.toolBar1_ButtonClick);
 			// 
-			// toolBarButton1
+			// tbbtHeThong
 			// 
-			this.toolBarButton1.ImageIndex = 22;
-			this.toolBarButton1.Text = "Hệ thống";
-			this.toolBarButton1.ToolTipText = "Hệ thống";
+			this.tbbtHeThong.ImageIndex = 22;
+			this.tbbtHeThong.Text = "Hệ thống";
+			this.tbbtHeThong.ToolTipText = "Hệ thống";
 			// 
-			// toolBarButton2
+			// tbbtNhapDs
 			// 
-			this.toolBarButton2.ImageIndex = 27;
-			this.toolBarButton2.Text = "Nhập danh sách";
-			this.toolBarButton2.ToolTipText = "Nhập danh sách";
+			this.tbbtNhapDs.ImageIndex = 27;
+			this.tbbtNhapDs.Text = "Nhập danh sách";
+			this.tbbtNhapDs.ToolTipText = "Nhập danh sách";
 			// 
-			// toolBarButton3
+			// tbbtKhaiThac
 			// 
-			this.toolBarButton3.ImageIndex = 26;
-			this.toolBarButton3.Text = "Khai thác";
-			this.toolBarButton3.ToolTipText = "Khai thác";
+			this.tbbtKhaiThac.ImageIndex = 26;
+			this.tbbtKhaiThac.Text = "Khai thác";
+			this.tbbtKhaiThac.ToolTipText = "Khai thác";
 			// 
-			// toolBarButton4
+			// tbbtBaoCao
 			// 
-			this.toolBarButton4.ImageIndex = 21;
-			this.toolBarButton4.Text = "Báo cáo ";
-			this.toolBarButton4.ToolTipText = "Báo cáo";
+			this.tbbtBaoCao.ImageIndex = 21;
+			this.tbbtBaoCao.Text = "Báo cáo ";
+			this.tbbtBaoCao.ToolTipText = "Báo cáo";
 			// 
-			// toolBarButton5
+			// ttbtSepe
 			// 
-			this.toolBarButton5.Style = System.Windows.Forms.ToolBarButtonStyle.Separator;
+			this.ttbtSepe.Style = System.Windows.Forms.ToolBarButtonStyle.Separator;
 			// 
-			// toolBarButton6
+			// tbbtBanQuyen
 			// 
-			this.toolBarButton6.ImageIndex = 18;
-			this.toolBarButton6.Text = "Bản quyền";
-			this.toolBarButton6.ToolTipText = "Bản quyền";
+			this.tbbtBanQuyen.ImageIndex = 18;
+			this.tbbtBanQuyen.Text = "Bản quyền";
+			this.tbbtBanQuyen.ToolTipText = "Bản quyền";
 			// 
 			// imageList1
 			// 
@@ -1786,6 +1789,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.dtgKhachHang.HeaderForeColor = System.Drawing.SystemColors.ControlText;
 			this.dtgKhachHang.Location = new System.Drawing.Point(0, 0);
 			this.dtgKhachHang.Name = "dtgKhachHang";
+			this.dtgKhachHang.SelectionBackColor = System.Drawing.Color.LightGoldenrodYellow;
 			this.dtgKhachHang.Size = new System.Drawing.Size(976, 365);
 			this.dtgKhachHang.TabIndex = 0;
 			this.dtgKhachHang.CurrentCellChanged += new System.EventHandler(this.dtgKhachHang_CurrentCellChanged);
@@ -1793,6 +1797,7 @@ using System; using System.Drawing; using System.Collections; using System
 			// contextMenuGrid
 			// 
 			this.contextMenuGrid.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+																							this.menuItem1,
 																							this.menuItemThem,
 																							this.menuItemSua,
 																							this.menuItemXoa,
@@ -1801,25 +1806,32 @@ using System; using System.Drawing; using System.Collections; using System
 			// 
 			// menuItemThem
 			// 
-			this.menuItemThem.Index = 0;
+			this.menuItemThem.Index = 1;
 			this.menuItemThem.Shortcut = System.Windows.Forms.Shortcut.Ins;
 			this.menuItemThem.Text = "Thêm khách hàng";
 			this.menuItemThem.Click += new System.EventHandler(this.menuItemThem_Click);
 			// 
 			// menuItemSua
 			// 
-			this.menuItemSua.Index = 1;
+			this.menuItemSua.Index = 2;
 			this.menuItemSua.Text = "Sửa thông tin";
 			this.menuItemSua.Click += new System.EventHandler(this.menuItemSua_Click);
 			// 
+			// menuItemXoa
+			// 
+			this.menuItemXoa.Index = 3;
+			this.menuItemXoa.Shortcut = System.Windows.Forms.Shortcut.Del;
+			this.menuItemXoa.Text = "Xóa khách hàng";
+			this.menuItemXoa.Click += new System.EventHandler(this.menuItemXoa_Click);
+			// 
 			// menuItem3
 			// 
-			this.menuItem3.Index = 3;
+			this.menuItem3.Index = 4;
 			this.menuItem3.Text = "-";
 			// 
 			// menuItemLamMoi
 			// 
-			this.menuItemLamMoi.Index = 4;
+			this.menuItemLamMoi.Index = 5;
 			this.menuItemLamMoi.Text = "Làm mới dữ liệu";
 			this.menuItemLamMoi.Click += new System.EventHandler(this.menuItemLamMoi_Click);
 			// 
@@ -2439,12 +2451,11 @@ using System; using System.Drawing; using System.Collections; using System
 			this.lbThongBao.Size = new System.Drawing.Size(0, 22);
 			this.lbThongBao.TabIndex = 3;
 			// 
-			// menuItemXoa
+			// menuItem1
 			// 
-			this.menuItemXoa.Index = 2;
-			this.menuItemXoa.Shortcut = System.Windows.Forms.Shortcut.Del;
-			this.menuItemXoa.Text = "Xóa khách hàng";
-			this.menuItemXoa.Click += new System.EventHandler(this.menuItemXoa_Click);
+			this.menuItem1.Index = 0;
+			this.menuItem1.Shortcut = System.Windows.Forms.Shortcut.F10;
+			this.menuItem1.Text = "Xem chi tiết";
 			// 
 			// Form1
 			// 
@@ -2537,7 +2548,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.pictureBox2.Click+=new EventHandler(ZoomImage);
 			this.pictureBox3.Click+=new EventHandler(ZoomImage); 			this.pictureBox4.Click+=new EventHandler(ZoomImage); 			this.pictureBox5.Click+=new EventHandler(ZoomImage); 			this.pictureBox6.Click+=new EventHandler(ZoomImage); 			this.pictureBox7.Click+=new EventHandler(ZoomImage); 			this.pictureBox8.Click+=new EventHandler(ZoomImage); 			this.pictureBox9.Click+=new EventHandler(ZoomImage); 			this.pictureBox10.Click+=new EventHandler(ZoomImage); 			this.pictureBox11.Click+=new EventHandler(ZoomImage); 			this.pictureBox12.Click+=new EventHandler(ZoomImage);
 			this.pictureBox13.Click+=new EventHandler(ZoomImage);
-			this.pictureBox14.Click+=new EventHandler(ZoomImage); 			this.pictureBox15.Click+=new EventHandler(ZoomImage); 			this.pictureBox16.Click+=new EventHandler(ZoomImage); 			this.pictureBox17.Click+=new EventHandler(ZoomImage); 			this.pictureBox18.Click+=new EventHandler(ZoomImage); 			this.pictureBox22.Click+=new EventHandler(ZoomImage); 			this.pictureBox20.Click+=new EventHandler(ZoomImage);	 			dtgKhachHang.ContextMenu = contextMenuGrid; 			ResetControl();			 			LoadFormData();												 		}  		 		clsBusPersonal bus = new clsBusPersonal(); 		private void LoadFormData() 		{			 			SetMessage("",false); 			//string strConn = "Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=HRM_CHECKER;Data Source=QUYDA-PC;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=QUYDA-PC;Use Encryption for Data=False;Tag with column collation when possible=False"; 			//string strConn = "Server=QUYDA-PC;Database=HRM_CHECKER;Trusted_Connection=True"; 			//SqlConnection conn = new SqlConnection(strConn);			 			//SqlDataReader reader =  SqlHelper.ExecuteReader(conn,CommandType.Text,"Select * from tblKhachHang"); 			//DataSet ds = SqlHelper.ExecuteDataset(conn,CommandType.Text,"Select * from tblKhachHang"); 			DataSet ds = bus.LoadPersonal(); 			if(ds!=null && ds.Tables[0].Rows.Count > 0) 			{ 				dtgKhachHang.DataSource = AutoNumberedTable(ds.Tables[0]);		 				dtgKhachHang.TableStyles.Clear();  				if (! dtgKhachHang.TableStyles.Contains ("Style_Person"))
+			this.pictureBox14.Click+=new EventHandler(ZoomImage); 			this.pictureBox15.Click+=new EventHandler(ZoomImage); 			this.pictureBox16.Click+=new EventHandler(ZoomImage); 			this.pictureBox17.Click+=new EventHandler(ZoomImage); 			this.pictureBox18.Click+=new EventHandler(ZoomImage); 			this.pictureBox22.Click+=new EventHandler(ZoomImage); 			this.pictureBox20.Click+=new EventHandler(ZoomImage);	 			dtgKhachHang.ContextMenu = contextMenuGrid; 			//dtgKhachHang.Ed 			ResetControl();			 			LoadFormData();												 		}  		 		clsBusPersonal bus = new clsBusPersonal(); 		private void LoadFormData() 		{			 			SetMessage("",false); 			//string strConn = "Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=HRM_CHECKER;Data Source=QUYDA-PC;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=QUYDA-PC;Use Encryption for Data=False;Tag with column collation when possible=False"; 			//string strConn = "Server=QUYDA-PC;Database=HRM_CHECKER;Trusted_Connection=True"; 			//SqlConnection conn = new SqlConnection(strConn);			 			//SqlDataReader reader =  SqlHelper.ExecuteReader(conn,CommandType.Text,"Select * from tblKhachHang"); 			//DataSet ds = SqlHelper.ExecuteDataset(conn,CommandType.Text,"Select * from tblKhachHang"); 			DataSet ds = bus.LoadPersonal(); 			if(ds!=null && ds.Tables[0].Rows.Count > 0) 			{ 				dtgKhachHang.DataSource = AutoNumberedTable(ds.Tables[0]); 				//dtgKhachHang.SetDataBinding(AutoNumberedTable(ds.Tables[0]),"Customer"); 				//dtgKhachHang.DataMember = "MaKhachHang"; 				dtgKhachHang.TableStyles.Clear();  				if (! dtgKhachHang.TableStyles.Contains ("Style_Person"))
 				{				
 					DataGridTableStyle dbgStyle = new DataGridTableStyle ();
 					dbgStyle.MappingName = ds.Tables[0].TableName;
@@ -2558,7 +2569,7 @@ using System; using System.Drawing; using System.Collections; using System
 					DataGridTextBoxColumn aCol1 = new DataGridTextBoxColumn();
 					DataGridTextBoxColumn aCol2 = new DataGridTextBoxColumn();
 					DataGridTextBoxColumn aCol3 = new DataGridTextBoxColumn();
-					DataGridBoolColumn aCol4 = new DataGridBoolColumn(); 					DataGridTextBoxColumn aCol5 = new DataGridTextBoxColumn(); 					DataGridTextBoxColumn aCol6 = new DataGridTextBoxColumn(); 					DataGridTextBoxColumn aCol7 = new DataGridTextBoxColumn(); 					DataGridBoolColumn aCol8 = new DataGridBoolColumn(); 					//
+					DataGridBoolColumn aCol4 = new DataGridBoolColumn(); 					DataGridTextBoxColumn aCol5 = new DataGridTextBoxColumn(); 					DataGridTextBoxColumn aCol6 = new DataGridTextBoxColumn(); 					DataGridTextBoxColumn aCol7 = new DataGridTextBoxColumn(); 					//DataGridBoolColumn aCol8 = new DataGridBoolColumn(); 					//
 					// Hide column 1 by setting its width to 0.
 					//
 					aCol1.MappingName = "MaKhachHang";
@@ -2616,16 +2627,16 @@ using System; using System.Drawing; using System.Collections; using System
 					aCol7.Alignment = HorizontalAlignment.Center;
 					aCol7.TextBox.Enabled = false;
 
-					aCol8.MappingName = "TT";
-					aCol8.HeaderText = "Chọn";
-					aCol8.Width = 80;
-					aCol8.Alignment = HorizontalAlignment.Center;
-					aCol8.NullValue = false;
-					aCol8.AllowNull = false;
-					aCol8.ReadOnly = false;
+//					aCol8.MappingName = "TT";
+//					aCol8.HeaderText = "Chọn";
+//					aCol8.Width = 80;
+//					aCol8.Alignment = HorizontalAlignment.Center;
+//					aCol8.NullValue = false;
+//					aCol8.AllowNull = false;
+//					aCol8.ReadOnly = false;
 					//aCol8.ReadOnly = false;
 
-					dbgStyle.GridColumnStyles.Add(aCol8);
+					//dbgStyle.GridColumnStyles.Add(aCol8);
 					dbgStyle.GridColumnStyles.Add(aCol7);
 					dbgStyle.GridColumnStyles.Add(aCol2);
 					dbgStyle.GridColumnStyles.Add(aCol3);
@@ -2650,16 +2661,16 @@ using System; using System.Drawing; using System.Collections; using System
 			ResultTable.Columns.Add(AutoNumberColumn);			
 			//ResultTable.Merge(SourceTable);			
 
-			DataColumn clTT = new DataColumn();
-			clTT.ColumnName="TT";
-			clTT.DataType = typeof(bool);
-			ResultTable.Columns.Add(clTT);			
+//			DataColumn clTT = new DataColumn();
+//			clTT.ColumnName="TT";
+//			clTT.DataType = typeof(bool);
+//			ResultTable.Columns.Add(clTT);			
 
 			int j = 1;
 			for(int i=0;i<ResultTable.Rows.Count;i++)
 			{				
 				ResultTable.Rows[i][29] = j;
-				ResultTable.Rows[i][30] = false;
+				//ResultTable.Rows[i][30] = false;
 				j++;
 			}
 			return ResultTable;
@@ -2772,6 +2783,10 @@ using System; using System.Drawing; using System.Collections; using System
 		{
 			//int indexRow = dtgKhachHang
 			//for(int i =0;i< 
+			CurrencyManager xCM = (CurrencyManager)dtgKhachHang.BindingContext[dtgKhachHang.DataSource, dtgKhachHang.DataMember];
+			DataRowView xDRV = (DataRowView)xCM.Current;
+			DataRow xRow	= xDRV.Row;
+			MessageBox.Show("Sửa XXX"+xRow["MaKhachHang"]);
 		}
 
 		private void menuItemLamMoi_Click(object sender, System.EventArgs e)
@@ -2813,58 +2828,55 @@ using System; using System.Drawing; using System.Collections; using System
 				dtgKhachHang.CurrentCell.RowNumber;
 			// Create the alert message.
 			myString = myString + "(" + myPoint + ")";
+			dtgKhachHang.Select(dtgKhachHang.CurrentCell.RowNumber);
 			// Show Co-ordinates when CurrentCellChanged event is raised.
-			//MessageBox.Show(myString, "Current cell co-ordinates");		
-			
-		}
-
+			//MessageBox.Show(myString, "Current cell co-ordinates");					
+		}		
+		
 		private void menuItemXoa_Click(object sender, System.EventArgs e)
-		{
-			if(dtgKhachHang.DataSource!=null)
-			{
-				dtgKhachHang.Update();
-				dtgKhachHang.Refresh();
-				dtgKhachHang.Select(0);
-			}
+		{		
 			if(MessageBox.Show("Bạn có chắc chắn muốn xóa?","Cảnh báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
 			{
 				if(dtgKhachHang.DataSource!=null)
 				{					
 					string strError = "";
-					DataTable tblState = (DataTable) dtgKhachHang.DataSource;
-				
-					if(tblState.Rows.Count>0)
+
+					CurrencyManager currencyManager = (CurrencyManager) this.BindingContext [this.dtgKhachHang.DataSource, this.dtgKhachHang.DataMember];					
+					string[] maKHs = new string[dtgKhachHang.VisibleRowCount];
+					for (int i = 0; i <dtgKhachHang.VisibleRowCount; i++)
 					{
-						//MessageBox.Show("Chac la xoa dc");
-						DataRow[] drs = tblState.Select("TT = 1");
-						string[] maKHs = new string[drs.Length];
-						for(int i=0;i<drs.Length;i++)
+						if (this.dtgKhachHang.IsSelected(i))
 						{
-							bus.DeletePersonal(drs[i]["MaKhachHang"].ToString(),ref strError);
+							DataRowView drv = (DataRowView) currencyManager.List[i];
+							DataRow dr = drv.Row;
+							//sb.AppendFormat("{0} {1} {2} \ n", dr[0], dr[1], dr[2]);
+							//sb+= dr["MaKhachHang"]+ " --- ";
+							bus.DeletePersonal(dr["MaKhachHang"].ToString(),ref strError);
 							if(strError!="")
 							{
-								maKHs[i] = drs[i]["MaKhachHang"].ToString();
+								maKHs[i] = dr["MaKhachHang"].ToString();
 							}
 						}
-						if(maKHs.Length>0)
+					}			
+
+					if(maKHs.Length>0)
+					{
+						string sMaKhang="";
+						for(int i=0;i<maKHs.Length;i++)
 						{
-							string sMaKhang="";
-							for(int i=0;i<maKHs.Length;i++)
+							if(maKHs[i]!= null)
 							{
-								if(maKHs[i]!= null)
-								{
-									sMaKhang+=maKHs[i].ToString();
-								}
+								sMaKhang+=maKHs[i].ToString();
 							}
-							if(sMaKhang!="")
-								SetMessage("Không xóa được dữ liệu các khách hàng sau: "+ sMaKhang,true);
-							else
-							{
-								SetMessage("Xóa danh sách khách hàng thành công!",false);
-							}
-							LoadFormData();
-						}					
-					}
+						}
+						if(sMaKhang!="")
+							SetMessage("Không xóa được dữ liệu các khách hàng sau: "+ sMaKhang,true);
+						else
+						{
+							SetMessage("Xóa danh sách khách hàng thành công!",false);
+						}
+						LoadFormData();
+					}							
 				}
 			}
 
@@ -2873,5 +2885,16 @@ using System; using System.Drawing; using System.Collections; using System
 		private void tabControl1_SelectedIndexChanged(object sender, System.EventArgs e)
 		{
 			SetMessage("",false);
+		}
+
+		private void toolBar1_ButtonClick(object sender, System.Windows.Forms.ToolBarButtonClickEventArgs e)
+		{
+			if(e.Button.Text.ToLower() == "khai thác")
+			{
+				MessageBox.Show("OK");
+				frmScan scan = new frmScan();
+				scan.ShowDialog();
+			}
+
 		}
 	 	} } 

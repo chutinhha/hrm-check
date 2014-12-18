@@ -33,12 +33,13 @@ namespace HRM_CHECKER
 
 		public DataSet LoadPersonal()
 		{
-			 			//SqlDataReader reader =  SqlHelper.ExecuteReader(conn,CommandType.Text,"Select * from tblKhachHang"); 			SqlConnection conn = new SqlConnection(StrConn); 			DataSet ds = SqlHelper.ExecuteDataset(conn,CommandType.Text,"Select * from tblKhachHang"); 			if(ds!=null) 			{ 				ds.Tables[0].TableName = "tblKhachHang"; 				return ds; 			} 			else 			{ 				return null; 			} 			//dtgKhachHang.DataSource = ds.Tables[0];
+			 			//SqlDataReader reader =  SqlHelper.ExecuteReader(conn,CommandType.Text,"Select * from tblKhachHang"); 			SqlConnection conn = new SqlConnection(StrConn); 			DataSet ds = SqlHelper.ExecuteDataset(conn,CommandType.Text,"Select * from tblKhachHang"); 			if(ds!=null) 			{ 				ds.Tables[0].TableName = "tblKhachHangs"; 				return ds; 			} 			else 			{ 				return null; 			} 			//dtgKhachHang.DataSource = ds.Tables[0];
 
 		}
 
-		public void LoadPersonalById(string personalID)
+		public DataSet LoadPersonalById(string personalID)
 		{
+			SqlConnection conn = new SqlConnection(StrConn); 			DataSet ds = SqlHelper.ExecuteDataset(conn,CommandType.Text,"Select * from tblKhachHang where makhachhang =N'"+personalID+"'"); 			if(ds!=null) 			{ 				ds.Tables[0].TableName = "tblKhachHang"; 				return ds; 			} 			else 			{ 				return null; 			}
 			
 		}
 
@@ -93,6 +94,62 @@ namespace HRM_CHECKER
 
 		}		
 
+		/// <summary>
+		/// Sửa thông tin khách hàng
+		/// </summary>
+		public void UpdatePersonal(string ma_Khang,string HoTen,string TenTat,string NgaySinh,int GioiTinh,string QuocTich,string CMND,string HoChieu,string SoKhac,string ngayCap,string noiCap,string dcLienHe,string dcThuongTru,string dcNuocNgoai,string dtNha,string dtDiDong,string HopThu,int DiHoc,int DiLam,int tuKinhDoanh,int nghiHuu,string nganhNghe,string chucVu,string dtCoQuan,string tenCoQuan,string ttHonNhan,string ttHocVan,string thuNhap,ref string pError)
+		{
+			try
+			{
+				DateTime dtNgaySinh = DateTime.Parse(NgaySinh);
+				DateTime dtNgayCapCMT = DateTime.Parse(ngayCap);
+				string strUpdate = @"Update [HRM_CHECKER].[dbo].[tblKhachHang]
+				([HoTen]
+				,[TenVietTat]
+				,[NgaySinh]
+				,[GioiTinh]
+				,[QuocTich]
+				,[CMND]
+				,[HoChieu]
+				,[SoKhac]
+				,[NgayCapCMND]
+				,[NoiCapCMND]
+				,[DiaChiLienHe]
+				,[DiaChiThuongTru]
+				,[DiaChiNuocNgoai]
+				,[DienThoaiNha]
+				,[DienThoaiDiDong]
+				,[HopThu]
+				,[IsDiHoc]
+				,[IsDiLam]
+				,[IsTuKinhDoanh]
+				,[IsNghiHuu]
+				,[NganhNghe]
+				,[ChucVu]
+				,[DienThoaiCoQuan]
+				,[TenCoQuan]
+				,[TinhTrangHonNhan]
+				,[TrinhDoHocVan]
+				,[ThuNhap]
+				)
+				SET
+				(N'"+HoTen+"',N'"+TenTat+"','"+NgaySinh+"',"+GioiTinh+",N'"+QuocTich+"',N'"+CMND+"',N'"+HoChieu+"',N'"+SoKhac+"','"+dtNgayCapCMT.ToString("yyyy-MM-dd")+"'"+",N'"+noiCap+"'"+",N'"+dcLienHe+"'"+",N'"+dcThuongTru+"'"+",N'"+dcNuocNgoai+"'"+",N'"+dtNha+"'"+",N'"+dtDiDong+"'"+",N'"+HopThu+"'"+","+DiHoc+","+DiLam+","+tuKinhDoanh+","+nghiHuu+",N'"+nganhNghe+"',N'"+chucVu+"'"+",N'"+dtCoQuan+"'"+",N'"+tenCoQuan+"'"+",N'"+ttHonNhan+"'"+",N'"+ttHocVan+"'"+",N'"+thuNhap+"') Where MaKhachHang = '"+ma_Khang+"'";
+				string strQueryFill = strUpdate.Replace("\r\n\t\t\t\t"," ");
+				SqlConnection conn = new SqlConnection(StrConn); 				int kq = SqlHelper.ExecuteNonQuery(conn,CommandType.Text,strQueryFill);
+				pError = "";
+			}
+			catch(Exception ex)
+			{
+				pError = ex.Message;
+			}				
+
+		}		
+
+		/// <summary>
+		/// Xóa thông tin khách hàng
+		/// </summary>
+		/// <param name="maKH"></param>
+		/// <param name="strError"></param>
 		public void DeletePersonal(string maKH,ref string strError)
 		{
 			try

@@ -122,6 +122,16 @@
                     BuildAction = "EmbeddedResource"
                 />
                 <File
+                    RelPath = "frmScan.cs"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "frmScan.resx"
+                    DependentUpon = "frmScan.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
                     RelPath = "frmZoomImage.cs"
                     SubType = "Form"
                     BuildAction = "Compile"
