@@ -98,8 +98,6 @@ using System; using System.Drawing; using System.Collections; using System
 		private System.Windows.Forms.CheckBox ck_LTK_Khac;
 		private System.Windows.Forms.CheckBox ck_LTK_DongChuTK;
 		private System.Windows.Forms.CheckBox ck_LTK_GiaoDich;
-		private System.Windows.Forms.Button txtLamLai;
-		private System.Windows.Forms.Button txtSuaKH;
 		private System.Windows.Forms.Button btThemKH;
 		private System.Windows.Forms.Panel panel20;
 		private System.Windows.Forms.Splitter splitter2;
@@ -193,7 +191,9 @@ using System; using System.Drawing; using System.Collections; using System
 		private System.Windows.Forms.ToolBarButton tbbtBaoCao;
 		private System.Windows.Forms.ToolBarButton ttbtSepe;
 		private System.Windows.Forms.ToolBarButton tbbtBanQuyen;
-		private System.Windows.Forms.MenuItem menuItem1; 		private System.ComponentModel.IContainer components;  		public Form1() 		{ 			// 			// Required for Windows Form Designer support 			// 			InitializeComponent();  			// 			// TODO: Add any constructor code after InitializeComponent call 			// 		}  		/// <summary> 		/// Clean up any resources being used. 		/// </summary> 		protected override void Dispose( bool disposing ) 		{ 			if( disposing ) 			{ 				if (components != null)  				{ 					components.Dispose(); 				} 			} 			base.Dispose( disposing ); 		}  		#region Windows Form Designer generated code 		/// <summary> 		/// Required method for Designer support - do not modify 		/// the contents of this method with the code editor. 		/// </summary> 		private void InitializeComponent() 		{ 			this.components = new System.ComponentModel.Container();
+		private System.Windows.Forms.MenuItem menuItem1;
+		private System.Windows.Forms.Button btLamLai;
+		private System.Windows.Forms.Button btSuaKH; 		private System.ComponentModel.IContainer components;  		public Form1() 		{ 			// 			// Required for Windows Form Designer support 			// 			InitializeComponent();  			// 			// TODO: Add any constructor code after InitializeComponent call 			// 		}  		/// <summary> 		/// Clean up any resources being used. 		/// </summary> 		protected override void Dispose( bool disposing ) 		{ 			if( disposing ) 			{ 				if (components != null)  				{ 					components.Dispose(); 				} 			} 			base.Dispose( disposing ); 		}  		#region Windows Form Designer generated code 		/// <summary> 		/// Required method for Designer support - do not modify 		/// the contents of this method with the code editor. 		/// </summary> 		private void InitializeComponent() 		{ 			this.components = new System.ComponentModel.Container();
 			System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(Form1));
 			this.toolBar1 = new System.Windows.Forms.ToolBar();
 			this.tbbtHeThong = new System.Windows.Forms.ToolBarButton();
@@ -278,8 +278,8 @@ using System; using System.Drawing; using System.Collections; using System
 			this.label4 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.panel3 = new System.Windows.Forms.Panel();
-			this.txtLamLai = new System.Windows.Forms.Button();
-			this.txtSuaKH = new System.Windows.Forms.Button();
+			this.btLamLai = new System.Windows.Forms.Button();
+			this.btSuaKH = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.btThemKH = new System.Windows.Forms.Button();
 			this.splitter1 = new System.Windows.Forms.Splitter();
@@ -328,6 +328,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel21 = new System.Windows.Forms.Panel();
 			this.dtgKhachHang = new System.Windows.Forms.DataGrid();
 			this.contextMenuGrid = new System.Windows.Forms.ContextMenu();
+			this.menuItem1 = new System.Windows.Forms.MenuItem();
 			this.menuItemThem = new System.Windows.Forms.MenuItem();
 			this.menuItemSua = new System.Windows.Forms.MenuItem();
 			this.menuItemXoa = new System.Windows.Forms.MenuItem();
@@ -388,7 +389,6 @@ using System; using System.Drawing; using System.Collections; using System
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.errorProvider1 = new System.Windows.Forms.ErrorProvider();
 			this.lbThongBao = new System.Windows.Forms.Label();
-			this.menuItem1 = new System.Windows.Forms.MenuItem();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.panel2.SuspendLayout();
@@ -1206,8 +1206,8 @@ using System; using System.Drawing; using System.Collections; using System
 			// panel3
 			// 
 			this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-			this.panel3.Controls.Add(this.txtLamLai);
-			this.panel3.Controls.Add(this.txtSuaKH);
+			this.panel3.Controls.Add(this.btLamLai);
+			this.panel3.Controls.Add(this.btSuaKH);
 			this.panel3.Controls.Add(this.label1);
 			this.panel3.Controls.Add(this.btThemKH);
 			this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -1216,39 +1216,39 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel3.Size = new System.Drawing.Size(573, 48);
 			this.panel3.TabIndex = 0;
 			// 
-			// txtLamLai
+			// btLamLai
 			// 
-			this.txtLamLai.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.txtLamLai.BackColor = System.Drawing.SystemColors.ControlLight;
-			this.txtLamLai.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.txtLamLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.txtLamLai.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.txtLamLai.ImageIndex = 32;
-			this.txtLamLai.ImageList = this.imageList1;
-			this.txtLamLai.Location = new System.Drawing.Point(481, 8);
-			this.txtLamLai.Name = "txtLamLai";
-			this.txtLamLai.Size = new System.Drawing.Size(88, 32);
-			this.txtLamLai.TabIndex = 4;
-			this.txtLamLai.Text = "Làm lại";
-			this.txtLamLai.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.txtLamLai.Click += new System.EventHandler(this.txtLamLai_Click);
+			this.btLamLai.Anchor = System.Windows.Forms.AnchorStyles.Right;
+			this.btLamLai.BackColor = System.Drawing.SystemColors.ControlLight;
+			this.btLamLai.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btLamLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btLamLai.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btLamLai.ImageIndex = 32;
+			this.btLamLai.ImageList = this.imageList1;
+			this.btLamLai.Location = new System.Drawing.Point(481, 8);
+			this.btLamLai.Name = "btLamLai";
+			this.btLamLai.Size = new System.Drawing.Size(88, 32);
+			this.btLamLai.TabIndex = 4;
+			this.btLamLai.Text = "Làm lại";
+			this.btLamLai.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btLamLai.Click += new System.EventHandler(this.btLamLai_Click);
 			// 
-			// txtSuaKH
+			// btSuaKH
 			// 
-			this.txtSuaKH.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.txtSuaKH.BackColor = System.Drawing.SystemColors.ControlLight;
-			this.txtSuaKH.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.txtSuaKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.txtSuaKH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.txtSuaKH.ImageIndex = 30;
-			this.txtSuaKH.ImageList = this.imageList1;
-			this.txtSuaKH.Location = new System.Drawing.Point(401, 8);
-			this.txtSuaKH.Name = "txtSuaKH";
-			this.txtSuaKH.Size = new System.Drawing.Size(72, 32);
-			this.txtSuaKH.TabIndex = 3;
-			this.txtSuaKH.Text = "Sửa";
-			this.txtSuaKH.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.txtSuaKH.Click += new System.EventHandler(this.txtSuaKH_Click);
+			this.btSuaKH.Anchor = System.Windows.Forms.AnchorStyles.Right;
+			this.btSuaKH.BackColor = System.Drawing.SystemColors.ControlLight;
+			this.btSuaKH.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btSuaKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btSuaKH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btSuaKH.ImageIndex = 30;
+			this.btSuaKH.ImageList = this.imageList1;
+			this.btSuaKH.Location = new System.Drawing.Point(401, 8);
+			this.btSuaKH.Name = "btSuaKH";
+			this.btSuaKH.Size = new System.Drawing.Size(72, 32);
+			this.btSuaKH.TabIndex = 3;
+			this.btSuaKH.Text = "Sửa";
+			this.btSuaKH.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btSuaKH.Click += new System.EventHandler(this.btSuaKH_Click);
 			// 
 			// label1
 			// 
@@ -1763,9 +1763,9 @@ using System; using System.Drawing; using System.Collections; using System
 			this.tabPage2.Controls.Add(this.panel21);
 			this.tabPage2.Controls.Add(this.splitter2);
 			this.tabPage2.Controls.Add(this.panel20);
-			this.tabPage2.Location = new System.Drawing.Point(4, 27);
+			this.tabPage2.Location = new System.Drawing.Point(4, 22);
 			this.tabPage2.Name = "tabPage2";
-			this.tabPage2.Size = new System.Drawing.Size(976, 613);
+			this.tabPage2.Size = new System.Drawing.Size(976, 618);
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "Kiểm tra thông tin ";
 			this.tabPage2.Visible = false;
@@ -1776,7 +1776,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel21.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel21.Location = new System.Drawing.Point(0, 248);
 			this.panel21.Name = "panel21";
-			this.panel21.Size = new System.Drawing.Size(976, 365);
+			this.panel21.Size = new System.Drawing.Size(976, 370);
 			this.panel21.TabIndex = 2;
 			// 
 			// dtgKhachHang
@@ -1790,7 +1790,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.dtgKhachHang.Location = new System.Drawing.Point(0, 0);
 			this.dtgKhachHang.Name = "dtgKhachHang";
 			this.dtgKhachHang.SelectionBackColor = System.Drawing.Color.LightGoldenrodYellow;
-			this.dtgKhachHang.Size = new System.Drawing.Size(976, 365);
+			this.dtgKhachHang.Size = new System.Drawing.Size(976, 370);
 			this.dtgKhachHang.TabIndex = 0;
 			this.dtgKhachHang.CurrentCellChanged += new System.EventHandler(this.dtgKhachHang_CurrentCellChanged);
 			// 
@@ -1803,6 +1803,12 @@ using System; using System.Drawing; using System.Collections; using System
 																							this.menuItemXoa,
 																							this.menuItem3,
 																							this.menuItemLamMoi});
+			// 
+			// menuItem1
+			// 
+			this.menuItem1.Index = 0;
+			this.menuItem1.Shortcut = System.Windows.Forms.Shortcut.F10;
+			this.menuItem1.Text = "Xem chi tiết";
 			// 
 			// menuItemThem
 			// 
@@ -1879,7 +1885,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.groupBox10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.groupBox10.Location = new System.Drawing.Point(704, 0);
 			this.groupBox10.Name = "groupBox10";
-			this.groupBox10.Size = new System.Drawing.Size(180, 221);
+			this.groupBox10.Size = new System.Drawing.Size(180, 238);
 			this.groupBox10.TabIndex = 2;
 			this.groupBox10.TabStop = false;
 			this.groupBox10.Text = "Ảnh vân tay sống";
@@ -1891,7 +1897,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel36.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel36.Location = new System.Drawing.Point(3, 122);
 			this.panel36.Name = "panel36";
-			this.panel36.Size = new System.Drawing.Size(174, 96);
+			this.panel36.Size = new System.Drawing.Size(174, 113);
 			this.panel36.TabIndex = 1;
 			// 
 			// panel38
@@ -1903,7 +1909,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel38.DockPadding.All = 2;
 			this.panel38.Location = new System.Drawing.Point(0, 0);
 			this.panel38.Name = "panel38";
-			this.panel38.Size = new System.Drawing.Size(173, 96);
+			this.panel38.Size = new System.Drawing.Size(173, 113);
 			this.panel38.TabIndex = 4;
 			// 
 			// pictureBox20
@@ -1913,7 +1919,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.pictureBox20.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox20.Image")));
 			this.pictureBox20.Location = new System.Drawing.Point(2, 2);
 			this.pictureBox20.Name = "pictureBox20";
-			this.pictureBox20.Size = new System.Drawing.Size(167, 67);
+			this.pictureBox20.Size = new System.Drawing.Size(167, 84);
 			this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox20.TabIndex = 2;
 			this.pictureBox20.TabStop = false;
@@ -1922,7 +1928,7 @@ using System; using System.Drawing; using System.Collections; using System
 			// 
 			this.label46.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.label46.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.label46.Location = new System.Drawing.Point(2, 69);
+			this.label46.Location = new System.Drawing.Point(2, 86);
 			this.label46.Name = "label46";
 			this.label46.Size = new System.Drawing.Size(167, 23);
 			this.label46.TabIndex = 0;
@@ -1983,7 +1989,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.groupBox9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.groupBox9.Location = new System.Drawing.Point(352, 0);
 			this.groupBox9.Name = "groupBox9";
-			this.groupBox9.Size = new System.Drawing.Size(352, 221);
+			this.groupBox9.Size = new System.Drawing.Size(352, 238);
 			this.groupBox9.TabIndex = 1;
 			this.groupBox9.TabStop = false;
 			this.groupBox9.Text = "Ảnh CMND mới";
@@ -1996,7 +2002,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel30.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel30.Location = new System.Drawing.Point(3, 122);
 			this.panel30.Name = "panel30";
-			this.panel30.Size = new System.Drawing.Size(346, 96);
+			this.panel30.Size = new System.Drawing.Size(346, 113);
 			this.panel30.TabIndex = 1;
 			// 
 			// panel31
@@ -2008,7 +2014,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel31.DockPadding.All = 2;
 			this.panel31.Location = new System.Drawing.Point(173, 0);
 			this.panel31.Name = "panel31";
-			this.panel31.Size = new System.Drawing.Size(173, 96);
+			this.panel31.Size = new System.Drawing.Size(173, 113);
 			this.panel31.TabIndex = 5;
 			// 
 			// pictureBox15
@@ -2018,7 +2024,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.pictureBox15.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox15.Image")));
 			this.pictureBox15.Location = new System.Drawing.Point(2, 2);
 			this.pictureBox15.Name = "pictureBox15";
-			this.pictureBox15.Size = new System.Drawing.Size(167, 67);
+			this.pictureBox15.Size = new System.Drawing.Size(167, 84);
 			this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox15.TabIndex = 2;
 			this.pictureBox15.TabStop = false;
@@ -2027,7 +2033,7 @@ using System; using System.Drawing; using System.Collections; using System
 			// 
 			this.label41.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.label41.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.label41.Location = new System.Drawing.Point(2, 69);
+			this.label41.Location = new System.Drawing.Point(2, 86);
 			this.label41.Name = "label41";
 			this.label41.Size = new System.Drawing.Size(167, 23);
 			this.label41.TabIndex = 0;
@@ -2043,7 +2049,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel32.DockPadding.All = 2;
 			this.panel32.Location = new System.Drawing.Point(0, 0);
 			this.panel32.Name = "panel32";
-			this.panel32.Size = new System.Drawing.Size(173, 96);
+			this.panel32.Size = new System.Drawing.Size(173, 113);
 			this.panel32.TabIndex = 4;
 			// 
 			// pictureBox16
@@ -2053,7 +2059,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.pictureBox16.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox16.Image")));
 			this.pictureBox16.Location = new System.Drawing.Point(2, 2);
 			this.pictureBox16.Name = "pictureBox16";
-			this.pictureBox16.Size = new System.Drawing.Size(167, 67);
+			this.pictureBox16.Size = new System.Drawing.Size(167, 84);
 			this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox16.TabIndex = 2;
 			this.pictureBox16.TabStop = false;
@@ -2062,7 +2068,7 @@ using System; using System.Drawing; using System.Collections; using System
 			// 
 			this.label42.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.label42.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.label42.Location = new System.Drawing.Point(2, 69);
+			this.label42.Location = new System.Drawing.Point(2, 86);
 			this.label42.Name = "label42";
 			this.label42.Size = new System.Drawing.Size(167, 23);
 			this.label42.TabIndex = 0;
@@ -2159,7 +2165,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.groupBox8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.groupBox8.Location = new System.Drawing.Point(0, 0);
 			this.groupBox8.Name = "groupBox8";
-			this.groupBox8.Size = new System.Drawing.Size(352, 221);
+			this.groupBox8.Size = new System.Drawing.Size(352, 238);
 			this.groupBox8.TabIndex = 0;
 			this.groupBox8.TabStop = false;
 			this.groupBox8.Text = "Ảnh CMND cũ";
@@ -2172,7 +2178,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel25.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel25.Location = new System.Drawing.Point(3, 122);
 			this.panel25.Name = "panel25";
-			this.panel25.Size = new System.Drawing.Size(346, 96);
+			this.panel25.Size = new System.Drawing.Size(346, 113);
 			this.panel25.TabIndex = 1;
 			// 
 			// panel29
@@ -2184,7 +2190,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel29.DockPadding.All = 2;
 			this.panel29.Location = new System.Drawing.Point(173, 0);
 			this.panel29.Name = "panel29";
-			this.panel29.Size = new System.Drawing.Size(173, 96);
+			this.panel29.Size = new System.Drawing.Size(173, 113);
 			this.panel29.TabIndex = 5;
 			// 
 			// pictureBox14
@@ -2194,7 +2200,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
 			this.pictureBox14.Location = new System.Drawing.Point(2, 2);
 			this.pictureBox14.Name = "pictureBox14";
-			this.pictureBox14.Size = new System.Drawing.Size(167, 67);
+			this.pictureBox14.Size = new System.Drawing.Size(167, 84);
 			this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox14.TabIndex = 2;
 			this.pictureBox14.TabStop = false;
@@ -2203,7 +2209,7 @@ using System; using System.Drawing; using System.Collections; using System
 			// 
 			this.label40.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.label40.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.label40.Location = new System.Drawing.Point(2, 69);
+			this.label40.Location = new System.Drawing.Point(2, 86);
 			this.label40.Name = "label40";
 			this.label40.Size = new System.Drawing.Size(167, 23);
 			this.label40.TabIndex = 0;
@@ -2219,7 +2225,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel28.DockPadding.All = 2;
 			this.panel28.Location = new System.Drawing.Point(0, 0);
 			this.panel28.Name = "panel28";
-			this.panel28.Size = new System.Drawing.Size(173, 96);
+			this.panel28.Size = new System.Drawing.Size(173, 113);
 			this.panel28.TabIndex = 4;
 			// 
 			// pictureBox13
@@ -2229,7 +2235,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
 			this.pictureBox13.Location = new System.Drawing.Point(2, 2);
 			this.pictureBox13.Name = "pictureBox13";
-			this.pictureBox13.Size = new System.Drawing.Size(167, 67);
+			this.pictureBox13.Size = new System.Drawing.Size(167, 84);
 			this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox13.TabIndex = 2;
 			this.pictureBox13.TabStop = false;
@@ -2238,7 +2244,7 @@ using System; using System.Drawing; using System.Collections; using System
 			// 
 			this.label39.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.label39.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.label39.Location = new System.Drawing.Point(2, 69);
+			this.label39.Location = new System.Drawing.Point(2, 86);
 			this.label39.Name = "label39";
 			this.label39.Size = new System.Drawing.Size(167, 23);
 			this.label39.TabIndex = 0;
@@ -2451,12 +2457,6 @@ using System; using System.Drawing; using System.Collections; using System
 			this.lbThongBao.Size = new System.Drawing.Size(0, 22);
 			this.lbThongBao.TabIndex = 3;
 			// 
-			// menuItem1
-			// 
-			this.menuItem1.Index = 0;
-			this.menuItem1.Shortcut = System.Windows.Forms.Shortcut.F10;
-			this.menuItem1.Text = "Xem chi tiết";
-			// 
 			// Form1
 			// 
 			this.AutoScaleBaseSize = new System.Drawing.Size(7, 19);
@@ -2470,6 +2470,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.Name = "Form1";
 			this.Text = "Form1";
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+			this.Closing += new System.ComponentModel.CancelEventHandler(this.Form1_Closing);
 			this.Load += new System.EventHandler(this.Form1_Load);
 			this.tabControl1.ResumeLayout(false);
 			this.tabPage1.ResumeLayout(false);
@@ -2740,37 +2741,44 @@ using System; using System.Drawing; using System.Collections; using System
 			}
 		}
 
-		private void txtSuaKH_Click(object sender, System.EventArgs e)
+		private void btSuaKH_Click(object sender, System.EventArgs e)
 		{
 		
 		}
 
-		private void txtLamLai_Click(object sender, System.EventArgs e)
+		private void btLamLai_Click(object sender, System.EventArgs e)
 		{
-		
+			ResetControl();
 		}
 
 		private void ResetControl()
 		{
-			rbNam.Checked = true;
-			rbNu.Checked = false;
-//			rb_CT_Co.Checked = false;
-//			rb_CT_Khong.Checked = true;			
-			foreach(Control tb in groupBox2.Controls)
+			try	
 			{
-				if(tb is TextBox)
+				rbNam.Checked = true;
+				rbNu.Checked = false;
+				//			rb_CT_Co.Checked = false;
+				//			rb_CT_Khong.Checked = true;			
+				foreach(Control tb in groupBox2.Controls)
 				{
-					//here is where you access all the textboxs.
-					tb.Text = "";
+					if(tb is TextBox)
+					{
+						//here is where you access all the textboxs.
+						tb.Text = "";
+					}
+				}
+				foreach(Control tb in groupBox3.Controls)
+				{
+					if(tb is TextBox)
+					{
+						//here is where you access all the textboxs.
+						tb.Text = "";
+					}
 				}
 			}
-			foreach(Control tb in groupBox3.Controls)
+			catch(Exception ex)
 			{
-				if(tb is TextBox)
-				{
-					//here is where you access all the textboxs.
-					tb.Text = "";
-				}
+				SetMessage("Có lỗi hệ thống!" + ex.Message,true);
 			}
 		}
 
@@ -2780,13 +2788,58 @@ using System; using System.Drawing; using System.Collections; using System
 		}
 
 		private void menuItemSua_Click(object sender, System.EventArgs e)
-		{
-			//int indexRow = dtgKhachHang
-			//for(int i =0;i< 
-			CurrencyManager xCM = (CurrencyManager)dtgKhachHang.BindingContext[dtgKhachHang.DataSource, dtgKhachHang.DataMember];
-			DataRowView xDRV = (DataRowView)xCM.Current;
-			DataRow xRow	= xDRV.Row;
-			MessageBox.Show("Sửa XXX"+xRow["MaKhachHang"]);
+		{			
+			try
+			{
+				CurrencyManager xCM = (CurrencyManager)dtgKhachHang.BindingContext[dtgKhachHang.DataSource, dtgKhachHang.DataMember];
+				DataRowView xDRV = (DataRowView)xCM.Current;
+				DataRow xRow	= xDRV.Row;
+				tabControl1.SelectedIndex = 0;
+				//Load thông tin khách hàng
+				DataSet dsKhachHang = bus.LoadPersonalById(xRow["MaKhachHang"].ToString());
+				DataTable tblKhachHang = dsKhachHang.Tables[0];
+				txtHoTen.Text =  tblKhachHang.Rows[0]["HoTen"].ToString();
+				dtNgaySinh.Text = tblKhachHang.Rows[0]["NgaySinh"].ToString();			
+				txtTenVietTat.Text = tblKhachHang.Rows[0]["TenVietTat"].ToString();
+				int GioiTinh = 1;
+				if(rbNam.Checked)
+				{
+					GioiTinh = 1;
+				}
+				else
+				{
+					GioiTinh = 0;
+				}						
+				txtQuocTich.Text = tblKhachHang.Rows[0]["QuocTich"].ToString();
+				txtSo_CMND.Text = tblKhachHang.Rows[0]["CMND"].ToString();
+				//txtSo_CMND.Text = tblKhachHang.Rows[0]["HoChieu"].ToString();
+				//txtSo_CMND.Text = tblKhachHang.Rows[0]["SoKhac"].ToString();
+				dtNgayCap.Text = tblKhachHang.Rows[0]["NgayCapCMND"].ToString();
+				txtNoiCap_CMND.Text = tblKhachHang.Rows[0]["NoiCapCMND"].ToString();
+				txtDiaChiLienHe.Text = tblKhachHang.Rows[0]["DiaChiLienHe"].ToString();
+				txtDiaChiCuTru.Text = tblKhachHang.Rows[0]["DiaChiThuongTru"].ToString();
+				txtDiaChiNuocNgoai.Text = tblKhachHang.Rows[0]["DiaChiNuocNgoai"].ToString();
+				txtDienThoaiNha.Text = tblKhachHang.Rows[0]["DienThoaiNha"].ToString();
+				txtDienThoaiDD.Text = tblKhachHang.Rows[0]["DienThoaiDiDong"].ToString();
+				txtHopThu.Text = tblKhachHang.Rows[0]["HopThu"].ToString();
+				//DiHoc = 0;
+				//DiLam = 0;
+				//tuKinhDoanh = 0;
+				//nghiHuu = 0;
+			    txtNganhNghe.Text = tblKhachHang.Rows[0]["NganhNghe"].ToString();
+				txtChucVu.Text = tblKhachHang.Rows[0]["ChucVu"].ToString();
+				txtCoQuan.Text = tblKhachHang.Rows[0]["TenCoQuan"].ToString();;				
+				//ttHonNhan = "";
+				//ttHocVan = "";
+				//thuNhap = "";
+
+			}
+			catch(Exception ex)
+			{
+
+			}
+
+			//MessageBox.Show("Sửa XXX"+xRow["MaKhachHang"]);
 		}
 
 		private void menuItemLamMoi_Click(object sender, System.EventArgs e)
@@ -2897,4 +2950,12 @@ using System; using System.Drawing; using System.Collections; using System
 			}
 
 		}
+
+		private void Form1_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+		{
+			if(MessageBox.Show("Bạn có thực sự muốn thoát chương trình?","Thong Bao",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.No)
+			{
+				e.Cancel = true;
+			}			
+		}	
 	 	} } 
