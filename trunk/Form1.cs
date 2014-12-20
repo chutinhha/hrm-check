@@ -2731,14 +2731,24 @@ using System; using System.Drawing; using System.Collections; using System
 			int maTK = 0;
 			string strError = "";
 			bus.InsertPersonal(strHoTen,strTenTat,strNgaySinh,GioiTinh,QuocTich,CMND,HoChieu,SoKhac,ngayCap,noiCap,dcLienHe,dcThuongTru,dcNuocNgoai,dtNha,dtCoQuan,HopThu,DiHoc,DiLam,tuKinhDoanh,nghiHuu,nganhNghe,chucVu,dtCoQuan,tenCoQuan,ttHonNhan,ttHocVan,thuNhap,maTK,ref strError);
+
 			if(strError =="")
 			{
+				SaveImage(pictureBox1.Image, "abc.jpg");
+
 				SetMessage("Thêm khách hàng thành công!",false);
 			}
 			else
 			{
 				SetMessage("Có lỗi trong quá trình thêm dữ liệu:"+strError,true);
 			}
+		}
+		string SVPath = @"D:\";
+		Boolean SaveImage(PictureBox pic, string name)
+		{
+			string filename = SVPath +  name;
+			Bitmap bmp = new Bitmap(pic.Image);
+			bmp.Save(filename, System.Drawing.Imaging.ImageFormat.Jpeg);
 		}
 
 		private void btSuaKH_Click(object sender, System.EventArgs e)
