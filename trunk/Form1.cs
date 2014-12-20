@@ -2693,67 +2693,136 @@ using System; using System.Drawing; using System.Collections; using System
 
 		private void btThemKH_Click(object sender, System.EventArgs e)
 		{
-			string strHoTen = txtHoTen.Text.Trim();
-			string strNgaySinh = dtNgaySinh.Text;			
-			string strTenTat = txtTenVietTat.Text.Trim();
-			int GioiTinh = 1;
-			if(rbNam.Checked)
+			try
 			{
-				GioiTinh = 1;
-			}
-			else
-			{
-				GioiTinh = 0;
-			}						
-			string QuocTich = txtQuocTich.Text.Trim();
-			string CMND = txtSo_CMND.Text.Trim();
-			string HoChieu = txtSo_CMND.Text.Trim();
-			string SoKhac = txtSo_CMND.Text.Trim();
-			string ngayCap = dtNgayCap.Text;
-			string noiCap = txtNoiCap_CMND.Text.Trim();
-			string dcLienHe = txtDiaChiLienHe.Text.Trim();
-			string dcThuongTru = txtDiaChiCuTru.Text.Trim();
-			string dcNuocNgoai = txtDiaChiNuocNgoai.Text.Trim();
-			string dtNha = txtDienThoaiNha.Text.Trim();
-			string dtDiDong = txtDienThoaiDD.Text.Trim();
-			string HopThu = txtHopThu.Text.Trim();
-			int DiHoc = 0;
-			int DiLam = 0;
-			int tuKinhDoanh = 0;
-			int nghiHuu = 0;
-			string nganhNghe = "NV";
-			string chucVu = "NV";
-			string dtCoQuan = "";
-			string tenCoQuan = txtCoQuan.Text.Trim();
-			string ttHonNhan = "";
-			string ttHocVan = "";
-			string thuNhap = "";
-			int maTK = 0;
-			string strError = "";
-			bus.InsertPersonal(strHoTen,strTenTat,strNgaySinh,GioiTinh,QuocTich,CMND,HoChieu,SoKhac,ngayCap,noiCap,dcLienHe,dcThuongTru,dcNuocNgoai,dtNha,dtCoQuan,HopThu,DiHoc,DiLam,tuKinhDoanh,nghiHuu,nganhNghe,chucVu,dtCoQuan,tenCoQuan,ttHonNhan,ttHocVan,thuNhap,maTK,ref strError);
+				string strHoTen = txtHoTen.Text.Trim();
+				string strNgaySinh = dtNgaySinh.Text;			
+				string strTenTat = txtTenVietTat.Text.Trim();
+				int GioiTinh = 1;
+				if(rbNam.Checked)
+				{
+					GioiTinh = 1;
+				}
+				else
+				{
+					GioiTinh = 0;
+				}						
+				string QuocTich = txtQuocTich.Text.Trim();
+				string CMND = txtSo_CMND.Text.Trim();
+				string HoChieu = txtSo_CMND.Text.Trim();
+				string SoKhac = txtSo_CMND.Text.Trim();
+				string ngayCap = dtNgayCap.Text;
+				string noiCap = txtNoiCap_CMND.Text.Trim();
+				string dcLienHe = txtDiaChiLienHe.Text.Trim();
+				string dcThuongTru = txtDiaChiCuTru.Text.Trim();
+				string dcNuocNgoai = txtDiaChiNuocNgoai.Text.Trim();
+				string dtNha = txtDienThoaiNha.Text.Trim();
+				string dtDiDong = txtDienThoaiDD.Text.Trim();
+				string HopThu = txtHopThu.Text.Trim();
+				int DiHoc = 0;
+				int DiLam = 0;
+				int tuKinhDoanh = 0;
+				int nghiHuu = 0;
+				string nganhNghe = "NV";
+				string chucVu = "NV";
+				string dtCoQuan = "";
+				string tenCoQuan = txtCoQuan.Text.Trim();
+				string ttHonNhan = "";
+				string ttHocVan = "";
+				string thuNhap = "";
+				int maTK = 0;
+				string strError = "";
+				bus.InsertPersonal(strHoTen,strTenTat,strNgaySinh,GioiTinh,QuocTich,CMND,HoChieu,SoKhac,ngayCap,noiCap,dcLienHe,dcThuongTru,dcNuocNgoai,dtNha,dtCoQuan,HopThu,DiHoc,DiLam,tuKinhDoanh,nghiHuu,nganhNghe,chucVu,dtCoQuan,tenCoQuan,ttHonNhan,ttHocVan,thuNhap,maTK,ref strError);
 
-			if(strError =="")
-			{
-				SaveImage(pictureBox1.Image, "abc.jpg");
+				if(strError =="")
+				{
+					SaveImage(pictureBox1, "abc.jpg");
 
-				SetMessage("Thêm khách hàng thành công!",false);
+					SetMessage("Thêm khách hàng thành công!",false);
+				}
+				else
+				{
+					SetMessage("Có lỗi trong quá trình thêm dữ liệu:"+strError,true);
+				}
 			}
-			else
+			catch(Exception ex)
 			{
-				SetMessage("Có lỗi trong quá trình thêm dữ liệu:"+strError,true);
+				SetMessage("Có lỗi trong quá trình thêm dữ liệu:"+ex.Message,true);
 			}
 		}
+
 		string SVPath = @"D:\";
-		Boolean SaveImage(PictureBox pic, string name)
+		private Boolean SaveImage(PictureBox pic, string name)
 		{
 			string filename = SVPath +  name;
 			Bitmap bmp = new Bitmap(pic.Image);
 			bmp.Save(filename, System.Drawing.Imaging.ImageFormat.Jpeg);
+			return true;
 		}
 
 		private void btSuaKH_Click(object sender, System.EventArgs e)
 		{
-		
+			try
+			{
+				string strHoTen = txtHoTen.Text.Trim();
+				string strNgaySinh = dtNgaySinh.Text;			
+				string strTenTat = txtTenVietTat.Text.Trim();
+				int GioiTinh = 1;
+				if(rbNam.Checked)
+				{
+					GioiTinh = 1;
+				}
+				else
+				{
+					GioiTinh = 0;
+				}						
+				string QuocTich = txtQuocTich.Text.Trim();
+				string CMND = txtSo_CMND.Text.Trim();
+				string HoChieu = txtSo_CMND.Text.Trim();
+				string SoKhac = txtSo_CMND.Text.Trim();
+				string ngayCap = dtNgayCap.Text;
+				string noiCap = txtNoiCap_CMND.Text.Trim();
+				string dcLienHe = txtDiaChiLienHe.Text.Trim();
+				string dcThuongTru = txtDiaChiCuTru.Text.Trim();
+				string dcNuocNgoai = txtDiaChiNuocNgoai.Text.Trim();
+				string dtNha = txtDienThoaiNha.Text.Trim();
+				string dtDiDong = txtDienThoaiDD.Text.Trim();
+				string HopThu = txtHopThu.Text.Trim();
+				int DiHoc = 0;
+				int DiLam = 0;
+				int tuKinhDoanh = 0;
+				int nghiHuu = 0;
+				string nganhNghe = "NV";
+				string chucVu = "NV";
+				string dtCoQuan = "";
+				string tenCoQuan = txtCoQuan.Text.Trim();
+				string ttHonNhan = "";
+				string ttHocVan = "";
+				string thuNhap = "";				
+				string strError = "";
+				if(ma_khang_edit!="")
+				{
+					bus.UpdatePersonal(ma_khang_edit,strHoTen,strTenTat,strNgaySinh,GioiTinh,QuocTich,CMND,HoChieu,SoKhac,ngayCap,noiCap,dcLienHe,dcThuongTru,dcNuocNgoai,dtNha,dtCoQuan,HopThu,DiHoc,DiLam,tuKinhDoanh,nghiHuu,nganhNghe,chucVu,dtCoQuan,tenCoQuan,ttHonNhan,ttHocVan,thuNhap,ref strError);
+					if(strError =="")
+					{
+						SaveImage(pictureBox1, "abc.jpg");
+
+						SetMessage("Thêm khách hàng thành công!",false);
+					}
+					else
+					{
+						SetMessage("Có lỗi trong quá trình thêm dữ liệu:"+strError,true);
+					}
+				}
+				else
+				{
+					MessageBox.Show("Chưa lấy được thông tin khách hàng!");
+				}
+			}
+			catch(Exception ex)
+			{
+				SetMessage("Có lỗi trong quá trình thêm dữ liệu:"+ex.Message,true);
+			}
 		}
 
 		private void btLamLai_Click(object sender, System.EventArgs e)
@@ -2795,53 +2864,61 @@ using System; using System.Drawing; using System.Collections; using System
 		private void menuItemThem_Click(object sender, System.EventArgs e)
 		{
 			tabControl1.SelectedIndex = 0;
+			StateControl(1);
 		}
+		private string ma_khang_edit = "";
 
 		private void menuItemSua_Click(object sender, System.EventArgs e)
 		{			
 			try
 			{
+				StateControl(2);
 				CurrencyManager xCM = (CurrencyManager)dtgKhachHang.BindingContext[dtgKhachHang.DataSource, dtgKhachHang.DataMember];
 				DataRowView xDRV = (DataRowView)xCM.Current;
 				DataRow xRow	= xDRV.Row;
-				tabControl1.SelectedIndex = 0;
-				//Load thông tin khách hàng
-				DataSet dsKhachHang = bus.LoadPersonalById(xRow["MaKhachHang"].ToString());
-				DataTable tblKhachHang = dsKhachHang.Tables[0];
-				txtHoTen.Text =  tblKhachHang.Rows[0]["HoTen"].ToString();
-				dtNgaySinh.Text = tblKhachHang.Rows[0]["NgaySinh"].ToString();			
-				txtTenVietTat.Text = tblKhachHang.Rows[0]["TenVietTat"].ToString();
-				int GioiTinh = 1;
-				if(rbNam.Checked)
+
+				if(xRow["MaKhachHang"]!=null)
 				{
-					GioiTinh = 1;
+					tabControl1.SelectedIndex = 0;
+					ma_khang_edit = xRow["MaKhachHang"].ToString();
+					//Load thông tin khách hàng
+					DataSet dsKhachHang = bus.LoadPersonalById(xRow["MaKhachHang"].ToString());
+					DataTable tblKhachHang = dsKhachHang.Tables[0];
+					txtHoTen.Text =  tblKhachHang.Rows[0]["HoTen"].ToString();
+					dtNgaySinh.Text = tblKhachHang.Rows[0]["NgaySinh"].ToString();			
+					txtTenVietTat.Text = tblKhachHang.Rows[0]["TenVietTat"].ToString();
+					int GioiTinh = 1;
+					if(rbNam.Checked)
+					{
+						GioiTinh = 1;
+					}
+					else
+					{
+						GioiTinh = 0;
+					}						
+					txtQuocTich.Text = tblKhachHang.Rows[0]["QuocTich"].ToString();
+					txtSo_CMND.Text = tblKhachHang.Rows[0]["CMND"].ToString();
+					//txtSo_CMND.Text = tblKhachHang.Rows[0]["HoChieu"].ToString();
+					//txtSo_CMND.Text = tblKhachHang.Rows[0]["SoKhac"].ToString();
+					dtNgayCap.Text = tblKhachHang.Rows[0]["NgayCapCMND"].ToString();
+					txtNoiCap_CMND.Text = tblKhachHang.Rows[0]["NoiCapCMND"].ToString();
+					txtDiaChiLienHe.Text = tblKhachHang.Rows[0]["DiaChiLienHe"].ToString();
+					txtDiaChiCuTru.Text = tblKhachHang.Rows[0]["DiaChiThuongTru"].ToString();
+					txtDiaChiNuocNgoai.Text = tblKhachHang.Rows[0]["DiaChiNuocNgoai"].ToString();
+					txtDienThoaiNha.Text = tblKhachHang.Rows[0]["DienThoaiNha"].ToString();
+					txtDienThoaiDD.Text = tblKhachHang.Rows[0]["DienThoaiDiDong"].ToString();
+					txtHopThu.Text = tblKhachHang.Rows[0]["HopThu"].ToString();
+					//DiHoc = 0;
+					//DiLam = 0;
+					//tuKinhDoanh = 0;
+					//nghiHuu = 0;
+					txtNganhNghe.Text = tblKhachHang.Rows[0]["NganhNghe"].ToString();
+					txtChucVu.Text = tblKhachHang.Rows[0]["ChucVu"].ToString();
+					txtCoQuan.Text = tblKhachHang.Rows[0]["TenCoQuan"].ToString();;				
+					//ttHonNhan = "";
+					//ttHocVan = "";
+					//thuNhap = "";
 				}
-				else
-				{
-					GioiTinh = 0;
-				}						
-				txtQuocTich.Text = tblKhachHang.Rows[0]["QuocTich"].ToString();
-				txtSo_CMND.Text = tblKhachHang.Rows[0]["CMND"].ToString();
-				//txtSo_CMND.Text = tblKhachHang.Rows[0]["HoChieu"].ToString();
-				//txtSo_CMND.Text = tblKhachHang.Rows[0]["SoKhac"].ToString();
-				dtNgayCap.Text = tblKhachHang.Rows[0]["NgayCapCMND"].ToString();
-				txtNoiCap_CMND.Text = tblKhachHang.Rows[0]["NoiCapCMND"].ToString();
-				txtDiaChiLienHe.Text = tblKhachHang.Rows[0]["DiaChiLienHe"].ToString();
-				txtDiaChiCuTru.Text = tblKhachHang.Rows[0]["DiaChiThuongTru"].ToString();
-				txtDiaChiNuocNgoai.Text = tblKhachHang.Rows[0]["DiaChiNuocNgoai"].ToString();
-				txtDienThoaiNha.Text = tblKhachHang.Rows[0]["DienThoaiNha"].ToString();
-				txtDienThoaiDD.Text = tblKhachHang.Rows[0]["DienThoaiDiDong"].ToString();
-				txtHopThu.Text = tblKhachHang.Rows[0]["HopThu"].ToString();
-				//DiHoc = 0;
-				//DiLam = 0;
-				//tuKinhDoanh = 0;
-				//nghiHuu = 0;
-			    txtNganhNghe.Text = tblKhachHang.Rows[0]["NganhNghe"].ToString();
-				txtChucVu.Text = tblKhachHang.Rows[0]["ChucVu"].ToString();
-				txtCoQuan.Text = tblKhachHang.Rows[0]["TenCoQuan"].ToString();;				
-				//ttHonNhan = "";
-				//ttHocVan = "";
-				//thuNhap = "";
 
 			}
 			catch(Exception ex)
@@ -2968,4 +3045,26 @@ using System; using System.Drawing; using System.Collections; using System
 				e.Cancel = true;
 			}			
 		}	
+
+		private void StateControl(int stateId)
+		{	
+			switch(stateId)
+			{
+				case 1:
+				{
+					btThemKH.Enabled = true;
+					btSuaKH.Enabled = false;
+					btLamLai.Enabled = true;
+					break;
+				}
+				case 2:
+				{
+					btThemKH.Enabled = false;
+					btSuaKH.Enabled = true;
+					break;
+
+				}
+			}	
+			
+		}
 	 	} } 
