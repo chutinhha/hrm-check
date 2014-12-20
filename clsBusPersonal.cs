@@ -103,37 +103,7 @@ namespace HRM_CHECKER
 			{
 				DateTime dtNgaySinh = DateTime.Parse(NgaySinh);
 				DateTime dtNgayCapCMT = DateTime.Parse(ngayCap);
-				string strUpdate = @"Update [HRM_CHECKER].[dbo].[tblKhachHang]
-				([HoTen]
-				,[TenVietTat]
-				,[NgaySinh]
-				,[GioiTinh]
-				,[QuocTich]
-				,[CMND]
-				,[HoChieu]
-				,[SoKhac]
-				,[NgayCapCMND]
-				,[NoiCapCMND]
-				,[DiaChiLienHe]
-				,[DiaChiThuongTru]
-				,[DiaChiNuocNgoai]
-				,[DienThoaiNha]
-				,[DienThoaiDiDong]
-				,[HopThu]
-				,[IsDiHoc]
-				,[IsDiLam]
-				,[IsTuKinhDoanh]
-				,[IsNghiHuu]
-				,[NganhNghe]
-				,[ChucVu]
-				,[DienThoaiCoQuan]
-				,[TenCoQuan]
-				,[TinhTrangHonNhan]
-				,[TrinhDoHocVan]
-				,[ThuNhap]
-				)
-				SET
-				(N'"+HoTen+"',N'"+TenTat+"','"+NgaySinh+"',"+GioiTinh+",N'"+QuocTich+"',N'"+CMND+"',N'"+HoChieu+"',N'"+SoKhac+"','"+dtNgayCapCMT.ToString("yyyy-MM-dd")+"'"+",N'"+noiCap+"'"+",N'"+dcLienHe+"'"+",N'"+dcThuongTru+"'"+",N'"+dcNuocNgoai+"'"+",N'"+dtNha+"'"+",N'"+dtDiDong+"'"+",N'"+HopThu+"'"+","+DiHoc+","+DiLam+","+tuKinhDoanh+","+nghiHuu+",N'"+nganhNghe+"',N'"+chucVu+"'"+",N'"+dtCoQuan+"'"+",N'"+tenCoQuan+"'"+",N'"+ttHonNhan+"'"+",N'"+ttHocVan+"'"+",N'"+thuNhap+"') Where MaKhachHang = '"+ma_Khang+"'";
+				string strUpdate = @"Update [HRM_CHECKER].[dbo].[tblKhachHang] SET [HoTen] = N'"+HoTen+"',[TenVietTat] = N'"+TenTat+"',[NgaySinh] ='"+NgaySinh+"',[GioiTinh] = "+GioiTinh+",[QuocTich] = N'"+QuocTich+"',[CMND] = N'"+CMND+"',[HoChieu] = N'"+HoChieu+"',[SoKhac] = N'"+SoKhac+"',[NgayCapCMND] = '"+dtNgayCapCMT.ToString("yyyy-MM-dd")+"'"+",[NoiCapCMND] = N'"+noiCap+"'"+",[DiaChiLienHe] = N'"+dcLienHe+"'"+",[DiaChiThuongTru] = N'"+dcThuongTru+"'"+",[DiaChiNuocNgoai] = N'"+dcNuocNgoai+"'"+",[DienThoaiNha] = N'"+dtNha+"'"+",[DienThoaiDiDong] = N'"+dtDiDong+"'"+",[HopThu] = N'"+HopThu+"'"+",[IsDiHoc] = "+DiHoc+",[IsDiLam] ="+DiLam+",[IsTuKinhDoanh] = "+tuKinhDoanh+",[IsNghiHuu] = "+nghiHuu+",[NganhNghe] = N'"+nganhNghe+"',[ChucVu] = N'"+chucVu+"'"+",[DienThoaiCoQuan] = N'"+dtCoQuan+"'"+",[TenCoQuan] = N'"+tenCoQuan+"'"+",[TinhTrangHonNhan] = N'"+ttHonNhan+"'"+",[TrinhDoHocVan] = N'"+ttHocVan+"'"+",[ThuNhap] = N'"+thuNhap+"' Where MaKhachHang = '"+ma_Khang+"'";
 				string strQueryFill = strUpdate.Replace("\r\n\t\t\t\t"," ");
 				SqlConnection conn = new SqlConnection(StrConn); 				int kq = SqlHelper.ExecuteNonQuery(conn,CommandType.Text,strQueryFill);
 				pError = "";
