@@ -1,4 +1,5 @@
-using System; using System.Drawing; using System.Collections; using System.ComponentModel; using System.Windows.Forms; using System.Data; using System.Data.SqlClient;   namespace HRM_CHECKER { 	/// <summary> 	/// Summary description for Form1. 	/// </summary> 	public class Form1 : System.Windows.Forms.Form 	{ 		private System.Windows.Forms.ToolBar toolBar1; 		private System.Windows.Forms.ImageList imageList1;
+using System; using System.Drawing; using System.Collections; using System.ComponentModel; using System.Windows.Forms; using System.Data; using System.Data.SqlClient;   namespace HRM_CHECKER { 	/// <summary> 	/// Summary description for Form1. 	/// </summary> 	public class Form1 : System.Windows.Forms.Form 	{ 		
+		string SVPath = @"E:\"; 		private System.Windows.Forms.ToolBar toolBar1; 		private System.Windows.Forms.ImageList imageList1;
 		private System.Windows.Forms.StatusBar statusBar1;
 		private System.Windows.Forms.TabControl tabControl1;
 		private System.Windows.Forms.TabPage tabPage1;
@@ -36,38 +37,28 @@ using System; using System.Drawing; using System.Collections; using System
 		private System.Windows.Forms.GroupBox groupBox4;
 		private System.Windows.Forms.Panel panel8;
 		private System.Windows.Forms.Panel panel7;
-		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Label label20;
 		private System.Windows.Forms.Panel panel9;
-		private System.Windows.Forms.PictureBox pictureBox2;
 		private System.Windows.Forms.Label label21;
 		private System.Windows.Forms.Panel panel10;
-		private System.Windows.Forms.PictureBox pictureBox3;
 		private System.Windows.Forms.Label label22;
 		private System.Windows.Forms.Panel panel11;
-		private System.Windows.Forms.PictureBox pictureBox4;
 		private System.Windows.Forms.Label label23;
 		private System.Windows.Forms.GroupBox groupBox5;
 		private System.Windows.Forms.Panel panel12;
 		private System.Windows.Forms.Panel panel13;
-		private System.Windows.Forms.PictureBox pictureBox5;
 		private System.Windows.Forms.Label label24;
 		private System.Windows.Forms.Panel panel14;
-		private System.Windows.Forms.PictureBox pictureBox6;
 		private System.Windows.Forms.Label label25;
 		private System.Windows.Forms.Panel panel15;
-		private System.Windows.Forms.PictureBox pictureBox7;
 		private System.Windows.Forms.Label label26;
 		private System.Windows.Forms.Panel panel16;
-		private System.Windows.Forms.PictureBox pictureBox8;
 		private System.Windows.Forms.Label label27;
 		private System.Windows.Forms.GroupBox groupBox6;
 		private System.Windows.Forms.Panel panel17;
 		private System.Windows.Forms.Panel panel18;
-		private System.Windows.Forms.PictureBox pictureBox9;
 		private System.Windows.Forms.Label label28;
 		private System.Windows.Forms.Panel panel19;
-		private System.Windows.Forms.PictureBox pictureBox10;
 		private System.Windows.Forms.Label label29;
 		private System.Windows.Forms.TextBox textBox15;
 		private System.Windows.Forms.Label label30;
@@ -115,7 +106,6 @@ using System; using System.Drawing; using System.Collections; using System
 		private System.Windows.Forms.PictureBox pictureBox11;
 		private System.Windows.Forms.Label label37;
 		private System.Windows.Forms.Panel panel27;
-		private System.Windows.Forms.PictureBox pictureBox12;
 		private System.Windows.Forms.Label label38;
 		private System.Windows.Forms.Panel panel28;
 		private System.Windows.Forms.PictureBox pictureBox13;
@@ -136,7 +126,6 @@ using System; using System.Drawing; using System.Collections; using System
 		private System.Windows.Forms.PictureBox pictureBox17;
 		private System.Windows.Forms.Label label43;
 		private System.Windows.Forms.Panel panel35;
-		private System.Windows.Forms.PictureBox pictureBox18;
 		private System.Windows.Forms.Label label44;
 		private System.Windows.Forms.GroupBox groupBox10;
 		private System.Windows.Forms.Panel panel36;
@@ -193,7 +182,20 @@ using System; using System.Drawing; using System.Collections; using System
 		private System.Windows.Forms.ToolBarButton tbbtBanQuyen;
 		private System.Windows.Forms.MenuItem menuItem1;
 		private System.Windows.Forms.Button btLamLai;
-		private System.Windows.Forms.Button btSuaKH; 		private System.ComponentModel.IContainer components;  		public Form1() 		{ 			// 			// Required for Windows Form Designer support 			// 			InitializeComponent();  			// 			// TODO: Add any constructor code after InitializeComponent call 			// 		}  		/// <summary> 		/// Clean up any resources being used. 		/// </summary> 		protected override void Dispose( bool disposing ) 		{ 			if( disposing ) 			{ 				if (components != null)  				{ 					components.Dispose(); 				} 			} 			base.Dispose( disposing ); 		}  		#region Windows Form Designer generated code 		/// <summary> 		/// Required method for Designer support - do not modify 		/// the contents of this method with the code editor. 		/// </summary> 		private void InitializeComponent() 		{ 			this.components = new System.ComponentModel.Container();
+		private System.Windows.Forms.Button btSuaKH; 		private System.ComponentModel.IContainer components;  		private Image CMNDMoi_MatTruoc = null; 		private Image CMNDMoi_MatSau = null; 		private Image CMNDMoi_VanTay1 = null; 		private Image CMNDMoi_VanTay2 = null; 		private Image CMNDCu_MatTruoc = null; 		private Image CMNDCu_MatSau = null; 		private Image CMNDCu_VanTay1 = null;
+		private Image CMNDCu_VanTay2 = null;
+		private System.Windows.Forms.PictureBox picCMNDMoi_MatTruoc;
+		private System.Windows.Forms.PictureBox picCMNDCu_MatTruoc;
+		private System.Windows.Forms.PictureBox picCMNDCu_MatSau;
+		private System.Windows.Forms.PictureBox picCMNDMoi_MatSau;
+		private System.Windows.Forms.PictureBox picVanTaySong2;
+		private System.Windows.Forms.PictureBox picVanTaySong1;
+		private System.Windows.Forms.PictureBox picCMNDCu_VanTay2;
+		private System.Windows.Forms.PictureBox picCMNDCu_VanTay1;
+		private System.Windows.Forms.PictureBox picCMNDMoi_VanTay2;
+		private System.Windows.Forms.PictureBox picCMNDMoi_VanTay1;
+		private System.Windows.Forms.PictureBox pictureBox18;
+		private System.Windows.Forms.PictureBox pictureBox12;  		public Form1() 		{ 			// 			// Required for Windows Form Designer support 			// 			InitializeComponent();  			// 			// TODO: Add any constructor code after InitializeComponent call 			// 		}  		/// <summary> 		/// Clean up any resources being used. 		/// </summary> 		protected override void Dispose( bool disposing ) 		{ 			if( disposing ) 			{ 				if (components != null)  				{ 					components.Dispose(); 				} 			} 			base.Dispose( disposing ); 		}  		#region Windows Form Designer generated code 		/// <summary> 		/// Required method for Designer support - do not modify 		/// the contents of this method with the code editor. 		/// </summary> 		private void InitializeComponent() 		{ 			this.components = new System.ComponentModel.Container();
 			System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(Form1));
 			this.toolBar1 = new System.Windows.Forms.ToolBar();
 			this.tbbtHeThong = new System.Windows.Forms.ToolBarButton();
@@ -288,38 +290,38 @@ using System; using System.Drawing; using System.Collections; using System
 			this.groupBox6 = new System.Windows.Forms.GroupBox();
 			this.panel17 = new System.Windows.Forms.Panel();
 			this.panel18 = new System.Windows.Forms.Panel();
-			this.pictureBox9 = new System.Windows.Forms.PictureBox();
+			this.picVanTaySong2 = new System.Windows.Forms.PictureBox();
 			this.label28 = new System.Windows.Forms.Label();
 			this.panel19 = new System.Windows.Forms.Panel();
-			this.pictureBox10 = new System.Windows.Forms.PictureBox();
+			this.picVanTaySong1 = new System.Windows.Forms.PictureBox();
 			this.label29 = new System.Windows.Forms.Label();
 			this.groupBox5 = new System.Windows.Forms.GroupBox();
 			this.panel12 = new System.Windows.Forms.Panel();
 			this.panel13 = new System.Windows.Forms.Panel();
-			this.pictureBox5 = new System.Windows.Forms.PictureBox();
+			this.picCMNDCu_VanTay2 = new System.Windows.Forms.PictureBox();
 			this.label24 = new System.Windows.Forms.Label();
 			this.panel14 = new System.Windows.Forms.Panel();
-			this.pictureBox6 = new System.Windows.Forms.PictureBox();
+			this.picCMNDCu_VanTay1 = new System.Windows.Forms.PictureBox();
 			this.label25 = new System.Windows.Forms.Label();
 			this.panel15 = new System.Windows.Forms.Panel();
-			this.pictureBox7 = new System.Windows.Forms.PictureBox();
+			this.picCMNDMoi_MatSau = new System.Windows.Forms.PictureBox();
 			this.label26 = new System.Windows.Forms.Label();
 			this.panel16 = new System.Windows.Forms.Panel();
-			this.pictureBox8 = new System.Windows.Forms.PictureBox();
+			this.picCMNDMoi_MatTruoc = new System.Windows.Forms.PictureBox();
 			this.label27 = new System.Windows.Forms.Label();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
 			this.panel8 = new System.Windows.Forms.Panel();
 			this.panel10 = new System.Windows.Forms.Panel();
-			this.pictureBox3 = new System.Windows.Forms.PictureBox();
+			this.picCMNDMoi_VanTay2 = new System.Windows.Forms.PictureBox();
 			this.label22 = new System.Windows.Forms.Label();
 			this.panel11 = new System.Windows.Forms.Panel();
-			this.pictureBox4 = new System.Windows.Forms.PictureBox();
+			this.picCMNDMoi_VanTay1 = new System.Windows.Forms.PictureBox();
 			this.label23 = new System.Windows.Forms.Label();
 			this.panel9 = new System.Windows.Forms.Panel();
-			this.pictureBox2 = new System.Windows.Forms.PictureBox();
+			this.picCMNDCu_MatSau = new System.Windows.Forms.PictureBox();
 			this.label21 = new System.Windows.Forms.Label();
 			this.panel7 = new System.Windows.Forms.Panel();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.picCMNDCu_MatTruoc = new System.Windows.Forms.PictureBox();
 			this.label20 = new System.Windows.Forms.Label();
 			this.panel4 = new System.Windows.Forms.Panel();
 			this.textBox1 = new System.Windows.Forms.TextBox();
@@ -359,7 +361,6 @@ using System; using System.Drawing; using System.Collections; using System
 			this.pictureBox17 = new System.Windows.Forms.PictureBox();
 			this.label43 = new System.Windows.Forms.Label();
 			this.panel35 = new System.Windows.Forms.Panel();
-			this.pictureBox18 = new System.Windows.Forms.PictureBox();
 			this.label44 = new System.Windows.Forms.Label();
 			this.groupBox8 = new System.Windows.Forms.GroupBox();
 			this.panel25 = new System.Windows.Forms.Panel();
@@ -371,7 +372,6 @@ using System; using System.Drawing; using System.Collections; using System
 			this.label39 = new System.Windows.Forms.Label();
 			this.panel24 = new System.Windows.Forms.Panel();
 			this.panel27 = new System.Windows.Forms.Panel();
-			this.pictureBox12 = new System.Windows.Forms.PictureBox();
 			this.label38 = new System.Windows.Forms.Label();
 			this.panel26 = new System.Windows.Forms.Panel();
 			this.pictureBox11 = new System.Windows.Forms.PictureBox();
@@ -389,6 +389,8 @@ using System; using System.Drawing; using System.Collections; using System
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.errorProvider1 = new System.Windows.Forms.ErrorProvider();
 			this.lbThongBao = new System.Windows.Forms.Label();
+			this.pictureBox18 = new System.Windows.Forms.PictureBox();
+			this.pictureBox12 = new System.Windows.Forms.PictureBox();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.panel2.SuspendLayout();
@@ -1334,7 +1336,7 @@ using System; using System.Drawing; using System.Collections; using System
 			// panel18
 			// 
 			this.panel18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel18.Controls.Add(this.pictureBox9);
+			this.panel18.Controls.Add(this.picVanTaySong2);
 			this.panel18.Controls.Add(this.label28);
 			this.panel18.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel18.DockPadding.All = 2;
@@ -1343,17 +1345,17 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel18.Size = new System.Drawing.Size(125, 135);
 			this.panel18.TabIndex = 5;
 			// 
-			// pictureBox9
+			// picVanTaySong2
 			// 
-			this.pictureBox9.Cursor = System.Windows.Forms.Cursors.SizeAll;
-			this.pictureBox9.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-			this.pictureBox9.Location = new System.Drawing.Point(2, 2);
-			this.pictureBox9.Name = "pictureBox9";
-			this.pictureBox9.Size = new System.Drawing.Size(119, 106);
-			this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox9.TabIndex = 2;
-			this.pictureBox9.TabStop = false;
+			this.picVanTaySong2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picVanTaySong2.BackgroundImage")));
+			this.picVanTaySong2.Cursor = System.Windows.Forms.Cursors.SizeAll;
+			this.picVanTaySong2.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.picVanTaySong2.Location = new System.Drawing.Point(2, 2);
+			this.picVanTaySong2.Name = "picVanTaySong2";
+			this.picVanTaySong2.Size = new System.Drawing.Size(119, 106);
+			this.picVanTaySong2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.picVanTaySong2.TabIndex = 2;
+			this.picVanTaySong2.TabStop = false;
 			// 
 			// label28
 			// 
@@ -1369,7 +1371,7 @@ using System; using System.Drawing; using System.Collections; using System
 			// panel19
 			// 
 			this.panel19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel19.Controls.Add(this.pictureBox10);
+			this.panel19.Controls.Add(this.picVanTaySong1);
 			this.panel19.Controls.Add(this.label29);
 			this.panel19.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel19.DockPadding.All = 2;
@@ -1378,17 +1380,17 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel19.Size = new System.Drawing.Size(125, 135);
 			this.panel19.TabIndex = 4;
 			// 
-			// pictureBox10
+			// picVanTaySong1
 			// 
-			this.pictureBox10.Cursor = System.Windows.Forms.Cursors.SizeAll;
-			this.pictureBox10.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-			this.pictureBox10.Location = new System.Drawing.Point(2, 2);
-			this.pictureBox10.Name = "pictureBox10";
-			this.pictureBox10.Size = new System.Drawing.Size(119, 106);
-			this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox10.TabIndex = 2;
-			this.pictureBox10.TabStop = false;
+			this.picVanTaySong1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picVanTaySong1.BackgroundImage")));
+			this.picVanTaySong1.Cursor = System.Windows.Forms.Cursors.SizeAll;
+			this.picVanTaySong1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.picVanTaySong1.Location = new System.Drawing.Point(2, 2);
+			this.picVanTaySong1.Name = "picVanTaySong1";
+			this.picVanTaySong1.Size = new System.Drawing.Size(119, 106);
+			this.picVanTaySong1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.picVanTaySong1.TabIndex = 2;
+			this.picVanTaySong1.TabStop = false;
 			// 
 			// label29
 			// 
@@ -1428,7 +1430,7 @@ using System; using System.Drawing; using System.Collections; using System
 			// panel13
 			// 
 			this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel13.Controls.Add(this.pictureBox5);
+			this.panel13.Controls.Add(this.picCMNDCu_VanTay2);
 			this.panel13.Controls.Add(this.label24);
 			this.panel13.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel13.DockPadding.All = 2;
@@ -1437,17 +1439,18 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel13.Size = new System.Drawing.Size(125, 118);
 			this.panel13.TabIndex = 5;
 			// 
-			// pictureBox5
+			// picCMNDCu_VanTay2
 			// 
-			this.pictureBox5.Cursor = System.Windows.Forms.Cursors.SizeAll;
-			this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-			this.pictureBox5.Location = new System.Drawing.Point(2, 2);
-			this.pictureBox5.Name = "pictureBox5";
-			this.pictureBox5.Size = new System.Drawing.Size(119, 89);
-			this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox5.TabIndex = 2;
-			this.pictureBox5.TabStop = false;
+			this.picCMNDCu_VanTay2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picCMNDCu_VanTay2.BackgroundImage")));
+			this.picCMNDCu_VanTay2.Cursor = System.Windows.Forms.Cursors.SizeAll;
+			this.picCMNDCu_VanTay2.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.picCMNDCu_VanTay2.Location = new System.Drawing.Point(2, 2);
+			this.picCMNDCu_VanTay2.Name = "picCMNDCu_VanTay2";
+			this.picCMNDCu_VanTay2.Size = new System.Drawing.Size(119, 89);
+			this.picCMNDCu_VanTay2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.picCMNDCu_VanTay2.TabIndex = 2;
+			this.picCMNDCu_VanTay2.TabStop = false;
+			this.picCMNDCu_VanTay2.Click += new System.EventHandler(this.picCMNDCu_VanTay2_Click);
 			// 
 			// label24
 			// 
@@ -1463,7 +1466,7 @@ using System; using System.Drawing; using System.Collections; using System
 			// panel14
 			// 
 			this.panel14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel14.Controls.Add(this.pictureBox6);
+			this.panel14.Controls.Add(this.picCMNDCu_VanTay1);
 			this.panel14.Controls.Add(this.label25);
 			this.panel14.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel14.DockPadding.All = 2;
@@ -1472,17 +1475,18 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel14.Size = new System.Drawing.Size(125, 118);
 			this.panel14.TabIndex = 4;
 			// 
-			// pictureBox6
+			// picCMNDCu_VanTay1
 			// 
-			this.pictureBox6.Cursor = System.Windows.Forms.Cursors.SizeAll;
-			this.pictureBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-			this.pictureBox6.Location = new System.Drawing.Point(2, 2);
-			this.pictureBox6.Name = "pictureBox6";
-			this.pictureBox6.Size = new System.Drawing.Size(119, 89);
-			this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox6.TabIndex = 2;
-			this.pictureBox6.TabStop = false;
+			this.picCMNDCu_VanTay1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picCMNDCu_VanTay1.BackgroundImage")));
+			this.picCMNDCu_VanTay1.Cursor = System.Windows.Forms.Cursors.SizeAll;
+			this.picCMNDCu_VanTay1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.picCMNDCu_VanTay1.Location = new System.Drawing.Point(2, 2);
+			this.picCMNDCu_VanTay1.Name = "picCMNDCu_VanTay1";
+			this.picCMNDCu_VanTay1.Size = new System.Drawing.Size(119, 89);
+			this.picCMNDCu_VanTay1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.picCMNDCu_VanTay1.TabIndex = 2;
+			this.picCMNDCu_VanTay1.TabStop = false;
+			this.picCMNDCu_VanTay1.Click += new System.EventHandler(this.picCMNDCu_VanTay1_Click);
 			// 
 			// label25
 			// 
@@ -1498,7 +1502,7 @@ using System; using System.Drawing; using System.Collections; using System
 			// panel15
 			// 
 			this.panel15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel15.Controls.Add(this.pictureBox7);
+			this.panel15.Controls.Add(this.picCMNDMoi_MatSau);
 			this.panel15.Controls.Add(this.label26);
 			this.panel15.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel15.DockPadding.All = 2;
@@ -1507,17 +1511,18 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel15.Size = new System.Drawing.Size(173, 118);
 			this.panel15.TabIndex = 3;
 			// 
-			// pictureBox7
+			// picCMNDMoi_MatSau
 			// 
-			this.pictureBox7.Cursor = System.Windows.Forms.Cursors.SizeAll;
-			this.pictureBox7.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-			this.pictureBox7.Location = new System.Drawing.Point(2, 2);
-			this.pictureBox7.Name = "pictureBox7";
-			this.pictureBox7.Size = new System.Drawing.Size(167, 89);
-			this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox7.TabIndex = 2;
-			this.pictureBox7.TabStop = false;
+			this.picCMNDMoi_MatSau.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picCMNDMoi_MatSau.BackgroundImage")));
+			this.picCMNDMoi_MatSau.Cursor = System.Windows.Forms.Cursors.SizeAll;
+			this.picCMNDMoi_MatSau.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.picCMNDMoi_MatSau.Location = new System.Drawing.Point(2, 2);
+			this.picCMNDMoi_MatSau.Name = "picCMNDMoi_MatSau";
+			this.picCMNDMoi_MatSau.Size = new System.Drawing.Size(167, 89);
+			this.picCMNDMoi_MatSau.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.picCMNDMoi_MatSau.TabIndex = 2;
+			this.picCMNDMoi_MatSau.TabStop = false;
+			this.picCMNDMoi_MatSau.Click += new System.EventHandler(this.picCMNDMoi_MatSau_Click);
 			// 
 			// label26
 			// 
@@ -1533,7 +1538,7 @@ using System; using System.Drawing; using System.Collections; using System
 			// panel16
 			// 
 			this.panel16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel16.Controls.Add(this.pictureBox8);
+			this.panel16.Controls.Add(this.picCMNDMoi_MatTruoc);
 			this.panel16.Controls.Add(this.label27);
 			this.panel16.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel16.DockPadding.All = 2;
@@ -1542,17 +1547,18 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel16.Size = new System.Drawing.Size(173, 118);
 			this.panel16.TabIndex = 2;
 			// 
-			// pictureBox8
+			// picCMNDMoi_MatTruoc
 			// 
-			this.pictureBox8.Cursor = System.Windows.Forms.Cursors.SizeAll;
-			this.pictureBox8.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-			this.pictureBox8.Location = new System.Drawing.Point(2, 2);
-			this.pictureBox8.Name = "pictureBox8";
-			this.pictureBox8.Size = new System.Drawing.Size(167, 89);
-			this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox8.TabIndex = 2;
-			this.pictureBox8.TabStop = false;
+			this.picCMNDMoi_MatTruoc.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picCMNDMoi_MatTruoc.BackgroundImage")));
+			this.picCMNDMoi_MatTruoc.Cursor = System.Windows.Forms.Cursors.SizeAll;
+			this.picCMNDMoi_MatTruoc.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.picCMNDMoi_MatTruoc.Location = new System.Drawing.Point(2, 2);
+			this.picCMNDMoi_MatTruoc.Name = "picCMNDMoi_MatTruoc";
+			this.picCMNDMoi_MatTruoc.Size = new System.Drawing.Size(167, 89);
+			this.picCMNDMoi_MatTruoc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.picCMNDMoi_MatTruoc.TabIndex = 2;
+			this.picCMNDMoi_MatTruoc.TabStop = false;
+			this.picCMNDMoi_MatTruoc.Click += new System.EventHandler(this.picCMNDMoi_MatTruoc_Click);
 			// 
 			// label27
 			// 
@@ -1592,7 +1598,7 @@ using System; using System.Drawing; using System.Collections; using System
 			// panel10
 			// 
 			this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel10.Controls.Add(this.pictureBox3);
+			this.panel10.Controls.Add(this.picCMNDMoi_VanTay2);
 			this.panel10.Controls.Add(this.label22);
 			this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel10.DockPadding.All = 2;
@@ -1601,17 +1607,18 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel10.Size = new System.Drawing.Size(125, 118);
 			this.panel10.TabIndex = 5;
 			// 
-			// pictureBox3
+			// picCMNDMoi_VanTay2
 			// 
-			this.pictureBox3.Cursor = System.Windows.Forms.Cursors.SizeAll;
-			this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-			this.pictureBox3.Location = new System.Drawing.Point(2, 2);
-			this.pictureBox3.Name = "pictureBox3";
-			this.pictureBox3.Size = new System.Drawing.Size(119, 89);
-			this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox3.TabIndex = 2;
-			this.pictureBox3.TabStop = false;
+			this.picCMNDMoi_VanTay2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picCMNDMoi_VanTay2.BackgroundImage")));
+			this.picCMNDMoi_VanTay2.Cursor = System.Windows.Forms.Cursors.SizeAll;
+			this.picCMNDMoi_VanTay2.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.picCMNDMoi_VanTay2.Location = new System.Drawing.Point(2, 2);
+			this.picCMNDMoi_VanTay2.Name = "picCMNDMoi_VanTay2";
+			this.picCMNDMoi_VanTay2.Size = new System.Drawing.Size(119, 89);
+			this.picCMNDMoi_VanTay2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.picCMNDMoi_VanTay2.TabIndex = 2;
+			this.picCMNDMoi_VanTay2.TabStop = false;
+			this.picCMNDMoi_VanTay2.Click += new System.EventHandler(this.picCMNDMoi_VanTay2_Click);
 			// 
 			// label22
 			// 
@@ -1627,7 +1634,7 @@ using System; using System.Drawing; using System.Collections; using System
 			// panel11
 			// 
 			this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel11.Controls.Add(this.pictureBox4);
+			this.panel11.Controls.Add(this.picCMNDMoi_VanTay1);
 			this.panel11.Controls.Add(this.label23);
 			this.panel11.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel11.DockPadding.All = 2;
@@ -1636,17 +1643,18 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel11.Size = new System.Drawing.Size(125, 118);
 			this.panel11.TabIndex = 4;
 			// 
-			// pictureBox4
+			// picCMNDMoi_VanTay1
 			// 
-			this.pictureBox4.Cursor = System.Windows.Forms.Cursors.SizeAll;
-			this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-			this.pictureBox4.Location = new System.Drawing.Point(2, 2);
-			this.pictureBox4.Name = "pictureBox4";
-			this.pictureBox4.Size = new System.Drawing.Size(119, 89);
-			this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox4.TabIndex = 2;
-			this.pictureBox4.TabStop = false;
+			this.picCMNDMoi_VanTay1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picCMNDMoi_VanTay1.BackgroundImage")));
+			this.picCMNDMoi_VanTay1.Cursor = System.Windows.Forms.Cursors.SizeAll;
+			this.picCMNDMoi_VanTay1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.picCMNDMoi_VanTay1.Location = new System.Drawing.Point(2, 2);
+			this.picCMNDMoi_VanTay1.Name = "picCMNDMoi_VanTay1";
+			this.picCMNDMoi_VanTay1.Size = new System.Drawing.Size(119, 89);
+			this.picCMNDMoi_VanTay1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.picCMNDMoi_VanTay1.TabIndex = 2;
+			this.picCMNDMoi_VanTay1.TabStop = false;
+			this.picCMNDMoi_VanTay1.Click += new System.EventHandler(this.picCMNDMoi_VanTay1_Click);
 			// 
 			// label23
 			// 
@@ -1662,7 +1670,7 @@ using System; using System.Drawing; using System.Collections; using System
 			// panel9
 			// 
 			this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel9.Controls.Add(this.pictureBox2);
+			this.panel9.Controls.Add(this.picCMNDCu_MatSau);
 			this.panel9.Controls.Add(this.label21);
 			this.panel9.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel9.DockPadding.All = 2;
@@ -1671,17 +1679,18 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel9.Size = new System.Drawing.Size(173, 118);
 			this.panel9.TabIndex = 3;
 			// 
-			// pictureBox2
+			// picCMNDCu_MatSau
 			// 
-			this.pictureBox2.Cursor = System.Windows.Forms.Cursors.SizeAll;
-			this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-			this.pictureBox2.Location = new System.Drawing.Point(2, 2);
-			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(167, 89);
-			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox2.TabIndex = 2;
-			this.pictureBox2.TabStop = false;
+			this.picCMNDCu_MatSau.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picCMNDCu_MatSau.BackgroundImage")));
+			this.picCMNDCu_MatSau.Cursor = System.Windows.Forms.Cursors.SizeAll;
+			this.picCMNDCu_MatSau.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.picCMNDCu_MatSau.Location = new System.Drawing.Point(2, 2);
+			this.picCMNDCu_MatSau.Name = "picCMNDCu_MatSau";
+			this.picCMNDCu_MatSau.Size = new System.Drawing.Size(167, 89);
+			this.picCMNDCu_MatSau.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.picCMNDCu_MatSau.TabIndex = 2;
+			this.picCMNDCu_MatSau.TabStop = false;
+			this.picCMNDCu_MatSau.Click += new System.EventHandler(this.picCMNDCu_MatSau_Click);
 			// 
 			// label21
 			// 
@@ -1697,7 +1706,7 @@ using System; using System.Drawing; using System.Collections; using System
 			// panel7
 			// 
 			this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel7.Controls.Add(this.pictureBox1);
+			this.panel7.Controls.Add(this.picCMNDCu_MatTruoc);
 			this.panel7.Controls.Add(this.label20);
 			this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel7.DockPadding.All = 2;
@@ -1706,17 +1715,18 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel7.Size = new System.Drawing.Size(173, 118);
 			this.panel7.TabIndex = 2;
 			// 
-			// pictureBox1
+			// picCMNDCu_MatTruoc
 			// 
-			this.pictureBox1.Cursor = System.Windows.Forms.Cursors.SizeAll;
-			this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(2, 2);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(167, 89);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox1.TabIndex = 2;
-			this.pictureBox1.TabStop = false;
+			this.picCMNDCu_MatTruoc.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picCMNDCu_MatTruoc.BackgroundImage")));
+			this.picCMNDCu_MatTruoc.Cursor = System.Windows.Forms.Cursors.SizeAll;
+			this.picCMNDCu_MatTruoc.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.picCMNDCu_MatTruoc.Location = new System.Drawing.Point(2, 2);
+			this.picCMNDCu_MatTruoc.Name = "picCMNDCu_MatTruoc";
+			this.picCMNDCu_MatTruoc.Size = new System.Drawing.Size(167, 89);
+			this.picCMNDCu_MatTruoc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.picCMNDCu_MatTruoc.TabIndex = 2;
+			this.picCMNDCu_MatTruoc.TabStop = false;
+			this.picCMNDCu_MatTruoc.Click += new System.EventHandler(this.picCMNDCu_MatTruoc_Click);
 			// 
 			// label20
 			// 
@@ -1763,9 +1773,9 @@ using System; using System.Drawing; using System.Collections; using System
 			this.tabPage2.Controls.Add(this.panel21);
 			this.tabPage2.Controls.Add(this.splitter2);
 			this.tabPage2.Controls.Add(this.panel20);
-			this.tabPage2.Location = new System.Drawing.Point(4, 22);
+			this.tabPage2.Location = new System.Drawing.Point(4, 27);
 			this.tabPage2.Name = "tabPage2";
-			this.tabPage2.Size = new System.Drawing.Size(976, 618);
+			this.tabPage2.Size = new System.Drawing.Size(976, 613);
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "Kiểm tra thông tin ";
 			this.tabPage2.Visible = false;
@@ -1776,7 +1786,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel21.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel21.Location = new System.Drawing.Point(0, 248);
 			this.panel21.Name = "panel21";
-			this.panel21.Size = new System.Drawing.Size(976, 370);
+			this.panel21.Size = new System.Drawing.Size(976, 365);
 			this.panel21.TabIndex = 2;
 			// 
 			// dtgKhachHang
@@ -1790,7 +1800,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.dtgKhachHang.Location = new System.Drawing.Point(0, 0);
 			this.dtgKhachHang.Name = "dtgKhachHang";
 			this.dtgKhachHang.SelectionBackColor = System.Drawing.Color.LightGoldenrodYellow;
-			this.dtgKhachHang.Size = new System.Drawing.Size(976, 370);
+			this.dtgKhachHang.Size = new System.Drawing.Size(976, 365);
 			this.dtgKhachHang.TabIndex = 0;
 			this.dtgKhachHang.CurrentCellChanged += new System.EventHandler(this.dtgKhachHang_CurrentCellChanged);
 			// 
@@ -1885,7 +1895,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.groupBox10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.groupBox10.Location = new System.Drawing.Point(704, 0);
 			this.groupBox10.Name = "groupBox10";
-			this.groupBox10.Size = new System.Drawing.Size(180, 238);
+			this.groupBox10.Size = new System.Drawing.Size(180, 221);
 			this.groupBox10.TabIndex = 2;
 			this.groupBox10.TabStop = false;
 			this.groupBox10.Text = "Ảnh vân tay sống";
@@ -1897,7 +1907,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel36.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel36.Location = new System.Drawing.Point(3, 122);
 			this.panel36.Name = "panel36";
-			this.panel36.Size = new System.Drawing.Size(174, 113);
+			this.panel36.Size = new System.Drawing.Size(174, 96);
 			this.panel36.TabIndex = 1;
 			// 
 			// panel38
@@ -1909,17 +1919,17 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel38.DockPadding.All = 2;
 			this.panel38.Location = new System.Drawing.Point(0, 0);
 			this.panel38.Name = "panel38";
-			this.panel38.Size = new System.Drawing.Size(173, 113);
+			this.panel38.Size = new System.Drawing.Size(173, 96);
 			this.panel38.TabIndex = 4;
 			// 
 			// pictureBox20
 			// 
+			this.pictureBox20.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox20.BackgroundImage")));
 			this.pictureBox20.Cursor = System.Windows.Forms.Cursors.SizeAll;
 			this.pictureBox20.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pictureBox20.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox20.Image")));
 			this.pictureBox20.Location = new System.Drawing.Point(2, 2);
 			this.pictureBox20.Name = "pictureBox20";
-			this.pictureBox20.Size = new System.Drawing.Size(167, 84);
+			this.pictureBox20.Size = new System.Drawing.Size(167, 67);
 			this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox20.TabIndex = 2;
 			this.pictureBox20.TabStop = false;
@@ -1928,11 +1938,11 @@ using System; using System.Drawing; using System.Collections; using System
 			// 
 			this.label46.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.label46.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.label46.Location = new System.Drawing.Point(2, 86);
+			this.label46.Location = new System.Drawing.Point(2, 69);
 			this.label46.Name = "label46";
 			this.label46.Size = new System.Drawing.Size(167, 23);
 			this.label46.TabIndex = 0;
-			this.label46.Text = "Ảnh sau";
+			this.label46.Text = "Vân tay";
 			this.label46.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// panel39
@@ -1959,9 +1969,9 @@ using System; using System.Drawing; using System.Collections; using System
 			// 
 			// pictureBox22
 			// 
+			this.pictureBox22.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox22.BackgroundImage")));
 			this.pictureBox22.Cursor = System.Windows.Forms.Cursors.SizeAll;
 			this.pictureBox22.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pictureBox22.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox22.Image")));
 			this.pictureBox22.Location = new System.Drawing.Point(2, 2);
 			this.pictureBox22.Name = "pictureBox22";
 			this.pictureBox22.Size = new System.Drawing.Size(167, 71);
@@ -1977,7 +1987,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.label48.Name = "label48";
 			this.label48.Size = new System.Drawing.Size(167, 23);
 			this.label48.TabIndex = 0;
-			this.label48.Text = "Ảnh sau";
+			this.label48.Text = "Vân tay";
 			this.label48.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// groupBox9
@@ -1989,7 +1999,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.groupBox9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.groupBox9.Location = new System.Drawing.Point(352, 0);
 			this.groupBox9.Name = "groupBox9";
-			this.groupBox9.Size = new System.Drawing.Size(352, 238);
+			this.groupBox9.Size = new System.Drawing.Size(352, 221);
 			this.groupBox9.TabIndex = 1;
 			this.groupBox9.TabStop = false;
 			this.groupBox9.Text = "Ảnh CMND mới";
@@ -2002,7 +2012,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel30.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel30.Location = new System.Drawing.Point(3, 122);
 			this.panel30.Name = "panel30";
-			this.panel30.Size = new System.Drawing.Size(346, 113);
+			this.panel30.Size = new System.Drawing.Size(346, 96);
 			this.panel30.TabIndex = 1;
 			// 
 			// panel31
@@ -2014,17 +2024,17 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel31.DockPadding.All = 2;
 			this.panel31.Location = new System.Drawing.Point(173, 0);
 			this.panel31.Name = "panel31";
-			this.panel31.Size = new System.Drawing.Size(173, 113);
+			this.panel31.Size = new System.Drawing.Size(173, 96);
 			this.panel31.TabIndex = 5;
 			// 
 			// pictureBox15
 			// 
+			this.pictureBox15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox15.BackgroundImage")));
 			this.pictureBox15.Cursor = System.Windows.Forms.Cursors.SizeAll;
 			this.pictureBox15.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pictureBox15.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox15.Image")));
 			this.pictureBox15.Location = new System.Drawing.Point(2, 2);
 			this.pictureBox15.Name = "pictureBox15";
-			this.pictureBox15.Size = new System.Drawing.Size(167, 84);
+			this.pictureBox15.Size = new System.Drawing.Size(167, 67);
 			this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox15.TabIndex = 2;
 			this.pictureBox15.TabStop = false;
@@ -2033,11 +2043,11 @@ using System; using System.Drawing; using System.Collections; using System
 			// 
 			this.label41.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.label41.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.label41.Location = new System.Drawing.Point(2, 86);
+			this.label41.Location = new System.Drawing.Point(2, 69);
 			this.label41.Name = "label41";
 			this.label41.Size = new System.Drawing.Size(167, 23);
 			this.label41.TabIndex = 0;
-			this.label41.Text = "Ảnh sau";
+			this.label41.Text = "Vân tay";
 			this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// panel32
@@ -2049,17 +2059,17 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel32.DockPadding.All = 2;
 			this.panel32.Location = new System.Drawing.Point(0, 0);
 			this.panel32.Name = "panel32";
-			this.panel32.Size = new System.Drawing.Size(173, 113);
+			this.panel32.Size = new System.Drawing.Size(173, 96);
 			this.panel32.TabIndex = 4;
 			// 
 			// pictureBox16
 			// 
+			this.pictureBox16.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox16.BackgroundImage")));
 			this.pictureBox16.Cursor = System.Windows.Forms.Cursors.SizeAll;
 			this.pictureBox16.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pictureBox16.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox16.Image")));
 			this.pictureBox16.Location = new System.Drawing.Point(2, 2);
 			this.pictureBox16.Name = "pictureBox16";
-			this.pictureBox16.Size = new System.Drawing.Size(167, 84);
+			this.pictureBox16.Size = new System.Drawing.Size(167, 67);
 			this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox16.TabIndex = 2;
 			this.pictureBox16.TabStop = false;
@@ -2068,11 +2078,11 @@ using System; using System.Drawing; using System.Collections; using System
 			// 
 			this.label42.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.label42.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.label42.Location = new System.Drawing.Point(2, 86);
+			this.label42.Location = new System.Drawing.Point(2, 69);
 			this.label42.Name = "label42";
 			this.label42.Size = new System.Drawing.Size(167, 23);
 			this.label42.TabIndex = 0;
-			this.label42.Text = "Ảnh sau";
+			this.label42.Text = "Vân tay";
 			this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// panel33
@@ -2100,9 +2110,9 @@ using System; using System.Drawing; using System.Collections; using System
 			// 
 			// pictureBox17
 			// 
+			this.pictureBox17.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox17.BackgroundImage")));
 			this.pictureBox17.Cursor = System.Windows.Forms.Cursors.SizeAll;
 			this.pictureBox17.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pictureBox17.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox17.Image")));
 			this.pictureBox17.Location = new System.Drawing.Point(2, 2);
 			this.pictureBox17.Name = "pictureBox17";
 			this.pictureBox17.Size = new System.Drawing.Size(167, 71);
@@ -2118,7 +2128,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.label43.Name = "label43";
 			this.label43.Size = new System.Drawing.Size(167, 23);
 			this.label43.TabIndex = 0;
-			this.label43.Text = "Ảnh sau";
+			this.label43.Text = "Ảnh trước";
 			this.label43.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// panel35
@@ -2132,18 +2142,6 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel35.Name = "panel35";
 			this.panel35.Size = new System.Drawing.Size(173, 100);
 			this.panel35.TabIndex = 4;
-			// 
-			// pictureBox18
-			// 
-			this.pictureBox18.Cursor = System.Windows.Forms.Cursors.SizeAll;
-			this.pictureBox18.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pictureBox18.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox18.Image")));
-			this.pictureBox18.Location = new System.Drawing.Point(2, 2);
-			this.pictureBox18.Name = "pictureBox18";
-			this.pictureBox18.Size = new System.Drawing.Size(167, 71);
-			this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox18.TabIndex = 2;
-			this.pictureBox18.TabStop = false;
 			// 
 			// label44
 			// 
@@ -2165,7 +2163,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.groupBox8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.groupBox8.Location = new System.Drawing.Point(0, 0);
 			this.groupBox8.Name = "groupBox8";
-			this.groupBox8.Size = new System.Drawing.Size(352, 238);
+			this.groupBox8.Size = new System.Drawing.Size(352, 221);
 			this.groupBox8.TabIndex = 0;
 			this.groupBox8.TabStop = false;
 			this.groupBox8.Text = "Ảnh CMND cũ";
@@ -2178,7 +2176,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel25.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel25.Location = new System.Drawing.Point(3, 122);
 			this.panel25.Name = "panel25";
-			this.panel25.Size = new System.Drawing.Size(346, 113);
+			this.panel25.Size = new System.Drawing.Size(346, 96);
 			this.panel25.TabIndex = 1;
 			// 
 			// panel29
@@ -2190,17 +2188,17 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel29.DockPadding.All = 2;
 			this.panel29.Location = new System.Drawing.Point(173, 0);
 			this.panel29.Name = "panel29";
-			this.panel29.Size = new System.Drawing.Size(173, 113);
+			this.panel29.Size = new System.Drawing.Size(173, 96);
 			this.panel29.TabIndex = 5;
 			// 
 			// pictureBox14
 			// 
+			this.pictureBox14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox14.BackgroundImage")));
 			this.pictureBox14.Cursor = System.Windows.Forms.Cursors.SizeAll;
 			this.pictureBox14.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
 			this.pictureBox14.Location = new System.Drawing.Point(2, 2);
 			this.pictureBox14.Name = "pictureBox14";
-			this.pictureBox14.Size = new System.Drawing.Size(167, 84);
+			this.pictureBox14.Size = new System.Drawing.Size(167, 67);
 			this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox14.TabIndex = 2;
 			this.pictureBox14.TabStop = false;
@@ -2209,11 +2207,11 @@ using System; using System.Drawing; using System.Collections; using System
 			// 
 			this.label40.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.label40.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.label40.Location = new System.Drawing.Point(2, 86);
+			this.label40.Location = new System.Drawing.Point(2, 69);
 			this.label40.Name = "label40";
 			this.label40.Size = new System.Drawing.Size(167, 23);
 			this.label40.TabIndex = 0;
-			this.label40.Text = "Ảnh sau";
+			this.label40.Text = "Vân tay";
 			this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// panel28
@@ -2225,17 +2223,17 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel28.DockPadding.All = 2;
 			this.panel28.Location = new System.Drawing.Point(0, 0);
 			this.panel28.Name = "panel28";
-			this.panel28.Size = new System.Drawing.Size(173, 113);
+			this.panel28.Size = new System.Drawing.Size(173, 96);
 			this.panel28.TabIndex = 4;
 			// 
 			// pictureBox13
 			// 
+			this.pictureBox13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox13.BackgroundImage")));
 			this.pictureBox13.Cursor = System.Windows.Forms.Cursors.SizeAll;
 			this.pictureBox13.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
 			this.pictureBox13.Location = new System.Drawing.Point(2, 2);
 			this.pictureBox13.Name = "pictureBox13";
-			this.pictureBox13.Size = new System.Drawing.Size(167, 84);
+			this.pictureBox13.Size = new System.Drawing.Size(167, 67);
 			this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox13.TabIndex = 2;
 			this.pictureBox13.TabStop = false;
@@ -2244,11 +2242,11 @@ using System; using System.Drawing; using System.Collections; using System
 			// 
 			this.label39.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.label39.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.label39.Location = new System.Drawing.Point(2, 86);
+			this.label39.Location = new System.Drawing.Point(2, 69);
 			this.label39.Name = "label39";
 			this.label39.Size = new System.Drawing.Size(167, 23);
 			this.label39.TabIndex = 0;
-			this.label39.Text = "Ảnh sau";
+			this.label39.Text = "Vân tay";
 			this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// panel24
@@ -2274,18 +2272,6 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel27.Size = new System.Drawing.Size(173, 100);
 			this.panel27.TabIndex = 5;
 			// 
-			// pictureBox12
-			// 
-			this.pictureBox12.Cursor = System.Windows.Forms.Cursors.SizeAll;
-			this.pictureBox12.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
-			this.pictureBox12.Location = new System.Drawing.Point(2, 2);
-			this.pictureBox12.Name = "pictureBox12";
-			this.pictureBox12.Size = new System.Drawing.Size(167, 71);
-			this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox12.TabIndex = 2;
-			this.pictureBox12.TabStop = false;
-			// 
 			// label38
 			// 
 			this.label38.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -2294,7 +2280,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.label38.Name = "label38";
 			this.label38.Size = new System.Drawing.Size(167, 23);
 			this.label38.TabIndex = 0;
-			this.label38.Text = "Ảnh sau";
+			this.label38.Text = "Ảnh trước";
 			this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// panel26
@@ -2311,9 +2297,9 @@ using System; using System.Drawing; using System.Collections; using System
 			// 
 			// pictureBox11
 			// 
+			this.pictureBox11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox11.BackgroundImage")));
 			this.pictureBox11.Cursor = System.Windows.Forms.Cursors.SizeAll;
 			this.pictureBox11.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
 			this.pictureBox11.Location = new System.Drawing.Point(2, 2);
 			this.pictureBox11.Name = "pictureBox11";
 			this.pictureBox11.Size = new System.Drawing.Size(167, 71);
@@ -2438,9 +2424,9 @@ using System; using System.Drawing; using System.Collections; using System
 			// 
 			// tabPage3
 			// 
-			this.tabPage3.Location = new System.Drawing.Point(4, 22);
+			this.tabPage3.Location = new System.Drawing.Point(4, 27);
 			this.tabPage3.Name = "tabPage3";
-			this.tabPage3.Size = new System.Drawing.Size(976, 618);
+			this.tabPage3.Size = new System.Drawing.Size(976, 613);
 			this.tabPage3.TabIndex = 2;
 			this.tabPage3.Text = "Báo cáo ";
 			this.tabPage3.Visible = false;
@@ -2456,6 +2442,34 @@ using System; using System.Drawing; using System.Collections; using System
 			this.lbThongBao.Name = "lbThongBao";
 			this.lbThongBao.Size = new System.Drawing.Size(0, 22);
 			this.lbThongBao.TabIndex = 3;
+			// 
+			// pictureBox18
+			// 
+			this.pictureBox18.BackColor = System.Drawing.Color.LightGray;
+			this.pictureBox18.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox18.BackgroundImage")));
+			this.pictureBox18.Cursor = System.Windows.Forms.Cursors.SizeAll;
+			this.pictureBox18.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.pictureBox18.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.pictureBox18.Location = new System.Drawing.Point(2, 2);
+			this.pictureBox18.Name = "pictureBox18";
+			this.pictureBox18.Size = new System.Drawing.Size(167, 71);
+			this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox18.TabIndex = 2;
+			this.pictureBox18.TabStop = false;
+			// 
+			// pictureBox12
+			// 
+			this.pictureBox12.BackColor = System.Drawing.SystemColors.InactiveCaption;
+			this.pictureBox12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox12.BackgroundImage")));
+			this.pictureBox12.Cursor = System.Windows.Forms.Cursors.SizeAll;
+			this.pictureBox12.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.pictureBox12.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.pictureBox12.Location = new System.Drawing.Point(2, 2);
+			this.pictureBox12.Name = "pictureBox12";
+			this.pictureBox12.Size = new System.Drawing.Size(167, 71);
+			this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox12.TabIndex = 2;
+			this.pictureBox12.TabStop = false;
 			// 
 			// Form1
 			// 
@@ -2545,9 +2559,9 @@ using System; using System.Drawing; using System.Collections; using System
 		private void Form1_Load(object sender, System.EventArgs e)
 		{
 			//MessageBox.Show("OKKK");
-			this.pictureBox1.Click+=new EventHandler(ZoomImage);
-			this.pictureBox2.Click+=new EventHandler(ZoomImage);
-			this.pictureBox3.Click+=new EventHandler(ZoomImage); 			this.pictureBox4.Click+=new EventHandler(ZoomImage); 			this.pictureBox5.Click+=new EventHandler(ZoomImage); 			this.pictureBox6.Click+=new EventHandler(ZoomImage); 			this.pictureBox7.Click+=new EventHandler(ZoomImage); 			this.pictureBox8.Click+=new EventHandler(ZoomImage); 			this.pictureBox9.Click+=new EventHandler(ZoomImage); 			this.pictureBox10.Click+=new EventHandler(ZoomImage); 			this.pictureBox11.Click+=new EventHandler(ZoomImage); 			this.pictureBox12.Click+=new EventHandler(ZoomImage);
+//			this.pictureBox1.Click+=new EventHandler(ZoomImage);
+//			this.pictureBox2.Click+=new EventHandler(ZoomImage);
+//			this.pictureBox3.Click+=new EventHandler(ZoomImage); //			this.pictureBox4.Click+=new EventHandler(ZoomImage); //			this.pictureBox5.Click+=new EventHandler(ZoomImage); //			this.pictureBox6.Click+=new EventHandler(ZoomImage); //			this.pictureBox7.Click+=new EventHandler(ZoomImage); //			this.pictureBox8.Click+=new EventHandler(ZoomImage); //			this.pictureBox9.Click+=new EventHandler(ZoomImage); //			this.pictureBox10.Click+=new EventHandler(ZoomImage); 			this.pictureBox11.Click+=new EventHandler(ZoomImage); 			this.pictureBox12.Click+=new EventHandler(ZoomImage);
 			this.pictureBox13.Click+=new EventHandler(ZoomImage);
 			this.pictureBox14.Click+=new EventHandler(ZoomImage); 			this.pictureBox15.Click+=new EventHandler(ZoomImage); 			this.pictureBox16.Click+=new EventHandler(ZoomImage); 			this.pictureBox17.Click+=new EventHandler(ZoomImage); 			this.pictureBox18.Click+=new EventHandler(ZoomImage); 			this.pictureBox22.Click+=new EventHandler(ZoomImage); 			this.pictureBox20.Click+=new EventHandler(ZoomImage);	 			dtgKhachHang.ContextMenu = contextMenuGrid; 			//dtgKhachHang.Ed 			ResetControl();			 			LoadFormData();												 		}  		 		clsBusPersonal bus = new clsBusPersonal(); 		private void LoadFormData() 		{			 			SetMessage("",false); 			//string strConn = "Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=HRM_CHECKER;Data Source=QUYDA-PC;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=QUYDA-PC;Use Encryption for Data=False;Tag with column collation when possible=False"; 			//string strConn = "Server=QUYDA-PC;Database=HRM_CHECKER;Trusted_Connection=True"; 			//SqlConnection conn = new SqlConnection(strConn);			 			//SqlDataReader reader =  SqlHelper.ExecuteReader(conn,CommandType.Text,"Select * from tblKhachHang"); 			//DataSet ds = SqlHelper.ExecuteDataset(conn,CommandType.Text,"Select * from tblKhachHang"); 			DataSet ds = bus.LoadPersonal(); 			if(ds!=null && ds.Tables[0].Rows.Count > 0) 			{ 				dtgKhachHang.DataSource = AutoNumberedTable(ds.Tables[0]); 				//dtgKhachHang.SetDataBinding(AutoNumberedTable(ds.Tables[0]),"Customer"); 				//dtgKhachHang.DataMember = "MaKhachHang"; 				dtgKhachHang.TableStyles.Clear();  				if (! dtgKhachHang.TableStyles.Contains ("Style_Person"))
 				{				
@@ -2732,12 +2746,62 @@ using System; using System.Drawing; using System.Collections; using System
 				string thuNhap = "";
 				int maTK = 0;
 				string strError = "";
-				bus.InsertPersonal(strHoTen,strTenTat,strNgaySinh,GioiTinh,QuocTich,CMND,HoChieu,SoKhac,ngayCap,noiCap,dcLienHe,dcThuongTru,dcNuocNgoai,dtNha,dtCoQuan,HopThu,DiHoc,DiLam,tuKinhDoanh,nghiHuu,nganhNghe,chucVu,dtCoQuan,tenCoQuan,ttHonNhan,ttHocVan,thuNhap,maTK,ref strError);
+
+				string strCMNDCu_MatTruoc ="";
+				string strCMNDCu_MatSau ="";
+				string strCMNDCu_VanTay1 ="";
+				string strCMNDCu_VanTay2 ="";
+
+				string strCMNDMoi_MatTruoc ="";
+				string strCMNDMoi_MatSau ="";
+				string strCMNDMoi_VanTay1 ="";
+				string strCMNDMoi_VanTay2 ="";				
+
+				if(CMNDCu_MatTruoc != null)
+				{
+					strCMNDMoi_MatTruoc = CMND + "_CMNDCu_MatTruoc.jpg";
+					SaveImage(CMNDCu_MatTruoc, strCMNDMoi_MatTruoc);
+				}
+				if(CMNDCu_MatSau != null)
+				{
+					strCMNDCu_MatSau = CMND + "_CMNDCu_MatSau.jpg";
+					SaveImage(CMNDCu_MatTruoc, strCMNDCu_MatSau);
+				}
+				if(CMNDCu_VanTay1 != null)
+				{
+					strCMNDCu_VanTay1 = CMND + "_CMNDCu_VanTay1.jpg";
+					SaveImage(CMNDCu_VanTay1, strCMNDCu_VanTay1);
+				}
+				if(CMNDCu_VanTay2 != null)
+				{
+					strCMNDCu_VanTay2 = CMND + "_CMNDCu_VanTay2.jpg";
+					SaveImage(CMNDCu_VanTay2, strCMNDCu_VanTay2);
+				}
+				if(CMNDMoi_MatTruoc != null)
+				{
+					strCMNDMoi_MatTruoc = CMND + "_CMNDMoi_MatTruoc.jpg";
+					SaveImage(CMNDMoi_MatTruoc, strCMNDMoi_MatTruoc);
+				}
+				if(CMNDMoi_MatSau != null)
+				{
+					strCMNDMoi_MatSau = CMND + "_CMNDMoi_MatSau.jpg";
+					SaveImage(CMNDMoi_MatTruoc, strCMNDMoi_MatSau);
+				}
+				if(CMNDMoi_VanTay1 != null)
+				{
+					strCMNDMoi_VanTay1 = CMND + "_CMNDMoi_VanTay1.jpg";
+					SaveImage(CMNDMoi_VanTay1, strCMNDMoi_VanTay1);
+				}
+				if(CMNDMoi_VanTay2 != null)
+				{
+					strCMNDMoi_VanTay2 = CMND + "_CMNDMoi_VanTay2.jpg";
+					SaveImage(CMNDMoi_VanTay2, strCMNDMoi_VanTay2);
+				}
+
+				bus.InsertPersonal(strHoTen,strTenTat,strNgaySinh,GioiTinh,QuocTich,CMND,HoChieu,SoKhac,ngayCap,noiCap,dcLienHe,dcThuongTru,dcNuocNgoai,dtNha,dtCoQuan,HopThu,DiHoc,DiLam,tuKinhDoanh,nghiHuu,nganhNghe,chucVu,dtCoQuan,tenCoQuan,ttHonNhan,ttHocVan,thuNhap,maTK,strCMNDMoi_MatTruoc, strCMNDMoi_MatSau, strCMNDMoi_VanTay1, strCMNDMoi_VanTay2, strCMNDCu_MatTruoc, strCMNDCu_MatSau, strCMNDCu_VanTay1, strCMNDCu_VanTay2, ref strError);
 
 				if(strError =="")
 				{
-					SaveImage(pictureBox1, "abc.jpg");
-
 					SetMessage("Thêm khách hàng thành công!",false);
 				}
 				else
@@ -2751,13 +2815,21 @@ using System; using System.Drawing; using System.Collections; using System
 			}
 		}
 
-		string SVPath = @"D:\";
-		private Boolean SaveImage(PictureBox pic, string name)
+		private Boolean SaveImage(Image pic, string name)
 		{
-			string filename = SVPath +  name;
-			Bitmap bmp = new Bitmap(pic.Image);
-			bmp.Save(filename, System.Drawing.Imaging.ImageFormat.Jpeg);
-			return true;
+			try
+			{
+				string filename = SVPath +  name;
+				Bitmap bmp = new Bitmap(pic);
+				bmp.Save(filename, System.Drawing.Imaging.ImageFormat.Jpeg);
+				return true;
+			}
+			catch
+			{
+				MessageBox.Show("Chưa lưu được ảnh!");
+				return false;
+			}
+			
 		}
 
 		private void btSuaKH_Click(object sender, System.EventArgs e)
@@ -2802,11 +2874,60 @@ using System; using System.Drawing; using System.Collections; using System
 				string strError = "";
 				if(ma_khang_edit!="")
 				{
+					string strCMNDCu_MatTruoc ="";
+					string strCMNDCu_MatSau ="";
+					string strCMNDCu_VanTay1 ="";
+					string strCMNDCu_VanTay2 ="";
+
+					string strCMNDMoi_MatTruoc ="";
+					string strCMNDMoi_MatSau ="";
+					string strCMNDMoi_VanTay1 ="";
+					string strCMNDMoi_VanTay2 ="";				
+
+					if(CMNDCu_MatTruoc != null)
+					{
+						strCMNDMoi_MatTruoc = CMND + "_CMNDCu_MatTruoc.jpg";
+						SaveImage(CMNDCu_MatTruoc, strCMNDMoi_MatTruoc);
+					}
+					if(CMNDCu_MatSau != null)
+					{
+						strCMNDCu_MatSau = CMND + "_CMNDCu_MatSau.jpg";
+						SaveImage(CMNDCu_MatTruoc, strCMNDCu_MatSau);
+					}
+					if(CMNDCu_VanTay1 != null)
+					{
+						strCMNDCu_VanTay1 = CMND + "_CMNDCu_VanTay1.jpg";
+						SaveImage(CMNDCu_VanTay1, strCMNDCu_VanTay1);
+					}
+					if(CMNDCu_VanTay2 != null)
+					{
+						strCMNDCu_VanTay2 = CMND + "_CMNDCu_VanTay2.jpg";
+						SaveImage(CMNDCu_VanTay2, strCMNDCu_VanTay2);
+					}
+					if(CMNDMoi_MatTruoc != null)
+					{
+						strCMNDMoi_MatTruoc = CMND + "_CMNDMoi_MatTruoc.jpg";
+						SaveImage(CMNDMoi_MatTruoc, strCMNDMoi_MatTruoc);
+					}
+					if(CMNDMoi_MatSau != null)
+					{
+						strCMNDMoi_MatSau = CMND + "_CMNDMoi_MatSau.jpg";
+						SaveImage(CMNDMoi_MatTruoc, strCMNDMoi_MatSau);
+					}
+					if(CMNDMoi_VanTay1 != null)
+					{
+						strCMNDMoi_VanTay1 = CMND + "_CMNDMoi_VanTay1.jpg";
+						SaveImage(CMNDMoi_VanTay1, strCMNDMoi_VanTay1);
+					}
+					if(CMNDMoi_VanTay2 != null)
+					{
+						strCMNDMoi_VanTay2 = CMND + "_CMNDMoi_VanTay2.jpg";
+						SaveImage(CMNDMoi_VanTay2, strCMNDMoi_VanTay2);
+					}
+
 					bus.UpdatePersonal(ma_khang_edit,strHoTen,strTenTat,strNgaySinh,GioiTinh,QuocTich,CMND,HoChieu,SoKhac,ngayCap,noiCap,dcLienHe,dcThuongTru,dcNuocNgoai,dtNha,dtCoQuan,HopThu,DiHoc,DiLam,tuKinhDoanh,nghiHuu,nganhNghe,chucVu,dtCoQuan,tenCoQuan,ttHonNhan,ttHocVan,thuNhap,ref strError);
 					if(strError =="")
 					{
-						SaveImage(pictureBox1, "abc.jpg");
-
 						SetMessage("Thêm khách hàng thành công!",false);
 					}
 					else
@@ -2921,7 +3042,7 @@ using System; using System.Drawing; using System.Collections; using System
 				}
 
 			}
-			catch(Exception ex)
+			catch
 			{
 
 			}
@@ -3067,4 +3188,71 @@ using System; using System.Drawing; using System.Collections; using System
 			}	
 			
 		}
-	 	} } 
+
+		private void picCMNDCu_MatTruoc_Click(object sender, System.EventArgs e)
+		{
+			frmScan frm = new frmScan();
+			frm.SelectIndex = 1;
+			frm.ShowDialog();
+			GetID(frm, 0);
+		}
+
+		private void picCMNDCu_MatSau_Click(object sender, System.EventArgs e)
+		{
+			frmScan frm = new frmScan();
+			frm.SelectIndex = 2;
+			frm.ShowDialog();
+			GetID(frm, 0);			
+		}
+		private void picCMNDMoi_VanTay1_Click(object sender, System.EventArgs e)
+		{
+			frmScan frm = new frmScan();
+			frm.SelectIndex = 3;
+			frm.ShowDialog();
+			GetID(frm, 0);
+		}
+
+		private void picCMNDMoi_VanTay2_Click(object sender, System.EventArgs e)
+		{
+			frmScan frm = new frmScan();
+			frm.SelectIndex = 4;
+			frm.ShowDialog();
+			GetID(frm, 0);
+		}
+		private void picCMNDMoi_MatTruoc_Click(object sender, System.EventArgs e)
+		{
+			frmScan frm = new frmScan();
+			frm.SelectIndex = 1;
+			frm.ShowDialog();
+			GetID(frm, 1);
+		}
+
+		private void picCMNDMoi_MatSau_Click(object sender, System.EventArgs e)
+		{
+			frmScan frm = new frmScan();
+			frm.SelectIndex = 2;
+			frm.ShowDialog();
+			GetID(frm, 1);
+		}
+		private void picCMNDCu_VanTay1_Click(object sender, System.EventArgs e)
+		{
+			frmScan frm = new frmScan();
+			frm.SelectIndex = 3;
+			frm.ShowDialog();
+			GetID(frm, 1);
+		}
+
+		private void picCMNDCu_VanTay2_Click(object sender, System.EventArgs e)
+		{
+			frmScan frm = new frmScan();
+			frm.SelectIndex = 4;
+			frm.ShowDialog();
+			GetID(frm, 1);
+		}
+		void GetID(frmScan frm, int idversion) 		{ 			if(idversion == 0)//ID cũ 			{ 				CMNDCu_MatTruoc = frm.IDBefore; 				CMNDCu_MatSau = frm.IDAfter; 				CMNDCu_VanTay1 = frm.FP1;
+				CMNDCu_VanTay2 = frm.FP2; 				if(frm.IDBefore != null) 				{ 					picCMNDCu_MatTruoc.Image = frm.IDBefore; 				} 				if(frm.IDAfter != null) 				{ 					picCMNDCu_MatSau.Image = frm.IDAfter; 				} 				if(frm.FP1 != null) 				{ 					picCMNDCu_VanTay1.Image = frm.FP1; 				} 				if(frm.FP2 != null) 				{ 					picCMNDCu_VanTay2.Image = frm.FP2; 				} 			} 			else if(idversion == 1)//ID mới 			{ 				CMNDMoi_MatTruoc = frm.IDBefore; 				CMNDMoi_MatSau = frm.IDAfter; 				CMNDMoi_VanTay1 = frm.FP1;
+				CMNDMoi_VanTay2 = frm.FP2; 				if(frm.IDBefore != null) 				{ 					picCMNDMoi_MatTruoc.Image = frm.IDBefore; 				} 				if(frm.IDAfter != null) 				{ 					picCMNDMoi_MatSau.Image = frm.IDAfter; 				} 				if(frm.FP1 != null) 				{ 					picCMNDMoi_VanTay1.Image = frm.FP1; 				} 				if(frm.FP2 != null) 				{ 					picCMNDMoi_VanTay2.Image = frm.FP2; 				} 			} 		}
+
+		
+
+ 	} } 
