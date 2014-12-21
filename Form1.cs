@@ -1,4 +1,4 @@
-using System; using System.Drawing; using System.Collections; using System.ComponentModel; using System.Windows.Forms; using System.Data; using System.Data.SqlClient;   namespace HRM_CHECKER { 	/// <summary> 	/// Summary description for Form1. 	/// </summary> 	public class Form1 : System.Windows.Forms.Form 	{ 		
+using System; using System.Drawing; using System.Collections; using System.ComponentModel; using System.Windows.Forms; using System.Data; using System.Data.SqlClient; using System.IO;   namespace HRM_CHECKER { 	/// <summary> 	/// Summary description for Form1. 	/// </summary> 	public class Form1 : System.Windows.Forms.Form 	{ 		
 		string SVPath = @"E:\"; 		private System.Windows.Forms.ToolBar toolBar1; 		private System.Windows.Forms.ImageList imageList1;
 		private System.Windows.Forms.StatusBar statusBar1;
 		private System.Windows.Forms.TabControl tabControl1;
@@ -103,38 +103,30 @@ using System; using System.Drawing; using System.Collections; using System
 		private System.Windows.Forms.Panel panel24;
 		private System.Windows.Forms.Panel panel25;
 		private System.Windows.Forms.Panel panel26;
-		private System.Windows.Forms.PictureBox pictureBox11;
 		private System.Windows.Forms.Label label37;
 		private System.Windows.Forms.Panel panel27;
 		private System.Windows.Forms.Label label38;
 		private System.Windows.Forms.Panel panel28;
-		private System.Windows.Forms.PictureBox pictureBox13;
 		private System.Windows.Forms.Label label39;
 		private System.Windows.Forms.Panel panel29;
-		private System.Windows.Forms.PictureBox pictureBox14;
 		private System.Windows.Forms.Label label40;
 		private System.Windows.Forms.GroupBox groupBox9;
 		private System.Windows.Forms.Panel panel30;
 		private System.Windows.Forms.Panel panel31;
-		private System.Windows.Forms.PictureBox pictureBox15;
 		private System.Windows.Forms.Label label41;
 		private System.Windows.Forms.Panel panel32;
-		private System.Windows.Forms.PictureBox pictureBox16;
 		private System.Windows.Forms.Label label42;
 		private System.Windows.Forms.Panel panel33;
 		private System.Windows.Forms.Panel panel34;
-		private System.Windows.Forms.PictureBox pictureBox17;
 		private System.Windows.Forms.Label label43;
 		private System.Windows.Forms.Panel panel35;
 		private System.Windows.Forms.Label label44;
 		private System.Windows.Forms.GroupBox groupBox10;
 		private System.Windows.Forms.Panel panel36;
 		private System.Windows.Forms.Panel panel38;
-		private System.Windows.Forms.PictureBox pictureBox20;
 		private System.Windows.Forms.Label label46;
 		private System.Windows.Forms.Panel panel39;
 		private System.Windows.Forms.Panel panel41;
-		private System.Windows.Forms.PictureBox pictureBox22;
 		private System.Windows.Forms.Label label48;
 		private System.Windows.Forms.ErrorProvider errorProvider1;
 		private System.Windows.Forms.Label label45;
@@ -180,7 +172,6 @@ using System; using System.Drawing; using System.Collections; using System
 		private System.Windows.Forms.ToolBarButton tbbtBaoCao;
 		private System.Windows.Forms.ToolBarButton ttbtSepe;
 		private System.Windows.Forms.ToolBarButton tbbtBanQuyen;
-		private System.Windows.Forms.MenuItem menuItem1;
 		private System.Windows.Forms.Button btLamLai;
 		private System.Windows.Forms.Button btSuaKH; 		private System.ComponentModel.IContainer components;  		private Image CMNDMoi_MatTruoc = null; 		private Image CMNDMoi_MatSau = null; 		private Image CMNDMoi_VanTay1 = null; 		private Image CMNDMoi_VanTay2 = null; 		private Image CMNDCu_MatTruoc = null; 		private Image CMNDCu_MatSau = null; 		private Image CMNDCu_VanTay1 = null;
 		private Image CMNDCu_VanTay2 = null;
@@ -194,8 +185,17 @@ using System; using System.Drawing; using System.Collections; using System
 		private System.Windows.Forms.PictureBox picCMNDCu_VanTay1;
 		private System.Windows.Forms.PictureBox picCMNDMoi_VanTay2;
 		private System.Windows.Forms.PictureBox picCMNDMoi_VanTay1;
-		private System.Windows.Forms.PictureBox pictureBox18;
-		private System.Windows.Forms.PictureBox pictureBox12;  		public Form1() 		{ 			// 			// Required for Windows Form Designer support 			// 			InitializeComponent();  			// 			// TODO: Add any constructor code after InitializeComponent call 			// 		}  		/// <summary> 		/// Clean up any resources being used. 		/// </summary> 		protected override void Dispose( bool disposing ) 		{ 			if( disposing ) 			{ 				if (components != null)  				{ 					components.Dispose(); 				} 			} 			base.Dispose( disposing ); 		}  		#region Windows Form Designer generated code 		/// <summary> 		/// Required method for Designer support - do not modify 		/// the contents of this method with the code editor. 		/// </summary> 		private void InitializeComponent() 		{ 			this.components = new System.ComponentModel.Container();
+		private System.Windows.Forms.PictureBox picCMNDCu_VanTay2SS;
+		private System.Windows.Forms.PictureBox picCMNDCu_VanTay1SS;
+		private System.Windows.Forms.PictureBox picCMNDCu_MatTruocSS;
+		private System.Windows.Forms.PictureBox picCMNDCu_MatSauSS;
+		private System.Windows.Forms.PictureBox picCMNDMoi_VanTay2SS;
+		private System.Windows.Forms.PictureBox picCMNDMoi_VanTay1SS;
+		private System.Windows.Forms.PictureBox picCMNDMoi_MatSauSS;
+		private System.Windows.Forms.PictureBox picCMNDMoi_MatTruocSS;
+		private System.Windows.Forms.PictureBox picVanTaySong2SS;
+		private System.Windows.Forms.PictureBox picVanTaySong1SS;
+		private System.Windows.Forms.MenuItem menuItemChiTiet;  		public Form1() 		{ 			// 			// Required for Windows Form Designer support 			// 			InitializeComponent();  			// 			// TODO: Add any constructor code after InitializeComponent call 			// 		}  		/// <summary> 		/// Clean up any resources being used. 		/// </summary> 		protected override void Dispose( bool disposing ) 		{ 			if( disposing ) 			{ 				if (components != null)  				{ 					components.Dispose(); 				} 			} 			base.Dispose( disposing ); 		}  		#region Windows Form Designer generated code 		/// <summary> 		/// Required method for Designer support - do not modify 		/// the contents of this method with the code editor. 		/// </summary> 		private void InitializeComponent() 		{ 			this.components = new System.ComponentModel.Container();
 			System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(Form1));
 			this.toolBar1 = new System.Windows.Forms.ToolBar();
 			this.tbbtHeThong = new System.Windows.Forms.ToolBarButton();
@@ -330,7 +330,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel21 = new System.Windows.Forms.Panel();
 			this.dtgKhachHang = new System.Windows.Forms.DataGrid();
 			this.contextMenuGrid = new System.Windows.Forms.ContextMenu();
-			this.menuItem1 = new System.Windows.Forms.MenuItem();
+			this.menuItemChiTiet = new System.Windows.Forms.MenuItem();
 			this.menuItemThem = new System.Windows.Forms.MenuItem();
 			this.menuItemSua = new System.Windows.Forms.MenuItem();
 			this.menuItemXoa = new System.Windows.Forms.MenuItem();
@@ -342,39 +342,41 @@ using System; using System.Drawing; using System.Collections; using System
 			this.groupBox10 = new System.Windows.Forms.GroupBox();
 			this.panel36 = new System.Windows.Forms.Panel();
 			this.panel38 = new System.Windows.Forms.Panel();
-			this.pictureBox20 = new System.Windows.Forms.PictureBox();
+			this.picVanTaySong2SS = new System.Windows.Forms.PictureBox();
 			this.label46 = new System.Windows.Forms.Label();
 			this.panel39 = new System.Windows.Forms.Panel();
 			this.panel41 = new System.Windows.Forms.Panel();
-			this.pictureBox22 = new System.Windows.Forms.PictureBox();
+			this.picVanTaySong1SS = new System.Windows.Forms.PictureBox();
 			this.label48 = new System.Windows.Forms.Label();
 			this.groupBox9 = new System.Windows.Forms.GroupBox();
 			this.panel30 = new System.Windows.Forms.Panel();
 			this.panel31 = new System.Windows.Forms.Panel();
-			this.pictureBox15 = new System.Windows.Forms.PictureBox();
+			this.picCMNDMoi_VanTay2SS = new System.Windows.Forms.PictureBox();
 			this.label41 = new System.Windows.Forms.Label();
 			this.panel32 = new System.Windows.Forms.Panel();
-			this.pictureBox16 = new System.Windows.Forms.PictureBox();
+			this.picCMNDMoi_VanTay1SS = new System.Windows.Forms.PictureBox();
 			this.label42 = new System.Windows.Forms.Label();
 			this.panel33 = new System.Windows.Forms.Panel();
 			this.panel34 = new System.Windows.Forms.Panel();
-			this.pictureBox17 = new System.Windows.Forms.PictureBox();
+			this.picCMNDMoi_MatTruocSS = new System.Windows.Forms.PictureBox();
 			this.label43 = new System.Windows.Forms.Label();
 			this.panel35 = new System.Windows.Forms.Panel();
+			this.picCMNDMoi_MatSauSS = new System.Windows.Forms.PictureBox();
 			this.label44 = new System.Windows.Forms.Label();
 			this.groupBox8 = new System.Windows.Forms.GroupBox();
 			this.panel25 = new System.Windows.Forms.Panel();
 			this.panel29 = new System.Windows.Forms.Panel();
-			this.pictureBox14 = new System.Windows.Forms.PictureBox();
+			this.picCMNDCu_VanTay2SS = new System.Windows.Forms.PictureBox();
 			this.label40 = new System.Windows.Forms.Label();
 			this.panel28 = new System.Windows.Forms.Panel();
-			this.pictureBox13 = new System.Windows.Forms.PictureBox();
+			this.picCMNDCu_VanTay1SS = new System.Windows.Forms.PictureBox();
 			this.label39 = new System.Windows.Forms.Label();
 			this.panel24 = new System.Windows.Forms.Panel();
 			this.panel27 = new System.Windows.Forms.Panel();
+			this.picCMNDCu_MatTruocSS = new System.Windows.Forms.PictureBox();
 			this.label38 = new System.Windows.Forms.Label();
 			this.panel26 = new System.Windows.Forms.Panel();
-			this.pictureBox11 = new System.Windows.Forms.PictureBox();
+			this.picCMNDCu_MatSauSS = new System.Windows.Forms.PictureBox();
 			this.label37 = new System.Windows.Forms.Label();
 			this.splitter3 = new System.Windows.Forms.Splitter();
 			this.panel22 = new System.Windows.Forms.Panel();
@@ -389,8 +391,6 @@ using System; using System.Drawing; using System.Collections; using System
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.errorProvider1 = new System.Windows.Forms.ErrorProvider();
 			this.lbThongBao = new System.Windows.Forms.Label();
-			this.pictureBox18 = new System.Windows.Forms.PictureBox();
-			this.pictureBox12 = new System.Windows.Forms.PictureBox();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.panel2.SuspendLayout();
@@ -1802,23 +1802,25 @@ using System; using System.Drawing; using System.Collections; using System
 			this.dtgKhachHang.SelectionBackColor = System.Drawing.Color.LightGoldenrodYellow;
 			this.dtgKhachHang.Size = new System.Drawing.Size(976, 365);
 			this.dtgKhachHang.TabIndex = 0;
+			this.dtgKhachHang.Click += new System.EventHandler(this.dtgKhachHang_Click);
 			this.dtgKhachHang.CurrentCellChanged += new System.EventHandler(this.dtgKhachHang_CurrentCellChanged);
 			// 
 			// contextMenuGrid
 			// 
 			this.contextMenuGrid.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-																							this.menuItem1,
+																							this.menuItemChiTiet,
 																							this.menuItemThem,
 																							this.menuItemSua,
 																							this.menuItemXoa,
 																							this.menuItem3,
 																							this.menuItemLamMoi});
 			// 
-			// menuItem1
+			// menuItemChiTiet
 			// 
-			this.menuItem1.Index = 0;
-			this.menuItem1.Shortcut = System.Windows.Forms.Shortcut.F10;
-			this.menuItem1.Text = "Xem chi tiết";
+			this.menuItemChiTiet.Index = 0;
+			this.menuItemChiTiet.Shortcut = System.Windows.Forms.Shortcut.F10;
+			this.menuItemChiTiet.Text = "Xem chi tiết";
+			this.menuItemChiTiet.Click += new System.EventHandler(this.menuItemChiTiet_Click);
 			// 
 			// menuItemThem
 			// 
@@ -1913,7 +1915,7 @@ using System; using System.Drawing; using System.Collections; using System
 			// panel38
 			// 
 			this.panel38.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel38.Controls.Add(this.pictureBox20);
+			this.panel38.Controls.Add(this.picVanTaySong2SS);
 			this.panel38.Controls.Add(this.label46);
 			this.panel38.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel38.DockPadding.All = 2;
@@ -1922,17 +1924,17 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel38.Size = new System.Drawing.Size(173, 96);
 			this.panel38.TabIndex = 4;
 			// 
-			// pictureBox20
+			// picVanTaySong2SS
 			// 
-			this.pictureBox20.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox20.BackgroundImage")));
-			this.pictureBox20.Cursor = System.Windows.Forms.Cursors.SizeAll;
-			this.pictureBox20.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pictureBox20.Location = new System.Drawing.Point(2, 2);
-			this.pictureBox20.Name = "pictureBox20";
-			this.pictureBox20.Size = new System.Drawing.Size(167, 67);
-			this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox20.TabIndex = 2;
-			this.pictureBox20.TabStop = false;
+			this.picVanTaySong2SS.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picVanTaySong2SS.BackgroundImage")));
+			this.picVanTaySong2SS.Cursor = System.Windows.Forms.Cursors.SizeAll;
+			this.picVanTaySong2SS.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.picVanTaySong2SS.Location = new System.Drawing.Point(2, 2);
+			this.picVanTaySong2SS.Name = "picVanTaySong2SS";
+			this.picVanTaySong2SS.Size = new System.Drawing.Size(167, 67);
+			this.picVanTaySong2SS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.picVanTaySong2SS.TabIndex = 2;
+			this.picVanTaySong2SS.TabStop = false;
 			// 
 			// label46
 			// 
@@ -1958,7 +1960,7 @@ using System; using System.Drawing; using System.Collections; using System
 			// panel41
 			// 
 			this.panel41.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel41.Controls.Add(this.pictureBox22);
+			this.panel41.Controls.Add(this.picVanTaySong1SS);
 			this.panel41.Controls.Add(this.label48);
 			this.panel41.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel41.DockPadding.All = 2;
@@ -1967,17 +1969,17 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel41.Size = new System.Drawing.Size(173, 100);
 			this.panel41.TabIndex = 4;
 			// 
-			// pictureBox22
+			// picVanTaySong1SS
 			// 
-			this.pictureBox22.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox22.BackgroundImage")));
-			this.pictureBox22.Cursor = System.Windows.Forms.Cursors.SizeAll;
-			this.pictureBox22.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pictureBox22.Location = new System.Drawing.Point(2, 2);
-			this.pictureBox22.Name = "pictureBox22";
-			this.pictureBox22.Size = new System.Drawing.Size(167, 71);
-			this.pictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox22.TabIndex = 2;
-			this.pictureBox22.TabStop = false;
+			this.picVanTaySong1SS.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picVanTaySong1SS.BackgroundImage")));
+			this.picVanTaySong1SS.Cursor = System.Windows.Forms.Cursors.SizeAll;
+			this.picVanTaySong1SS.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.picVanTaySong1SS.Location = new System.Drawing.Point(2, 2);
+			this.picVanTaySong1SS.Name = "picVanTaySong1SS";
+			this.picVanTaySong1SS.Size = new System.Drawing.Size(167, 71);
+			this.picVanTaySong1SS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.picVanTaySong1SS.TabIndex = 2;
+			this.picVanTaySong1SS.TabStop = false;
 			// 
 			// label48
 			// 
@@ -2018,7 +2020,7 @@ using System; using System.Drawing; using System.Collections; using System
 			// panel31
 			// 
 			this.panel31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel31.Controls.Add(this.pictureBox15);
+			this.panel31.Controls.Add(this.picCMNDMoi_VanTay2SS);
 			this.panel31.Controls.Add(this.label41);
 			this.panel31.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel31.DockPadding.All = 2;
@@ -2027,17 +2029,17 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel31.Size = new System.Drawing.Size(173, 96);
 			this.panel31.TabIndex = 5;
 			// 
-			// pictureBox15
+			// picCMNDMoi_VanTay2SS
 			// 
-			this.pictureBox15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox15.BackgroundImage")));
-			this.pictureBox15.Cursor = System.Windows.Forms.Cursors.SizeAll;
-			this.pictureBox15.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pictureBox15.Location = new System.Drawing.Point(2, 2);
-			this.pictureBox15.Name = "pictureBox15";
-			this.pictureBox15.Size = new System.Drawing.Size(167, 67);
-			this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox15.TabIndex = 2;
-			this.pictureBox15.TabStop = false;
+			this.picCMNDMoi_VanTay2SS.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picCMNDMoi_VanTay2SS.BackgroundImage")));
+			this.picCMNDMoi_VanTay2SS.Cursor = System.Windows.Forms.Cursors.SizeAll;
+			this.picCMNDMoi_VanTay2SS.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.picCMNDMoi_VanTay2SS.Location = new System.Drawing.Point(2, 2);
+			this.picCMNDMoi_VanTay2SS.Name = "picCMNDMoi_VanTay2SS";
+			this.picCMNDMoi_VanTay2SS.Size = new System.Drawing.Size(167, 67);
+			this.picCMNDMoi_VanTay2SS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.picCMNDMoi_VanTay2SS.TabIndex = 2;
+			this.picCMNDMoi_VanTay2SS.TabStop = false;
 			// 
 			// label41
 			// 
@@ -2053,7 +2055,7 @@ using System; using System.Drawing; using System.Collections; using System
 			// panel32
 			// 
 			this.panel32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel32.Controls.Add(this.pictureBox16);
+			this.panel32.Controls.Add(this.picCMNDMoi_VanTay1SS);
 			this.panel32.Controls.Add(this.label42);
 			this.panel32.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel32.DockPadding.All = 2;
@@ -2062,17 +2064,17 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel32.Size = new System.Drawing.Size(173, 96);
 			this.panel32.TabIndex = 4;
 			// 
-			// pictureBox16
+			// picCMNDMoi_VanTay1SS
 			// 
-			this.pictureBox16.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox16.BackgroundImage")));
-			this.pictureBox16.Cursor = System.Windows.Forms.Cursors.SizeAll;
-			this.pictureBox16.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pictureBox16.Location = new System.Drawing.Point(2, 2);
-			this.pictureBox16.Name = "pictureBox16";
-			this.pictureBox16.Size = new System.Drawing.Size(167, 67);
-			this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox16.TabIndex = 2;
-			this.pictureBox16.TabStop = false;
+			this.picCMNDMoi_VanTay1SS.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picCMNDMoi_VanTay1SS.BackgroundImage")));
+			this.picCMNDMoi_VanTay1SS.Cursor = System.Windows.Forms.Cursors.SizeAll;
+			this.picCMNDMoi_VanTay1SS.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.picCMNDMoi_VanTay1SS.Location = new System.Drawing.Point(2, 2);
+			this.picCMNDMoi_VanTay1SS.Name = "picCMNDMoi_VanTay1SS";
+			this.picCMNDMoi_VanTay1SS.Size = new System.Drawing.Size(167, 67);
+			this.picCMNDMoi_VanTay1SS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.picCMNDMoi_VanTay1SS.TabIndex = 2;
+			this.picCMNDMoi_VanTay1SS.TabStop = false;
 			// 
 			// label42
 			// 
@@ -2099,7 +2101,7 @@ using System; using System.Drawing; using System.Collections; using System
 			// panel34
 			// 
 			this.panel34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel34.Controls.Add(this.pictureBox17);
+			this.panel34.Controls.Add(this.picCMNDMoi_MatTruocSS);
 			this.panel34.Controls.Add(this.label43);
 			this.panel34.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel34.DockPadding.All = 2;
@@ -2108,17 +2110,17 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel34.Size = new System.Drawing.Size(173, 100);
 			this.panel34.TabIndex = 5;
 			// 
-			// pictureBox17
+			// picCMNDMoi_MatTruocSS
 			// 
-			this.pictureBox17.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox17.BackgroundImage")));
-			this.pictureBox17.Cursor = System.Windows.Forms.Cursors.SizeAll;
-			this.pictureBox17.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pictureBox17.Location = new System.Drawing.Point(2, 2);
-			this.pictureBox17.Name = "pictureBox17";
-			this.pictureBox17.Size = new System.Drawing.Size(167, 71);
-			this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox17.TabIndex = 2;
-			this.pictureBox17.TabStop = false;
+			this.picCMNDMoi_MatTruocSS.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picCMNDMoi_MatTruocSS.BackgroundImage")));
+			this.picCMNDMoi_MatTruocSS.Cursor = System.Windows.Forms.Cursors.SizeAll;
+			this.picCMNDMoi_MatTruocSS.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.picCMNDMoi_MatTruocSS.Location = new System.Drawing.Point(2, 2);
+			this.picCMNDMoi_MatTruocSS.Name = "picCMNDMoi_MatTruocSS";
+			this.picCMNDMoi_MatTruocSS.Size = new System.Drawing.Size(167, 71);
+			this.picCMNDMoi_MatTruocSS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.picCMNDMoi_MatTruocSS.TabIndex = 2;
+			this.picCMNDMoi_MatTruocSS.TabStop = false;
 			// 
 			// label43
 			// 
@@ -2134,7 +2136,7 @@ using System; using System.Drawing; using System.Collections; using System
 			// panel35
 			// 
 			this.panel35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel35.Controls.Add(this.pictureBox18);
+			this.panel35.Controls.Add(this.picCMNDMoi_MatSauSS);
 			this.panel35.Controls.Add(this.label44);
 			this.panel35.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel35.DockPadding.All = 2;
@@ -2142,6 +2144,20 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel35.Name = "panel35";
 			this.panel35.Size = new System.Drawing.Size(173, 100);
 			this.panel35.TabIndex = 4;
+			// 
+			// picCMNDMoi_MatSauSS
+			// 
+			this.picCMNDMoi_MatSauSS.BackColor = System.Drawing.Color.LightGray;
+			this.picCMNDMoi_MatSauSS.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picCMNDMoi_MatSauSS.BackgroundImage")));
+			this.picCMNDMoi_MatSauSS.Cursor = System.Windows.Forms.Cursors.SizeAll;
+			this.picCMNDMoi_MatSauSS.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.picCMNDMoi_MatSauSS.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.picCMNDMoi_MatSauSS.Location = new System.Drawing.Point(2, 2);
+			this.picCMNDMoi_MatSauSS.Name = "picCMNDMoi_MatSauSS";
+			this.picCMNDMoi_MatSauSS.Size = new System.Drawing.Size(167, 71);
+			this.picCMNDMoi_MatSauSS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.picCMNDMoi_MatSauSS.TabIndex = 2;
+			this.picCMNDMoi_MatSauSS.TabStop = false;
 			// 
 			// label44
 			// 
@@ -2182,7 +2198,7 @@ using System; using System.Drawing; using System.Collections; using System
 			// panel29
 			// 
 			this.panel29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel29.Controls.Add(this.pictureBox14);
+			this.panel29.Controls.Add(this.picCMNDCu_VanTay2SS);
 			this.panel29.Controls.Add(this.label40);
 			this.panel29.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel29.DockPadding.All = 2;
@@ -2191,17 +2207,17 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel29.Size = new System.Drawing.Size(173, 96);
 			this.panel29.TabIndex = 5;
 			// 
-			// pictureBox14
+			// picCMNDCu_VanTay2SS
 			// 
-			this.pictureBox14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox14.BackgroundImage")));
-			this.pictureBox14.Cursor = System.Windows.Forms.Cursors.SizeAll;
-			this.pictureBox14.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pictureBox14.Location = new System.Drawing.Point(2, 2);
-			this.pictureBox14.Name = "pictureBox14";
-			this.pictureBox14.Size = new System.Drawing.Size(167, 67);
-			this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox14.TabIndex = 2;
-			this.pictureBox14.TabStop = false;
+			this.picCMNDCu_VanTay2SS.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picCMNDCu_VanTay2SS.BackgroundImage")));
+			this.picCMNDCu_VanTay2SS.Cursor = System.Windows.Forms.Cursors.SizeAll;
+			this.picCMNDCu_VanTay2SS.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.picCMNDCu_VanTay2SS.Location = new System.Drawing.Point(2, 2);
+			this.picCMNDCu_VanTay2SS.Name = "picCMNDCu_VanTay2SS";
+			this.picCMNDCu_VanTay2SS.Size = new System.Drawing.Size(167, 67);
+			this.picCMNDCu_VanTay2SS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.picCMNDCu_VanTay2SS.TabIndex = 2;
+			this.picCMNDCu_VanTay2SS.TabStop = false;
 			// 
 			// label40
 			// 
@@ -2217,7 +2233,7 @@ using System; using System.Drawing; using System.Collections; using System
 			// panel28
 			// 
 			this.panel28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel28.Controls.Add(this.pictureBox13);
+			this.panel28.Controls.Add(this.picCMNDCu_VanTay1SS);
 			this.panel28.Controls.Add(this.label39);
 			this.panel28.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel28.DockPadding.All = 2;
@@ -2226,17 +2242,17 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel28.Size = new System.Drawing.Size(173, 96);
 			this.panel28.TabIndex = 4;
 			// 
-			// pictureBox13
+			// picCMNDCu_VanTay1SS
 			// 
-			this.pictureBox13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox13.BackgroundImage")));
-			this.pictureBox13.Cursor = System.Windows.Forms.Cursors.SizeAll;
-			this.pictureBox13.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pictureBox13.Location = new System.Drawing.Point(2, 2);
-			this.pictureBox13.Name = "pictureBox13";
-			this.pictureBox13.Size = new System.Drawing.Size(167, 67);
-			this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox13.TabIndex = 2;
-			this.pictureBox13.TabStop = false;
+			this.picCMNDCu_VanTay1SS.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picCMNDCu_VanTay1SS.BackgroundImage")));
+			this.picCMNDCu_VanTay1SS.Cursor = System.Windows.Forms.Cursors.SizeAll;
+			this.picCMNDCu_VanTay1SS.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.picCMNDCu_VanTay1SS.Location = new System.Drawing.Point(2, 2);
+			this.picCMNDCu_VanTay1SS.Name = "picCMNDCu_VanTay1SS";
+			this.picCMNDCu_VanTay1SS.Size = new System.Drawing.Size(167, 67);
+			this.picCMNDCu_VanTay1SS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.picCMNDCu_VanTay1SS.TabIndex = 2;
+			this.picCMNDCu_VanTay1SS.TabStop = false;
 			// 
 			// label39
 			// 
@@ -2263,7 +2279,7 @@ using System; using System.Drawing; using System.Collections; using System
 			// panel27
 			// 
 			this.panel27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel27.Controls.Add(this.pictureBox12);
+			this.panel27.Controls.Add(this.picCMNDCu_MatTruocSS);
 			this.panel27.Controls.Add(this.label38);
 			this.panel27.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel27.DockPadding.All = 2;
@@ -2271,6 +2287,20 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel27.Name = "panel27";
 			this.panel27.Size = new System.Drawing.Size(173, 100);
 			this.panel27.TabIndex = 5;
+			// 
+			// picCMNDCu_MatTruocSS
+			// 
+			this.picCMNDCu_MatTruocSS.BackColor = System.Drawing.SystemColors.InactiveCaption;
+			this.picCMNDCu_MatTruocSS.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picCMNDCu_MatTruocSS.BackgroundImage")));
+			this.picCMNDCu_MatTruocSS.Cursor = System.Windows.Forms.Cursors.SizeAll;
+			this.picCMNDCu_MatTruocSS.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.picCMNDCu_MatTruocSS.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.picCMNDCu_MatTruocSS.Location = new System.Drawing.Point(2, 2);
+			this.picCMNDCu_MatTruocSS.Name = "picCMNDCu_MatTruocSS";
+			this.picCMNDCu_MatTruocSS.Size = new System.Drawing.Size(167, 71);
+			this.picCMNDCu_MatTruocSS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.picCMNDCu_MatTruocSS.TabIndex = 2;
+			this.picCMNDCu_MatTruocSS.TabStop = false;
 			// 
 			// label38
 			// 
@@ -2286,7 +2316,7 @@ using System; using System.Drawing; using System.Collections; using System
 			// panel26
 			// 
 			this.panel26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel26.Controls.Add(this.pictureBox11);
+			this.panel26.Controls.Add(this.picCMNDCu_MatSauSS);
 			this.panel26.Controls.Add(this.label37);
 			this.panel26.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel26.DockPadding.All = 2;
@@ -2295,17 +2325,17 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel26.Size = new System.Drawing.Size(173, 100);
 			this.panel26.TabIndex = 4;
 			// 
-			// pictureBox11
+			// picCMNDCu_MatSauSS
 			// 
-			this.pictureBox11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox11.BackgroundImage")));
-			this.pictureBox11.Cursor = System.Windows.Forms.Cursors.SizeAll;
-			this.pictureBox11.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pictureBox11.Location = new System.Drawing.Point(2, 2);
-			this.pictureBox11.Name = "pictureBox11";
-			this.pictureBox11.Size = new System.Drawing.Size(167, 71);
-			this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox11.TabIndex = 2;
-			this.pictureBox11.TabStop = false;
+			this.picCMNDCu_MatSauSS.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picCMNDCu_MatSauSS.BackgroundImage")));
+			this.picCMNDCu_MatSauSS.Cursor = System.Windows.Forms.Cursors.SizeAll;
+			this.picCMNDCu_MatSauSS.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.picCMNDCu_MatSauSS.Location = new System.Drawing.Point(2, 2);
+			this.picCMNDCu_MatSauSS.Name = "picCMNDCu_MatSauSS";
+			this.picCMNDCu_MatSauSS.Size = new System.Drawing.Size(167, 71);
+			this.picCMNDCu_MatSauSS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.picCMNDCu_MatSauSS.TabIndex = 2;
+			this.picCMNDCu_MatSauSS.TabStop = false;
 			// 
 			// label37
 			// 
@@ -2424,9 +2454,9 @@ using System; using System.Drawing; using System.Collections; using System
 			// 
 			// tabPage3
 			// 
-			this.tabPage3.Location = new System.Drawing.Point(4, 27);
+			this.tabPage3.Location = new System.Drawing.Point(4, 22);
 			this.tabPage3.Name = "tabPage3";
-			this.tabPage3.Size = new System.Drawing.Size(976, 613);
+			this.tabPage3.Size = new System.Drawing.Size(976, 618);
 			this.tabPage3.TabIndex = 2;
 			this.tabPage3.Text = "Báo cáo ";
 			this.tabPage3.Visible = false;
@@ -2442,34 +2472,6 @@ using System; using System.Drawing; using System.Collections; using System
 			this.lbThongBao.Name = "lbThongBao";
 			this.lbThongBao.Size = new System.Drawing.Size(0, 22);
 			this.lbThongBao.TabIndex = 3;
-			// 
-			// pictureBox18
-			// 
-			this.pictureBox18.BackColor = System.Drawing.Color.LightGray;
-			this.pictureBox18.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox18.BackgroundImage")));
-			this.pictureBox18.Cursor = System.Windows.Forms.Cursors.SizeAll;
-			this.pictureBox18.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pictureBox18.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.pictureBox18.Location = new System.Drawing.Point(2, 2);
-			this.pictureBox18.Name = "pictureBox18";
-			this.pictureBox18.Size = new System.Drawing.Size(167, 71);
-			this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox18.TabIndex = 2;
-			this.pictureBox18.TabStop = false;
-			// 
-			// pictureBox12
-			// 
-			this.pictureBox12.BackColor = System.Drawing.SystemColors.InactiveCaption;
-			this.pictureBox12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox12.BackgroundImage")));
-			this.pictureBox12.Cursor = System.Windows.Forms.Cursors.SizeAll;
-			this.pictureBox12.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pictureBox12.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.pictureBox12.Location = new System.Drawing.Point(2, 2);
-			this.pictureBox12.Name = "pictureBox12";
-			this.pictureBox12.Size = new System.Drawing.Size(167, 71);
-			this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox12.TabIndex = 2;
-			this.pictureBox12.TabStop = false;
 			// 
 			// Form1
 			// 
@@ -2561,9 +2563,9 @@ using System; using System.Drawing; using System.Collections; using System
 			//MessageBox.Show("OKKK");
 //			this.pictureBox1.Click+=new EventHandler(ZoomImage);
 //			this.pictureBox2.Click+=new EventHandler(ZoomImage);
-//			this.pictureBox3.Click+=new EventHandler(ZoomImage); //			this.pictureBox4.Click+=new EventHandler(ZoomImage); //			this.pictureBox5.Click+=new EventHandler(ZoomImage); //			this.pictureBox6.Click+=new EventHandler(ZoomImage); //			this.pictureBox7.Click+=new EventHandler(ZoomImage); //			this.pictureBox8.Click+=new EventHandler(ZoomImage); //			this.pictureBox9.Click+=new EventHandler(ZoomImage); //			this.pictureBox10.Click+=new EventHandler(ZoomImage); 			this.pictureBox11.Click+=new EventHandler(ZoomImage); 			this.pictureBox12.Click+=new EventHandler(ZoomImage);
-			this.pictureBox13.Click+=new EventHandler(ZoomImage);
-			this.pictureBox14.Click+=new EventHandler(ZoomImage); 			this.pictureBox15.Click+=new EventHandler(ZoomImage); 			this.pictureBox16.Click+=new EventHandler(ZoomImage); 			this.pictureBox17.Click+=new EventHandler(ZoomImage); 			this.pictureBox18.Click+=new EventHandler(ZoomImage); 			this.pictureBox22.Click+=new EventHandler(ZoomImage); 			this.pictureBox20.Click+=new EventHandler(ZoomImage);	 			dtgKhachHang.ContextMenu = contextMenuGrid; 			//dtgKhachHang.Ed 			ResetControl();			 			LoadFormData();												 		}  		 		clsBusPersonal bus = new clsBusPersonal(); 		private void LoadFormData() 		{			 			SetMessage("",false); 			//string strConn = "Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=HRM_CHECKER;Data Source=QUYDA-PC;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=QUYDA-PC;Use Encryption for Data=False;Tag with column collation when possible=False"; 			//string strConn = "Server=QUYDA-PC;Database=HRM_CHECKER;Trusted_Connection=True"; 			//SqlConnection conn = new SqlConnection(strConn);			 			//SqlDataReader reader =  SqlHelper.ExecuteReader(conn,CommandType.Text,"Select * from tblKhachHang"); 			//DataSet ds = SqlHelper.ExecuteDataset(conn,CommandType.Text,"Select * from tblKhachHang"); 			DataSet ds = bus.LoadPersonal(); 			if(ds!=null && ds.Tables[0].Rows.Count > 0) 			{ 				dtgKhachHang.DataSource = AutoNumberedTable(ds.Tables[0]); 				//dtgKhachHang.SetDataBinding(AutoNumberedTable(ds.Tables[0]),"Customer"); 				//dtgKhachHang.DataMember = "MaKhachHang"; 				dtgKhachHang.TableStyles.Clear();  				if (! dtgKhachHang.TableStyles.Contains ("Style_Person"))
+//			this.pictureBox3.Click+=new EventHandler(ZoomImage); //			this.pictureBox4.Click+=new EventHandler(ZoomImage); //			this.pictureBox5.Click+=new EventHandler(ZoomImage); //			this.pictureBox6.Click+=new EventHandler(ZoomImage); //			this.pictureBox7.Click+=new EventHandler(ZoomImage); //			this.pictureBox8.Click+=new EventHandler(ZoomImage); //			this.pictureBox9.Click+=new EventHandler(ZoomImage); //			this.pictureBox10.Click+=new EventHandler(ZoomImage); //			this.pictureBox11.Click+=new EventHandler(ZoomImage); //			this.pictureBox12.Click+=new EventHandler(ZoomImage);
+//			this.pictureBox13.Click+=new EventHandler(ZoomImage);
+//			this.pictureBox14.Click+=new EventHandler(ZoomImage); //			this.pictureBox15.Click+=new EventHandler(ZoomImage); //			this.pictureBox16.Click+=new EventHandler(ZoomImage); //			this.pictureBox17.Click+=new EventHandler(ZoomImage); //			this.pictureBox18.Click+=new EventHandler(ZoomImage); //			this.pictureBox22.Click+=new EventHandler(ZoomImage); //			this.pictureBox20.Click+=new EventHandler(ZoomImage);	 			dtgKhachHang.ContextMenu = contextMenuGrid; 			//dtgKhachHang.Ed 			ResetControl();			 			LoadFormData();												 		}  		 		clsBusPersonal bus = new clsBusPersonal(); 		private void LoadFormData() 		{			 			SetMessage("",false); 			//string strConn = "Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=HRM_CHECKER;Data Source=QUYDA-PC;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=QUYDA-PC;Use Encryption for Data=False;Tag with column collation when possible=False"; 			//string strConn = "Server=QUYDA-PC;Database=HRM_CHECKER;Trusted_Connection=True"; 			//SqlConnection conn = new SqlConnection(strConn);			 			//SqlDataReader reader =  SqlHelper.ExecuteReader(conn,CommandType.Text,"Select * from tblKhachHang"); 			//DataSet ds = SqlHelper.ExecuteDataset(conn,CommandType.Text,"Select * from tblKhachHang"); 			DataSet ds = bus.LoadPersonal(); 			if(ds!=null && ds.Tables[0].Rows.Count > 0) 			{ 				dtgKhachHang.DataSource = AutoNumberedTable(ds.Tables[0]); 				//dtgKhachHang.SetDataBinding(AutoNumberedTable(ds.Tables[0]),"Customer"); 				//dtgKhachHang.DataMember = "MaKhachHang"; 				dtgKhachHang.TableStyles.Clear();  				if (! dtgKhachHang.TableStyles.Contains ("Style_Person"))
 				{				
 					DataGridTableStyle dbgStyle = new DataGridTableStyle ();
 					dbgStyle.MappingName = ds.Tables[0].TableName;
@@ -2759,13 +2761,13 @@ using System; using System.Drawing; using System.Collections; using System
 
 				if(CMNDCu_MatTruoc != null)
 				{
-					strCMNDMoi_MatTruoc = CMND + "_CMNDCu_MatTruoc.jpg";
-					SaveImage(CMNDCu_MatTruoc, strCMNDMoi_MatTruoc);
+					strCMNDCu_MatTruoc = CMND + "_CMNDCu_MatTruoc.jpg";
+					SaveImage(CMNDCu_MatTruoc, strCMNDCu_MatTruoc);
 				}
 				if(CMNDCu_MatSau != null)
 				{
 					strCMNDCu_MatSau = CMND + "_CMNDCu_MatSau.jpg";
-					SaveImage(CMNDCu_MatTruoc, strCMNDCu_MatSau);
+					SaveImage(CMNDCu_MatSau, strCMNDCu_MatSau);
 				}
 				if(CMNDCu_VanTay1 != null)
 				{
@@ -2785,7 +2787,7 @@ using System; using System.Drawing; using System.Collections; using System
 				if(CMNDMoi_MatSau != null)
 				{
 					strCMNDMoi_MatSau = CMND + "_CMNDMoi_MatSau.jpg";
-					SaveImage(CMNDMoi_MatTruoc, strCMNDMoi_MatSau);
+					SaveImage(CMNDMoi_MatSau, strCMNDMoi_MatSau);
 				}
 				if(CMNDMoi_VanTay1 != null)
 				{
@@ -2886,13 +2888,13 @@ using System; using System.Drawing; using System.Collections; using System
 
 					if(CMNDCu_MatTruoc != null)
 					{
-						strCMNDMoi_MatTruoc = CMND + "_CMNDCu_MatTruoc.jpg";
-						SaveImage(CMNDCu_MatTruoc, strCMNDMoi_MatTruoc);
+						strCMNDCu_MatTruoc = CMND + "_CMNDCu_MatTruoc.jpg";
+						SaveImage(CMNDCu_MatTruoc, strCMNDCu_MatTruoc);
 					}
 					if(CMNDCu_MatSau != null)
 					{
 						strCMNDCu_MatSau = CMND + "_CMNDCu_MatSau.jpg";
-						SaveImage(CMNDCu_MatTruoc, strCMNDCu_MatSau);
+						SaveImage(CMNDCu_MatSau, strCMNDCu_MatSau);
 					}
 					if(CMNDCu_VanTay1 != null)
 					{
@@ -2912,7 +2914,7 @@ using System; using System.Drawing; using System.Collections; using System
 					if(CMNDMoi_MatSau != null)
 					{
 						strCMNDMoi_MatSau = CMND + "_CMNDMoi_MatSau.jpg";
-						SaveImage(CMNDMoi_MatTruoc, strCMNDMoi_MatSau);
+						SaveImage(CMNDMoi_MatSau, strCMNDMoi_MatSau);
 					}
 					if(CMNDMoi_VanTay1 != null)
 					{
@@ -2975,6 +2977,18 @@ using System; using System.Drawing; using System.Collections; using System
 						tb.Text = "";
 					}
 				}
+				CMNDMoi_MatTruoc = null; 				CMNDMoi_MatSau = null; 				CMNDMoi_VanTay1 = null; 				CMNDMoi_VanTay2 = null; 				CMNDCu_MatTruoc = null; 				CMNDCu_MatSau = null; 				CMNDCu_VanTay1 = null;
+				CMNDCu_VanTay2 = null;
+				//
+				picCMNDMoi_MatTruoc.Image = null; 				picCMNDMoi_MatSau.Image = null; 				picCMNDMoi_VanTay1.Image = null; 				picCMNDMoi_VanTay2.Image = null; 				picCMNDCu_MatTruoc.Image = null; 				picCMNDCu_MatSau.Image = null; 				picCMNDCu_VanTay1.Image = null;
+				picCMNDCu_VanTay2.Image = null;
+				picVanTaySong1.Image = null;
+				picVanTaySong2.Image = null;
+				//
+				picCMNDMoi_MatTruocSS.Image = null; 				picCMNDMoi_MatSauSS.Image = null; 				picCMNDMoi_VanTay1SS.Image = null; 				picCMNDMoi_VanTay2SS.Image = null; 				picCMNDCu_MatTruocSS.Image = null; 				picCMNDCu_MatSauSS.Image = null; 				picCMNDCu_VanTay1SS.Image = null;
+				picCMNDCu_VanTay2SS.Image = null;
+				picVanTaySong1SS.Image = null;
+				picVanTaySong2SS.Image = null;
 			}
 			catch(Exception ex)
 			{
@@ -3039,6 +3053,72 @@ using System; using System.Drawing; using System.Collections; using System
 					//ttHonNhan = "";
 					//ttHocVan = "";
 					//thuNhap = "";
+					//
+					if(File.Exists(SVPath + tblKhachHang.Rows[0]["CMNDCu_MatTruoc"].ToString()))
+					{
+						using (System.IO.FileStream fs = new System.IO.FileStream(SVPath + tblKhachHang.Rows[0]["CMNDCu_MatTruoc"].ToString(), FileMode.Open))
+						{
+							Bitmap bmp = new Bitmap(fs);
+							picCMNDCu_MatTruoc.Image = (Bitmap)bmp.Clone();
+						}	
+					}
+					if(File.Exists(SVPath + tblKhachHang.Rows[0]["CMNDCu_MatSau"].ToString()))
+					{
+						using (System.IO.FileStream fs = new System.IO.FileStream(SVPath + tblKhachHang.Rows[0]["CMNDCu_MatSau"].ToString(), FileMode.Open))
+						{
+							Bitmap bmp = new Bitmap(fs);
+							picCMNDCu_MatSau.Image = (Bitmap)bmp.Clone();
+						}	
+					}
+					if(File.Exists(SVPath + tblKhachHang.Rows[0]["CMNDCu_VanTay1"].ToString()))
+					{
+						using (System.IO.FileStream fs = new System.IO.FileStream(SVPath + tblKhachHang.Rows[0]["CMNDCu_VanTay1"].ToString(), FileMode.Open))
+						{
+							Bitmap bmp = new Bitmap(fs);
+							picCMNDCu_VanTay1.Image = (Bitmap)bmp.Clone();
+						}	
+					}
+					if(File.Exists(SVPath + tblKhachHang.Rows[0]["CMNDCu_VanTay2"].ToString()))
+					{
+						using (System.IO.FileStream fs = new System.IO.FileStream(SVPath + tblKhachHang.Rows[0]["CMNDCu_VanTay2"].ToString(), FileMode.Open))
+						{
+							Bitmap bmp = new Bitmap(fs);
+							picCMNDCu_VanTay2.Image = (Bitmap)bmp.Clone();
+						}	
+					}
+					//
+					if(File.Exists(SVPath + tblKhachHang.Rows[0]["CMNDMoi_MatTruoc"].ToString()))
+					{
+						using (System.IO.FileStream fs = new System.IO.FileStream(SVPath + tblKhachHang.Rows[0]["CMNDMoi_MatTruoc"].ToString(), FileMode.Open))
+						{
+							Bitmap bmp = new Bitmap(fs);
+							picCMNDMoi_MatTruoc.Image = (Bitmap)bmp.Clone();
+						}	
+					}
+					if(File.Exists(SVPath + tblKhachHang.Rows[0]["CMNDMoi_MatSau"].ToString()))
+					{
+						using (System.IO.FileStream fs = new System.IO.FileStream(SVPath + tblKhachHang.Rows[0]["CMNDMoi_MatSau"].ToString(), FileMode.Open))
+						{
+							Bitmap bmp = new Bitmap(fs);
+							picCMNDMoi_MatSau.Image = (Bitmap)bmp.Clone();
+						}	
+					}
+					if(File.Exists(SVPath + tblKhachHang.Rows[0]["CMNDMoi_VanTay1"].ToString()))
+					{
+						using (System.IO.FileStream fs = new System.IO.FileStream(SVPath + tblKhachHang.Rows[0]["CMNDMoi_VanTay1"].ToString(), FileMode.Open))
+						{
+							Bitmap bmp = new Bitmap(fs);
+							picCMNDMoi_VanTay1.Image = (Bitmap)bmp.Clone();
+						}	
+					}
+					if(File.Exists(SVPath + tblKhachHang.Rows[0]["CMNDMoi_VanTay2"].ToString()))
+					{
+						using (System.IO.FileStream fs = new System.IO.FileStream(SVPath + tblKhachHang.Rows[0]["CMNDMoi_VanTay2"].ToString(), FileMode.Open))
+						{
+							Bitmap bmp = new Bitmap(fs);
+							picCMNDMoi_VanTay2.Image = (Bitmap)bmp.Clone();
+						}
+					}
 				}
 
 			}
@@ -3193,6 +3273,7 @@ using System; using System.Drawing; using System.Collections; using System
 		{
 			frmScan frm = new frmScan();
 			frm.SelectIndex = 1;
+			EditIMG(0, frm);
 			frm.ShowDialog();
 			GetID(frm, 0);
 		}
@@ -3201,6 +3282,7 @@ using System; using System.Drawing; using System.Collections; using System
 		{
 			frmScan frm = new frmScan();
 			frm.SelectIndex = 2;
+			EditIMG(0, frm);
 			frm.ShowDialog();
 			GetID(frm, 0);			
 		}
@@ -3208,6 +3290,7 @@ using System; using System.Drawing; using System.Collections; using System
 		{
 			frmScan frm = new frmScan();
 			frm.SelectIndex = 3;
+			EditIMG(1, frm);
 			frm.ShowDialog();
 			GetID(frm, 0);
 		}
@@ -3216,6 +3299,7 @@ using System; using System.Drawing; using System.Collections; using System
 		{
 			frmScan frm = new frmScan();
 			frm.SelectIndex = 4;
+			EditIMG(1, frm);
 			frm.ShowDialog();
 			GetID(frm, 0);
 		}
@@ -3223,6 +3307,7 @@ using System; using System.Drawing; using System.Collections; using System
 		{
 			frmScan frm = new frmScan();
 			frm.SelectIndex = 1;
+			EditIMG(1, frm);
 			frm.ShowDialog();
 			GetID(frm, 1);
 		}
@@ -3231,6 +3316,7 @@ using System; using System.Drawing; using System.Collections; using System
 		{
 			frmScan frm = new frmScan();
 			frm.SelectIndex = 2;
+			EditIMG(1, frm);
 			frm.ShowDialog();
 			GetID(frm, 1);
 		}
@@ -3238,6 +3324,7 @@ using System; using System.Drawing; using System.Collections; using System
 		{
 			frmScan frm = new frmScan();
 			frm.SelectIndex = 3;
+			EditIMG(0, frm);
 			frm.ShowDialog();
 			GetID(frm, 1);
 		}
@@ -3246,13 +3333,121 @@ using System; using System.Drawing; using System.Collections; using System
 		{
 			frmScan frm = new frmScan();
 			frm.SelectIndex = 4;
+			EditIMG(0, frm);
 			frm.ShowDialog();
 			GetID(frm, 1);
 		}
+		void EditIMG(int iID, frmScan frm)
+		{
+			if(iID == 0)
+			{
+				if(picCMNDCu_MatTruoc.Image != null)
+					frm.IDBefore = picCMNDCu_MatTruoc.Image;
+				if(picCMNDCu_MatSau.Image != null)
+					frm.IDAfter = picCMNDCu_MatSau.Image;
+				if(picCMNDCu_VanTay1.Image != null)
+					frm.FP1 = picCMNDCu_VanTay1.Image;
+				if(picCMNDCu_VanTay2.Image != null)
+					frm.FP2 = picCMNDCu_VanTay2.Image;	
+			}
+			else
+			{
+				if(picCMNDMoi_MatTruoc.Image != null)
+					frm.IDBefore = picCMNDMoi_MatTruoc.Image;
+				if(picCMNDMoi_MatSau.Image != null)
+					frm.IDAfter = picCMNDMoi_MatSau.Image;
+				if(picCMNDMoi_VanTay1.Image != null)
+					frm.FP1 = picCMNDMoi_VanTay1.Image;
+				if(picCMNDMoi_VanTay2.Image != null)
+					frm.FP2 = picCMNDMoi_VanTay2.Image;	
+			}
+		}
+		 
 		void GetID(frmScan frm, int idversion) 		{ 			if(idversion == 0)//ID cũ 			{ 				CMNDCu_MatTruoc = frm.IDBefore; 				CMNDCu_MatSau = frm.IDAfter; 				CMNDCu_VanTay1 = frm.FP1;
 				CMNDCu_VanTay2 = frm.FP2; 				if(frm.IDBefore != null) 				{ 					picCMNDCu_MatTruoc.Image = frm.IDBefore; 				} 				if(frm.IDAfter != null) 				{ 					picCMNDCu_MatSau.Image = frm.IDAfter; 				} 				if(frm.FP1 != null) 				{ 					picCMNDCu_VanTay1.Image = frm.FP1; 				} 				if(frm.FP2 != null) 				{ 					picCMNDCu_VanTay2.Image = frm.FP2; 				} 			} 			else if(idversion == 1)//ID mới 			{ 				CMNDMoi_MatTruoc = frm.IDBefore; 				CMNDMoi_MatSau = frm.IDAfter; 				CMNDMoi_VanTay1 = frm.FP1;
 				CMNDMoi_VanTay2 = frm.FP2; 				if(frm.IDBefore != null) 				{ 					picCMNDMoi_MatTruoc.Image = frm.IDBefore; 				} 				if(frm.IDAfter != null) 				{ 					picCMNDMoi_MatSau.Image = frm.IDAfter; 				} 				if(frm.FP1 != null) 				{ 					picCMNDMoi_VanTay1.Image = frm.FP1; 				} 				if(frm.FP2 != null) 				{ 					picCMNDMoi_VanTay2.Image = frm.FP2; 				} 			} 		}
 
-		
+		private void dtgKhachHang_Click(object sender, System.EventArgs e)
+		{
+			
+		}
 
- 	} } 
+		private void menuItemChiTiet_Click(object sender, System.EventArgs e)
+		{
+			try
+			{
+				if(dtgKhachHang.DataSource!=null)
+				{
+					CurrencyManager currencyManager = (CurrencyManager) this.BindingContext [this.dtgKhachHang.DataSource, this.dtgKhachHang.DataMember];					
+					string[] maKHs = new string[dtgKhachHang.VisibleRowCount];					
+					DataRowView drv = (DataRowView) currencyManager.List[dtgKhachHang.CurrentRowIndex];
+					DataRow dr = drv.Row;
+					if(File.Exists(SVPath + dr["CMNDCu_MatTruoc"].ToString()))
+					{
+						using (System.IO.FileStream fs = new System.IO.FileStream(SVPath + dr["CMNDCu_MatTruoc"].ToString(), FileMode.Open))
+						{
+							Bitmap bmp = new Bitmap(fs);
+							picCMNDCu_MatTruocSS.Image = (Bitmap)bmp.Clone();
+						}	
+					}
+					if(File.Exists(SVPath + dr["CMNDCu_MatSau"].ToString()))
+					{
+						using (System.IO.FileStream fs = new System.IO.FileStream(SVPath + dr["CMNDCu_MatSau"].ToString(), FileMode.Open))
+						{
+							Bitmap bmp = new Bitmap(fs);
+							picCMNDCu_MatSauSS.Image = (Bitmap)bmp.Clone();
+						}	
+					}
+					if(File.Exists(SVPath + dr["CMNDCu_VanTay1"].ToString()))
+					{
+						using (System.IO.FileStream fs = new System.IO.FileStream(SVPath + dr["CMNDCu_VanTay1"].ToString(), FileMode.Open))
+						{
+							Bitmap bmp = new Bitmap(fs);
+							picCMNDCu_VanTay1SS.Image = (Bitmap)bmp.Clone();
+						}	
+					}
+					if(File.Exists(SVPath + dr["CMNDCu_VanTay2"].ToString()))
+					{
+						using (System.IO.FileStream fs = new System.IO.FileStream(SVPath + dr["CMNDCu_VanTay2"].ToString(), FileMode.Open))
+						{
+							Bitmap bmp = new Bitmap(fs);
+							picCMNDCu_VanTay2SS.Image = (Bitmap)bmp.Clone();
+						}	
+					}
+					//					 
+					if(File.Exists(SVPath + dr["CMNDMoi_MatTruoc"].ToString()))
+					{
+						using (System.IO.FileStream fs = new System.IO.FileStream(SVPath + dr["CMNDMoi_MatTruoc"].ToString(), FileMode.Open))
+						{
+							Bitmap bmp = new Bitmap(fs);
+							picCMNDMoi_MatTruocSS.Image = (Bitmap)bmp.Clone();
+						}	
+					}
+					if(File.Exists(SVPath + dr["CMNDMoi_MatSau"].ToString()))
+					{
+						using (System.IO.FileStream fs = new System.IO.FileStream(SVPath + dr["CMNDMoi_MatSau"].ToString(), FileMode.Open))
+						{
+							Bitmap bmp = new Bitmap(fs);
+							picCMNDMoi_MatSauSS.Image = (Bitmap)bmp.Clone();
+						}	
+					}
+					if(File.Exists(SVPath + dr["CMNDMoi_VanTay1"].ToString()))
+					{
+						using (System.IO.FileStream fs = new System.IO.FileStream(SVPath + dr["CMNDMoi_VanTay1"].ToString(), FileMode.Open))
+						{
+							Bitmap bmp = new Bitmap(fs);
+							picCMNDMoi_VanTay1SS.Image = (Bitmap)bmp.Clone();
+						}	
+					}
+					if(File.Exists(SVPath + dr["CMNDMoi_VanTay2"].ToString()))
+					{
+						using (System.IO.FileStream fs = new System.IO.FileStream(SVPath + dr["CMNDMoi_VanTay2"].ToString(), FileMode.Open))
+						{
+							Bitmap bmp = new Bitmap(fs);
+							picCMNDMoi_VanTay2SS.Image = (Bitmap)bmp.Clone();
+						}
+					}
+				}
+			}
+			catch{}
+		} 	} } 
