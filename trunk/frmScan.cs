@@ -18,6 +18,7 @@ namespace HRM_CHECKER
 		public Image FP1 = null;
 		public Image FP2 = null;
 		public int SelectIndex = 0;
+		public Boolean Edit = false;
 
 		string ScanPath =@"C:\Users\Public\Documents\ScanDoc";
 
@@ -376,6 +377,7 @@ namespace HRM_CHECKER
 			this.label2.Size = new System.Drawing.Size(432, 16);
 			this.label2.TabIndex = 3;
 			this.label2.Text = "Nguyen Thanh Thuy";
+			this.label2.Visible = false;
 			// 
 			// label1
 			// 
@@ -385,6 +387,7 @@ namespace HRM_CHECKER
 			this.label1.Size = new System.Drawing.Size(116, 16);
 			this.label1.TabIndex = 2;
 			this.label1.Text = "Them anh CMND cho:";
+			this.label1.Visible = false;
 			// 
 			// picAfter
 			// 
@@ -418,6 +421,7 @@ namespace HRM_CHECKER
 			this.label3.Size = new System.Drawing.Size(62, 16);
 			this.label3.TabIndex = 3;
 			this.label3.Text = "20-11-1989";
+			this.label3.Visible = false;
 			// 
 			// label4
 			// 
@@ -427,6 +431,7 @@ namespace HRM_CHECKER
 			this.label4.Size = new System.Drawing.Size(158, 16);
 			this.label4.TabIndex = 3;
 			this.label4.Text = "Hoang Dieu, Tu Loc, Hai Duon";
+			this.label4.Visible = false;
 			// 
 			// label5
 			// 
@@ -437,6 +442,7 @@ namespace HRM_CHECKER
 			this.label5.Size = new System.Drawing.Size(63, 16);
 			this.label5.TabIndex = 3;
 			this.label5.Text = "145565445";
+			this.label5.Visible = false;
 			// 
 			// picFP1
 			// 
@@ -485,6 +491,7 @@ namespace HRM_CHECKER
 			this.Name = "frmScan";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "frmScan";
+			this.Load += new System.EventHandler(this.frmScan_Load);
 			this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.frmScan_KeyUp);
 			this.pnControl.ResumeLayout(false);
 			this.pnMain.ResumeLayout(false);
@@ -846,6 +853,18 @@ namespace HRM_CHECKER
 				picAfter.BorderStyle = BorderStyle.Fixed3D;
 				picAfter.Select();
 			}
+		}
+
+		private void frmScan_Load(object sender, System.EventArgs e)
+		{
+			if(IDBefore != null)
+				picBefore.Image = IDBefore;
+			if(IDAfter != null)
+				picAfter.Image = IDAfter;
+			if(FP1 != null)
+				picFP1.Image = FP1;
+			if(FP2 != null)
+				picFP2.Image = FP2;
 		}
 	}
 }
