@@ -9,7 +9,7 @@ using System.Diagnostics;
 namespace HRM_CHECKER
 {
 	/// <summary>
-	/// Summary description for frmScan.
+	/// Summary description for frmScan
 	/// </summary>
 	public class frmScan : System.Windows.Forms.Form
 	{
@@ -17,8 +17,10 @@ namespace HRM_CHECKER
 		public Image IDAfter = null;
 		public Image FP1 = null;
 		public Image FP2 = null;
+		public int SelectIndex = 0;
 
 		string ScanPath =@"C:\Users\Public\Documents\ScanDoc";
+
 		bool Loading = false;
 		bool Killing = false;
 		Image FileSelected = null;
@@ -443,7 +445,7 @@ namespace HRM_CHECKER
 			this.picFP1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.picFP1.Location = new System.Drawing.Point(456, 288);
 			this.picFP1.Name = "picFP1";
-			this.picFP1.Size = new System.Drawing.Size(121, 115);
+			this.picFP1.Size = new System.Drawing.Size(121, 112);
 			this.picFP1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.picFP1.TabIndex = 4;
 			this.picFP1.TabStop = false;
@@ -455,7 +457,7 @@ namespace HRM_CHECKER
 			this.picFP2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.picFP2.Location = new System.Drawing.Point(584, 288);
 			this.picFP2.Name = "picFP2";
-			this.picFP2.Size = new System.Drawing.Size(121, 115);
+			this.picFP2.Size = new System.Drawing.Size(121, 112);
 			this.picFP2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.picFP2.TabIndex = 4;
 			this.picFP2.TabStop = false;
@@ -548,8 +550,16 @@ namespace HRM_CHECKER
 										picIMG4.Image = (Bitmap)bmp.Clone();
 									}
 								}
+								else if(i > 29)
+								{
+									try
+									{
+										File.Delete(fileArray[i].FullName);
+									}
+									catch{ }
+								}
 							}
-							RefreshBorderImage();
+							SetFileSelected(1);
 							picIMG1.BorderStyle = BorderStyle.Fixed3D;
 							Application.DoEvents();
 						}
@@ -615,22 +625,20 @@ namespace HRM_CHECKER
 			}
 			if (e.KeyCode == Keys.F5)
 			{
-				lock(FileSelected)
-					if(FileSelected != null)
-					{
-						picBefore.Image = FileSelected;
-						picIDSelect(0);
-					}
+				if(FileSelected != null)
+				{
+					picBefore.Image = FileSelected;
+					picIDSelect(0);
+				}
 				return;
 			}
 			if (e.KeyCode == Keys.F6)
 			{
-				lock(FileSelected)
-					if(FileSelected != null)
-					{
-						picAfter.Image = FileSelected;
-						picIDSelect(1);
-					}
+				if(FileSelected != null)
+				{
+					picAfter.Image = FileSelected;
+					picIDSelect(1);
+				}
 				return;
 			}			
 			if (e.KeyCode == Keys.Delete)
@@ -695,7 +703,7 @@ namespace HRM_CHECKER
 		{
 			picIMG1.BorderStyle = BorderStyle.FixedSingle;
 			picIMG1.Width = 145;
-			picIMG1.Height = 105;			
+			picIMG1.Height = 105;
 			picIMG2.BorderStyle = BorderStyle.FixedSingle;
 			picIMG2.Width = 145;
 			picIMG2.Height = 105;
@@ -770,16 +778,14 @@ namespace HRM_CHECKER
 		}
 		private void lkF5_LinkClicked(object sender, System.Windows.Forms.LinkLabelLinkClickedEventArgs e)
 		{
-			lock(FileSelected)
-				if(FileSelected != null)
-					picBefore.Image = FileSelected;
+			if(FileSelected != null)
+				picBefore.Image = FileSelected;
 		}
 
 		private void lkF6_LinkClicked(object sender, System.Windows.Forms.LinkLabelLinkClickedEventArgs e)
 		{
-			lock(FileSelected)
-				if(FileSelected != null)
-					picAfter.Image = FileSelected;
+			if(FileSelected != null)
+				picAfter.Image = FileSelected;
 		}
 
 		private void btnDelete_Click(object sender, System.EventArgs e)
