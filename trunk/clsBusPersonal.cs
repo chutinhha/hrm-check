@@ -46,7 +46,7 @@ namespace HRM_CHECKER
 		/// <summary>
 		/// Thêm khách hàng vào cở sở dữ liệu
 		/// </summary>
-		public void InsertPersonal(string HoTen,string TenTat,string NgaySinh,int GioiTinh,string QuocTich,string CMND,string HoChieu,string SoKhac,string ngayCap,string noiCap,string dcLienHe,string dcThuongTru,string dcNuocNgoai,string dtNha,string dtDiDong,string HopThu,int DiHoc,int DiLam,int tuKinhDoanh,int nghiHuu,string nganhNghe,string chucVu,string dtCoQuan,string tenCoQuan,string ttHonNhan,string ttHocVan,string thuNhap,int maTK,ref string pError)
+		public void InsertPersonal(string HoTen,string TenTat,string NgaySinh,int GioiTinh,string QuocTich,string CMND,string HoChieu,string SoKhac,string ngayCap,string noiCap,string dcLienHe,string dcThuongTru,string dcNuocNgoai,string dtNha,string dtDiDong,string HopThu,int DiHoc,int DiLam,int tuKinhDoanh,int nghiHuu,string nganhNghe,string chucVu,string dtCoQuan,string tenCoQuan,string ttHonNhan,string ttHocVan,string thuNhap,int maTK, string CMNDMoi_MatTruoc, string CMNDMoi_MatSau, string CMNDMoi_VanTay1, string CMNDMoi_VanTay2, string CMNDCu_MatTruoc, string CMNDCu_MatSau, string CMNDCu_VanTay1, string CMNDCu_VanTay2, ref string pError)
 		{
 			try
 			{
@@ -80,9 +80,17 @@ namespace HRM_CHECKER
 				,[TinhTrangHonNhan]
 				,[TrinhDoHocVan]
 				,[ThuNhap]
+				,[CMNDMoi_MatTruoc]
+				,[CMNDMoi_MatSau]
+				,[CMNDMoi_VanTay1]
+				,[CMNDMoi_VanTay2]
+				,[CMNDCu_MatTruoc]
+				,[CMNDCu_MatSau]
+				,[CMNDCu_VanTay1]
+				,[CMNDCu_VanTay2]
 				)
 				VALUES
-				(N'"+HoTen+"',N'"+TenTat+"','"+NgaySinh+"',"+GioiTinh+",N'"+QuocTich+"',N'"+CMND+"',N'"+HoChieu+"',N'"+SoKhac+"','"+dtNgayCapCMT.ToString("yyyy-MM-dd")+"'"+",N'"+noiCap+"'"+",N'"+dcLienHe+"'"+",N'"+dcThuongTru+"'"+",N'"+dcNuocNgoai+"'"+",N'"+dtNha+"'"+",N'"+dtDiDong+"'"+",N'"+HopThu+"'"+","+DiHoc+","+DiLam+","+tuKinhDoanh+","+nghiHuu+",N'"+nganhNghe+"',N'"+chucVu+"'"+",N'"+dtCoQuan+"'"+",N'"+tenCoQuan+"'"+",N'"+ttHonNhan+"'"+",N'"+ttHocVan+"'"+",N'"+thuNhap+"')";
+				(N'"+HoTen+"',N'"+TenTat+"','"+NgaySinh+"',"+GioiTinh+",N'"+QuocTich+"',N'"+CMND+"',N'"+HoChieu+"',N'"+SoKhac+"','"+dtNgayCapCMT.ToString("yyyy-MM-dd")+"'"+",N'"+noiCap+"'"+",N'"+dcLienHe+"'"+",N'"+dcThuongTru+"'"+",N'"+dcNuocNgoai+"'"+",N'"+dtNha+"'"+",N'"+dtDiDong+"'"+",N'"+HopThu+"'"+","+DiHoc+","+DiLam+","+tuKinhDoanh+","+nghiHuu+",N'"+nganhNghe+"',N'"+chucVu+"'"+",N'"+dtCoQuan+"'"+",N'"+tenCoQuan+"'"+",N'"+ttHonNhan+"'"+",N'"+ttHocVan+"'"+",N'"+thuNhap+"',N'"+CMNDMoi_MatTruoc+"',N'"+CMNDMoi_MatSau+"',N'"+CMNDMoi_VanTay1+"',N'"+CMNDMoi_VanTay2+"',N'"+CMNDCu_MatTruoc+"',N'"+CMNDCu_MatSau+"',N'"+CMNDCu_VanTay1+"',N'"+CMNDCu_VanTay2+"')";
 				string strQueryFill = strInsert.Replace("\r\n\t\t\t\t"," ");
 				SqlConnection conn = new SqlConnection(StrConn); 				int kq = SqlHelper.ExecuteNonQuery(conn,CommandType.Text,strQueryFill);
 				pError = "";
