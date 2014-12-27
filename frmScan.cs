@@ -20,7 +20,7 @@ namespace HRM_CHECKER
 		public int SelectIndex = 0;
 		public Boolean Edit = false;
 
-		string ScanPath =@"C:\Users\Public\Documents\ScanDoc";
+		string ScanPath =@"D:\ScanDoc";
 
 		bool Loading = false;
 		bool Killing = false;
@@ -527,35 +527,51 @@ namespace HRM_CHECKER
 							{
 								if(i == 0)
 								{
-									using (System.IO.FileStream fs = new System.IO.FileStream(fileArray[i].FullName, FileMode.Open))
+									try
 									{
-										Bitmap bmp = new Bitmap(fs);
-										picIMG1.Image = (Bitmap)bmp.Clone();
+										using (System.IO.FileStream fs = new System.IO.FileStream(fileArray[i].FullName, FileMode.Open))
+										{
+											Bitmap bmp = new Bitmap(fs);
+											picIMG1.Image = (Bitmap)bmp.Clone();
+										}
 									}
+									catch{}
 								}
 								else if(i == 1)
 								{
-									using (System.IO.FileStream fs = new System.IO.FileStream(fileArray[i].FullName, FileMode.Open))
+									try
 									{
-										Bitmap bmp = new Bitmap(fs);
-										picIMG2.Image = (Bitmap)bmp.Clone();
+										using (System.IO.FileStream fs = new System.IO.FileStream(fileArray[i].FullName, FileMode.Open))
+										{
+											Bitmap bmp = new Bitmap(fs);
+											picIMG2.Image = (Bitmap)bmp.Clone();
+										}
 									}
+									catch{}
 								}
 								else if(i == 2)
 								{
-									using (System.IO.FileStream fs = new System.IO.FileStream(fileArray[i].FullName, FileMode.Open))
+									try
 									{
-										Bitmap bmp = new Bitmap(fs);
-										picIMG3.Image = (Bitmap)bmp.Clone();
+										using (System.IO.FileStream fs = new System.IO.FileStream(fileArray[i].FullName, FileMode.Open))
+										{
+											Bitmap bmp = new Bitmap(fs);
+											picIMG3.Image = (Bitmap)bmp.Clone();
+										}
 									}
+									catch{}
 								}
 								else if(i == 3)
 								{
-									using (System.IO.FileStream fs = new System.IO.FileStream(fileArray[i].FullName, FileMode.Open))
+									try
 									{
-										Bitmap bmp = new Bitmap(fs);
-										picIMG4.Image = (Bitmap)bmp.Clone();
+										using (System.IO.FileStream fs = new System.IO.FileStream(fileArray[i].FullName, FileMode.Open))
+										{
+											Bitmap bmp = new Bitmap(fs);
+											picIMG4.Image = (Bitmap)bmp.Clone();
+										}
 									}
+									catch{}
 								}
 								else if(i > 29)
 								{
@@ -581,12 +597,16 @@ namespace HRM_CHECKER
 
 		private void timerClosePaint_Tick(object sender, System.EventArgs e)
 		{
-			if(Killing == false)
+			try
 			{
-				Killing = true;
-				KillPaint();
-				Killing = false;
+				if(Killing == false)
+				{
+					Killing = true;
+					KillPaint();
+					Killing = false;
+				}
 			}
+			catch{}
 		}
 
 		private void ArraySort(ref FileInfo[] files)
@@ -819,19 +839,16 @@ namespace HRM_CHECKER
 		}
 		public void KillPaint()
 		{
-			System.Diagnostics.Process[] procs = null;
 			try
 			{
-				procs = Process.GetProcessesByName("mspaint");
-				if(procs != null)
-					if(procs.Length > 0)
-					{
-						for(int i = 0; i < procs.Length; i ++)
-						{
-							Process mspaintProc = procs[i];
-							mspaintProc.Kill();
-						}
-					}
+				// User phai quyen adminstrator moi getduoc process :(
+				// ALo anh oi.
+//				System.Diagnostics.Process[] procs = Process.GetProcesses();
+//				for(int i = 0 ; i < procs.Length; i++)
+//				{
+//					if(procs[i].ProcessName.IndexOf("mspaint") > -1)
+//						procs[i].Kill();
+//				}				
 			}
 			catch
 			{ }
@@ -849,6 +866,7 @@ namespace HRM_CHECKER
 				picBefore.Select();
 			}
 			else if(IDImg == 1)
+
 			{
 				picAfter.BorderStyle = BorderStyle.Fixed3D;
 				picAfter.Select();
@@ -857,14 +875,21 @@ namespace HRM_CHECKER
 
 		private void frmScan_Load(object sender, System.EventArgs e)
 		{
-			if(IDBefore != null)
-				picBefore.Image = IDBefore;
-			if(IDAfter != null)
-				picAfter.Image = IDAfter;
-			if(FP1 != null)
-				picFP1.Image = FP1;
-			if(FP2 != null)
-				picFP2.Image = FP2;
+			try
+			{
+				if(IDBefore != null)
+					picBefore.Image = IDBefore;
+				if(IDAfter != null)
+					picAfter.Image = IDAfter;
+				if(FP1 != null)
+					picFP1.Image = FP1;
+				if(FP2 != null)
+					picFP2.Image = FP2;
+			}
+			catch
+			{ }
+			finally
+			{ }
 		}
 	}
 }
