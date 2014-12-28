@@ -43,6 +43,7 @@ namespace HRM_CHECKER
 			
 		}
 
+		
 		/// <summary>
 		/// Thêm khách hàng vào cở sở dữ liệu
 		/// </summary>
@@ -105,13 +106,25 @@ namespace HRM_CHECKER
 		/// <summary>
 		/// Sửa thông tin khách hàng
 		/// </summary>
-		public void UpdatePersonal(string ma_Khang,string HoTen,string TenTat,string NgaySinh,int GioiTinh,string QuocTich,string CMND,string HoChieu,string SoKhac,string ngayCap,string noiCap,string dcLienHe,string dcThuongTru,string dcNuocNgoai,string dtNha,string dtDiDong,string HopThu,int DiHoc,int DiLam,int tuKinhDoanh,int nghiHuu,string nganhNghe,string chucVu,string dtCoQuan,string tenCoQuan,string ttHonNhan,string ttHocVan,string thuNhap,ref string pError)
+		public void UpdatePersonal(string ma_Khang,string HoTen,string TenTat,string NgaySinh,int GioiTinh,string QuocTich,string CMND,string HoChieu,string SoKhac,string ngayCap,string noiCap,string dcLienHe,string dcThuongTru,string dcNuocNgoai,string dtNha,string dtDiDong,string HopThu,int DiHoc,int DiLam,int tuKinhDoanh,int nghiHuu,string nganhNghe,string chucVu,string dtCoQuan,string tenCoQuan,string ttHonNhan,string ttHocVan,string thuNhap , string CMNDMoi_MatTruoc, string CMNDMoi_MatSau, string CMNDMoi_VanTay1, string CMNDMoi_VanTay2, string CMNDCu_MatTruoc, string CMNDCu_MatSau, string CMNDCu_VanTay1, string CMNDCu_VanTay2,ref string pError)
 		{
 			try
 			{
 				DateTime dtNgaySinh = DateTime.Parse(NgaySinh);
 				DateTime dtNgayCapCMT = DateTime.Parse(ngayCap);
-				string strUpdate = @"Update [HRM_CHECKER].[dbo].[tblKhachHang] SET [HoTen] = N'"+HoTen+"',[TenVietTat] = N'"+TenTat+"',[NgaySinh] ='"+NgaySinh+"',[GioiTinh] = "+GioiTinh+",[QuocTich] = N'"+QuocTich+"',[CMND] = N'"+CMND+"',[HoChieu] = N'"+HoChieu+"',[SoKhac] = N'"+SoKhac+"',[NgayCapCMND] = '"+dtNgayCapCMT.ToString("yyyy-MM-dd")+"'"+",[NoiCapCMND] = N'"+noiCap+"'"+",[DiaChiLienHe] = N'"+dcLienHe+"'"+",[DiaChiThuongTru] = N'"+dcThuongTru+"'"+",[DiaChiNuocNgoai] = N'"+dcNuocNgoai+"'"+",[DienThoaiNha] = N'"+dtNha+"'"+",[DienThoaiDiDong] = N'"+dtDiDong+"'"+",[HopThu] = N'"+HopThu+"'"+",[IsDiHoc] = "+DiHoc+",[IsDiLam] ="+DiLam+",[IsTuKinhDoanh] = "+tuKinhDoanh+",[IsNghiHuu] = "+nghiHuu+",[NganhNghe] = N'"+nganhNghe+"',[ChucVu] = N'"+chucVu+"'"+",[DienThoaiCoQuan] = N'"+dtCoQuan+"'"+",[TenCoQuan] = N'"+tenCoQuan+"'"+",[TinhTrangHonNhan] = N'"+ttHonNhan+"'"+",[TrinhDoHocVan] = N'"+ttHocVan+"'"+",[ThuNhap] = N'"+thuNhap+"' Where MaKhachHang = '"+ma_Khang+"'";
+				string strUpdate = @"Update [HRM_CHECKER].[dbo].[tblKhachHang] SET [HoTen] = N'"+HoTen+"',[TenVietTat] = N'"+TenTat+"',[NgaySinh] ='"+NgaySinh+"',[GioiTinh] = "+GioiTinh+",[QuocTich] = N'"+QuocTich+"',[CMND] = N'"+CMND+"',[HoChieu] = N'"+HoChieu+"',[SoKhac] = N'"+SoKhac+"',[NgayCapCMND] = '"+dtNgayCapCMT.ToString("yyyy-MM-dd")+"'"+",[NoiCapCMND] = N'"+noiCap+"'"+",[DiaChiLienHe] = N'"+dcLienHe+"'"+",[DiaChiThuongTru] = N'"+dcThuongTru+"'"+",[DiaChiNuocNgoai] = N'"+dcNuocNgoai+"'"+",[DienThoaiNha] = N'"+dtNha+"'"+",[DienThoaiDiDong] = N'"+dtDiDong+"'"+",[HopThu] = N'"+HopThu+"'"+",[IsDiHoc] = "+DiHoc+",[IsDiLam] ="+DiLam+",[IsTuKinhDoanh] = "+tuKinhDoanh+",[IsNghiHuu] = "+nghiHuu+",[NganhNghe] = N'"+nganhNghe+"',[ChucVu] = N'"+chucVu+"'"+",[DienThoaiCoQuan] = N'"+dtCoQuan+"'"+",[TenCoQuan] = N'"+tenCoQuan+"'"+",[TinhTrangHonNhan] = N'"+ttHonNhan+
+					@"'"+",[TrinhDoHocVan] = N'"+ttHocVan+"'"+",[ThuNhap] = N'"+thuNhap+
+				
+					@"'"+",[CMNDMoi_MatTruoc] = N'"+CMNDMoi_MatTruoc+
+					@"'"+",[CMNDMoi_MatSau] = N'"+CMNDMoi_MatSau+
+					@"'"+",[CMNDMoi_VanTay1] = N'"+CMNDMoi_VanTay1+
+					@"'"+",[CMNDMoi_VanTay2] = N'"+CMNDMoi_VanTay2+
+					@"'"+",[CMNDCu_MatTruoc] = N'"+CMNDCu_MatTruoc+
+					@"'"+",[CMNDCu_MatSau] = N'"+CMNDCu_MatSau+
+					@"'"+",[CMNDCu_VanTay1] = N'"+CMNDCu_VanTay1+
+					@"'"+",[CMNDCu_VanTay2] = N'"+CMNDCu_VanTay2+
+
+					@"' Where MaKhachHang = '"+ma_Khang+"'";
 				string strQueryFill = strUpdate.Replace("\r\n\t\t\t\t"," ");
 				SqlConnection conn = new SqlConnection(StrConn); 				int kq = SqlHelper.ExecuteNonQuery(conn,CommandType.Text,strQueryFill);
 				pError = "";

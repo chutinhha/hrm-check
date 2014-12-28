@@ -28,6 +28,16 @@ namespace HRM_CHECKER
 		FileInfo[] fileArray;
 		long fileCreateLong = 0;
 
+		int FP1_Width = 190;
+		int FP1_Height = 120;
+		int FP1_X = 25;
+		int FP1_Y = 65;
+		//
+		int FP2_Width = 190;
+		int FP2_Height = 120;
+		int FP2_X = 20;
+		int FP2_Y = 210;
+
 		private System.Windows.Forms.Panel pnControl;
 		private System.Windows.Forms.Panel pnMain;
 		private System.Windows.Forms.Button btnEnter;
@@ -58,6 +68,10 @@ namespace HRM_CHECKER
 		private System.Windows.Forms.LinkLabel lkNoneBefore;
 		private System.Windows.Forms.LinkLabel lkNoneAfter;
 		private System.Windows.Forms.Timer timerClosePaint;
+		private System.Windows.Forms.Panel pnFP2;
+		private System.Windows.Forms.Panel pnFP1;
+		private System.Windows.Forms.Label label10;
+		private System.Windows.Forms.Label label11;
 		private System.ComponentModel.IContainer components;
 
 		public frmScan()
@@ -126,6 +140,10 @@ namespace HRM_CHECKER
 			this.picFP2 = new System.Windows.Forms.PictureBox();
 			this.timerLoadIMG = new System.Windows.Forms.Timer(this.components);
 			this.timerClosePaint = new System.Windows.Forms.Timer(this.components);
+			this.pnFP2 = new System.Windows.Forms.Panel();
+			this.pnFP1 = new System.Windows.Forms.Panel();
+			this.label10 = new System.Windows.Forms.Label();
+			this.label11 = new System.Windows.Forms.Label();
 			this.pnControl.SuspendLayout();
 			this.pnMain.SuspendLayout();
 			this.panel1.SuspendLayout();
@@ -169,6 +187,10 @@ namespace HRM_CHECKER
 			// pnMain
 			// 
 			this.pnMain.BackColor = System.Drawing.Color.White;
+			this.pnMain.Controls.Add(this.label10);
+			this.pnMain.Controls.Add(this.label11);
+			this.pnMain.Controls.Add(this.pnFP2);
+			this.pnMain.Controls.Add(this.pnFP1);
 			this.pnMain.Controls.Add(this.lkNoneAfter);
 			this.pnMain.Controls.Add(this.lkNoneBefore);
 			this.pnMain.Controls.Add(this.lkF6);
@@ -192,7 +214,7 @@ namespace HRM_CHECKER
 			// lkNoneAfter
 			// 
 			this.lkNoneAfter.AutoSize = true;
-			this.lkNoneAfter.Location = new System.Drawing.Point(784, 288);
+			this.lkNoneAfter.Location = new System.Drawing.Point(792, 288);
 			this.lkNoneAfter.Name = "lkNoneAfter";
 			this.lkNoneAfter.Size = new System.Drawing.Size(24, 16);
 			this.lkNoneAfter.TabIndex = 9;
@@ -214,7 +236,7 @@ namespace HRM_CHECKER
 			// lkF6
 			// 
 			this.lkF6.AutoSize = true;
-			this.lkF6.Location = new System.Drawing.Point(816, 288);
+			this.lkF6.Location = new System.Drawing.Point(824, 288);
 			this.lkF6.Name = "lkF6";
 			this.lkF6.Size = new System.Drawing.Size(75, 16);
 			this.lkF6.TabIndex = 7;
@@ -449,24 +471,26 @@ namespace HRM_CHECKER
 			this.picFP1.BackColor = System.Drawing.SystemColors.Control;
 			this.picFP1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picFP1.BackgroundImage")));
 			this.picFP1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.picFP1.Location = new System.Drawing.Point(456, 288);
+			this.picFP1.Location = new System.Drawing.Point(456, 296);
 			this.picFP1.Name = "picFP1";
-			this.picFP1.Size = new System.Drawing.Size(121, 112);
+			this.picFP1.Size = new System.Drawing.Size(160, 112);
 			this.picFP1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.picFP1.TabIndex = 4;
 			this.picFP1.TabStop = false;
+			this.picFP1.Click += new System.EventHandler(this.picFP1_Click);
 			// 
 			// picFP2
 			// 
 			this.picFP2.BackColor = System.Drawing.SystemColors.Control;
 			this.picFP2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picFP2.BackgroundImage")));
 			this.picFP2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.picFP2.Location = new System.Drawing.Point(584, 288);
+			this.picFP2.Location = new System.Drawing.Point(624, 296);
 			this.picFP2.Name = "picFP2";
-			this.picFP2.Size = new System.Drawing.Size(121, 112);
+			this.picFP2.Size = new System.Drawing.Size(160, 112);
 			this.picFP2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.picFP2.TabIndex = 4;
 			this.picFP2.TabStop = false;
+			this.picFP2.Click += new System.EventHandler(this.picFP2_Click);
 			// 
 			// timerLoadIMG
 			// 
@@ -479,6 +503,44 @@ namespace HRM_CHECKER
 			this.timerClosePaint.Enabled = true;
 			this.timerClosePaint.Interval = 500;
 			this.timerClosePaint.Tick += new System.EventHandler(this.timerClosePaint_Tick);
+			// 
+			// pnFP2
+			// 
+			this.pnFP2.Location = new System.Drawing.Point(624, 288);
+			this.pnFP2.Name = "pnFP2";
+			this.pnFP2.Size = new System.Drawing.Size(160, 8);
+			this.pnFP2.TabIndex = 14;
+			// 
+			// pnFP1
+			// 
+			this.pnFP1.Location = new System.Drawing.Point(456, 288);
+			this.pnFP1.Name = "pnFP1";
+			this.pnFP1.Size = new System.Drawing.Size(160, 8);
+			this.pnFP1.TabIndex = 13;
+			// 
+			// label10
+			// 
+			this.label10.AutoSize = true;
+			this.label10.BackColor = System.Drawing.Color.Yellow;
+			this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.label10.Location = new System.Drawing.Point(768, 280);
+			this.label10.Name = "label10";
+			this.label10.Size = new System.Drawing.Size(18, 16);
+			this.label10.TabIndex = 16;
+			this.label10.Text = "F8";
+			this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// label11
+			// 
+			this.label11.AutoSize = true;
+			this.label11.BackColor = System.Drawing.Color.Yellow;
+			this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.label11.Location = new System.Drawing.Point(600, 280);
+			this.label11.Name = "label11";
+			this.label11.Size = new System.Drawing.Size(18, 16);
+			this.label11.TabIndex = 15;
+			this.label11.Text = "F7";
+			this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// frmScan
 			// 
@@ -665,13 +727,107 @@ namespace HRM_CHECKER
 				{
 					picAfter.Image = FileSelected;
 					picIDSelect(1);
+					GetFP(1, FP1_Width, FP1_Height, FP1_X, FP1_Y);
+					GetFP(2, FP2_Width, FP2_Height, FP2_X, FP2_Y);
 				}
 				return;
-			}			
+			}
+	
+			if (e.KeyCode == Keys.F7)
+			{
+				if(pnFP1.BackColor == Color.White)
+				{
+					pnFP1.BackColor = Color.Blue;
+					pnFP2.BackColor = Color.White;
+				}
+			}
+			if (e.KeyCode == Keys.F8)
+			{
+				if(pnFP2.BackColor == Color.White)
+				{
+					pnFP1.BackColor = Color.White;
+					pnFP2.BackColor = Color.Blue;
+				}
+			}
+
 			if (e.KeyCode == Keys.Delete)
 			{
 				DeleteImage();
 				return;
+			}
+			if(e.KeyCode == Keys.Left)
+			{
+				if(pnFP1.BackColor == Color.Blue)
+				{
+					FP1_X -=10;
+					GetFP(1, FP1_Width, FP1_Height, FP1_X, FP1_Y);
+				}
+				if(pnFP2.BackColor == Color.Blue)
+				{
+					FP2_X -=10;
+					GetFP(2, FP2_Width, FP2_Height, FP2_X, FP2_Y);
+				}
+			}
+			if(e.KeyCode == Keys.Right)
+			{
+				if(pnFP1.BackColor == Color.Blue)
+				{
+					FP1_X +=10;
+					GetFP(1, FP1_Width, FP1_Height, FP1_X, FP1_Y);
+				}
+				if(pnFP2.BackColor == Color.Blue)
+				{
+					FP2_X +=10;
+					GetFP(2, FP2_Width, FP2_Height, FP2_X, FP2_Y);
+				}
+			}
+			if(e.KeyCode == Keys.Up)
+			{
+				if(pnFP1.BackColor == Color.Blue)
+				{
+					FP1_Y -=10;
+					GetFP(1, FP1_Width, FP1_Height, FP1_X, FP1_Y);
+				}
+				if(pnFP2.BackColor == Color.Blue)
+				{
+					FP2_Y -=10;
+					GetFP(2, FP2_Width, FP2_Height, FP2_X, FP2_Y);
+				}
+			}
+			if(e.KeyCode == Keys.Down)
+			{
+				if(pnFP1.BackColor == Color.Blue)
+				{
+					FP1_Y +=10;
+					GetFP(1, FP1_Width, FP1_Height, FP1_X, FP1_Y);
+				}
+				if(pnFP2.BackColor == Color.Blue)
+				{
+					FP2_Y +=10;
+					GetFP(2, FP2_Width, FP2_Height, FP2_X, FP2_Y);
+				}				
+			}
+		}
+
+		private void GetFP(int fpIndex, int XwidthThird, int XheightThird, int FP1_X, int FP1_Y)
+		{
+			if(picAfter.Image != null)
+			{
+				Image img = picAfter.Image;
+				int widthThird = XwidthThird;
+				int heightThird = XheightThird;
+				Bitmap bmps = new Bitmap(widthThird, heightThird);
+				Graphics g = Graphics.FromImage(bmps);
+				g.DrawImage(img, new Rectangle(0, 0, XwidthThird, XheightThird), new Rectangle(FP1_X, FP1_Y, XwidthThird, XheightThird), GraphicsUnit.Pixel);
+				g.Dispose();
+				if(fpIndex == 1)
+				{
+					picFP1.Image = bmps;
+				}
+				else
+				{
+					picFP2.Image = bmps;
+				}
 			}
 		}
 		
@@ -812,7 +968,11 @@ namespace HRM_CHECKER
 		private void lkF6_LinkClicked(object sender, System.Windows.Forms.LinkLabelLinkClickedEventArgs e)
 		{
 			if(FileSelected != null)
+			{
 				picAfter.Image = FileSelected;
+				GetFP(1, FP1_Width, FP1_Height, FP1_X, FP1_Y);
+				GetFP(2, FP2_Width, FP2_Height, FP2_X, FP2_Y);
+			}
 		}
 
 		private void btnDelete_Click(object sender, System.EventArgs e)
@@ -827,6 +987,8 @@ namespace HRM_CHECKER
 		private void lkNoneAfter_LinkClicked(object sender, System.Windows.Forms.LinkLabelLinkClickedEventArgs e)
 		{
 			picAfter.Image = null;
+			picFP1.Image = null;
+			picFP2.Image = null;
 		}
 
 		private void btnEnter_Click(object sender, System.EventArgs e)
@@ -890,6 +1052,24 @@ namespace HRM_CHECKER
 			{ }
 			finally
 			{ }
+		}
+
+		private void picFP1_Click(object sender, System.EventArgs e)
+		{
+			if(pnFP1.BackColor == Color.White)
+			{
+				pnFP1.BackColor = Color.Blue;
+				pnFP2.BackColor = Color.White;
+			}
+		}
+
+		private void picFP2_Click(object sender, System.EventArgs e)
+		{
+			if(pnFP2.BackColor == Color.White)
+			{
+				pnFP1.BackColor = Color.White;
+				pnFP2.BackColor = Color.Blue;
+			}
 		}
 	}
 }
