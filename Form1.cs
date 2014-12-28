@@ -381,6 +381,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.label37 = new System.Windows.Forms.Label();
 			this.splitter3 = new System.Windows.Forms.Splitter();
 			this.panel22 = new System.Windows.Forms.Panel();
+			this.btnInDanhSach = new System.Windows.Forms.Button();
 			this.btnTimKiem = new System.Windows.Forms.Button();
 			this.label47 = new System.Windows.Forms.Label();
 			this.txt_TK_SoCMND = new System.Windows.Forms.TextBox();
@@ -392,7 +393,6 @@ using System; using System.Drawing; using System.Collections; using System
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.errorProvider1 = new System.Windows.Forms.ErrorProvider();
 			this.lbThongBao = new System.Windows.Forms.Label();
-			this.btnInDanhSach = new System.Windows.Forms.Button();
 			this.tabControl.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.panel2.SuspendLayout();
@@ -1432,8 +1432,8 @@ using System; using System.Drawing; using System.Collections; using System
 			// panel13
 			// 
 			this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel13.Controls.Add(this.picCMNDCu_VanTay2);
 			this.panel13.Controls.Add(this.label24);
+			this.panel13.Controls.Add(this.picCMNDMoi_VanTay2);
 			this.panel13.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel13.DockPadding.All = 2;
 			this.panel13.Location = new System.Drawing.Point(471, 0);
@@ -1448,7 +1448,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.picCMNDCu_VanTay2.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.picCMNDCu_VanTay2.Location = new System.Drawing.Point(2, 2);
 			this.picCMNDCu_VanTay2.Name = "picCMNDCu_VanTay2";
-			this.picCMNDCu_VanTay2.Size = new System.Drawing.Size(119, 89);
+			this.picCMNDCu_VanTay2.Size = new System.Drawing.Size(119, 112);
 			this.picCMNDCu_VanTay2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.picCMNDCu_VanTay2.TabIndex = 2;
 			this.picCMNDCu_VanTay2.TabStop = false;
@@ -1468,8 +1468,8 @@ using System; using System.Drawing; using System.Collections; using System
 			// panel14
 			// 
 			this.panel14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel14.Controls.Add(this.picCMNDCu_VanTay1);
 			this.panel14.Controls.Add(this.label25);
+			this.panel14.Controls.Add(this.picCMNDMoi_VanTay1);
 			this.panel14.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel14.DockPadding.All = 2;
 			this.panel14.Location = new System.Drawing.Point(346, 0);
@@ -1484,7 +1484,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.picCMNDCu_VanTay1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.picCMNDCu_VanTay1.Location = new System.Drawing.Point(2, 2);
 			this.picCMNDCu_VanTay1.Name = "picCMNDCu_VanTay1";
-			this.picCMNDCu_VanTay1.Size = new System.Drawing.Size(119, 89);
+			this.picCMNDCu_VanTay1.Size = new System.Drawing.Size(119, 112);
 			this.picCMNDCu_VanTay1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.picCMNDCu_VanTay1.TabIndex = 2;
 			this.picCMNDCu_VanTay1.TabStop = false;
@@ -1600,8 +1600,8 @@ using System; using System.Drawing; using System.Collections; using System
 			// panel10
 			// 
 			this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel10.Controls.Add(this.picCMNDMoi_VanTay2);
 			this.panel10.Controls.Add(this.label22);
+			this.panel10.Controls.Add(this.picCMNDCu_VanTay2);
 			this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel10.DockPadding.All = 2;
 			this.panel10.Location = new System.Drawing.Point(471, 0);
@@ -1616,7 +1616,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.picCMNDMoi_VanTay2.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.picCMNDMoi_VanTay2.Location = new System.Drawing.Point(2, 2);
 			this.picCMNDMoi_VanTay2.Name = "picCMNDMoi_VanTay2";
-			this.picCMNDMoi_VanTay2.Size = new System.Drawing.Size(119, 89);
+			this.picCMNDMoi_VanTay2.Size = new System.Drawing.Size(119, 112);
 			this.picCMNDMoi_VanTay2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.picCMNDMoi_VanTay2.TabIndex = 2;
 			this.picCMNDMoi_VanTay2.TabStop = false;
@@ -1636,8 +1636,8 @@ using System; using System.Drawing; using System.Collections; using System
 			// panel11
 			// 
 			this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel11.Controls.Add(this.picCMNDMoi_VanTay1);
 			this.panel11.Controls.Add(this.label23);
+			this.panel11.Controls.Add(this.picCMNDCu_VanTay1);
 			this.panel11.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel11.DockPadding.All = 2;
 			this.panel11.Location = new System.Drawing.Point(346, 0);
@@ -1652,7 +1652,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.picCMNDMoi_VanTay1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.picCMNDMoi_VanTay1.Location = new System.Drawing.Point(2, 2);
 			this.picCMNDMoi_VanTay1.Name = "picCMNDMoi_VanTay1";
-			this.picCMNDMoi_VanTay1.Size = new System.Drawing.Size(119, 89);
+			this.picCMNDMoi_VanTay1.Size = new System.Drawing.Size(119, 112);
 			this.picCMNDMoi_VanTay1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.picCMNDMoi_VanTay1.TabIndex = 2;
 			this.picCMNDMoi_VanTay1.TabStop = false;
@@ -1775,9 +1775,9 @@ using System; using System.Drawing; using System.Collections; using System
 			this.tabPage2.Controls.Add(this.panel21);
 			this.tabPage2.Controls.Add(this.splitter2);
 			this.tabPage2.Controls.Add(this.panel20);
-			this.tabPage2.Location = new System.Drawing.Point(4, 27);
+			this.tabPage2.Location = new System.Drawing.Point(4, 22);
 			this.tabPage2.Name = "tabPage2";
-			this.tabPage2.Size = new System.Drawing.Size(976, 613);
+			this.tabPage2.Size = new System.Drawing.Size(976, 618);
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "Kiểm tra thông tin ";
 			this.tabPage2.Visible = false;
@@ -1788,7 +1788,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel21.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel21.Location = new System.Drawing.Point(0, 248);
 			this.panel21.Name = "panel21";
-			this.panel21.Size = new System.Drawing.Size(976, 365);
+			this.panel21.Size = new System.Drawing.Size(976, 370);
 			this.panel21.TabIndex = 2;
 			// 
 			// dtgKhachHang
@@ -1802,7 +1802,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.dtgKhachHang.Location = new System.Drawing.Point(0, 0);
 			this.dtgKhachHang.Name = "dtgKhachHang";
 			this.dtgKhachHang.SelectionBackColor = System.Drawing.Color.LightGoldenrodYellow;
-			this.dtgKhachHang.Size = new System.Drawing.Size(976, 365);
+			this.dtgKhachHang.Size = new System.Drawing.Size(976, 370);
 			this.dtgKhachHang.TabIndex = 0;
 			this.dtgKhachHang.Click += new System.EventHandler(this.dtgKhachHang_Click);
 			this.dtgKhachHang.CurrentCellChanged += new System.EventHandler(this.dtgKhachHang_CurrentCellChanged);
@@ -1899,7 +1899,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.groupBox10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.groupBox10.Location = new System.Drawing.Point(704, 0);
 			this.groupBox10.Name = "groupBox10";
-			this.groupBox10.Size = new System.Drawing.Size(180, 221);
+			this.groupBox10.Size = new System.Drawing.Size(180, 238);
 			this.groupBox10.TabIndex = 2;
 			this.groupBox10.TabStop = false;
 			this.groupBox10.Text = "Ảnh vân tay sống";
@@ -1911,7 +1911,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel36.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel36.Location = new System.Drawing.Point(3, 122);
 			this.panel36.Name = "panel36";
-			this.panel36.Size = new System.Drawing.Size(174, 96);
+			this.panel36.Size = new System.Drawing.Size(174, 113);
 			this.panel36.TabIndex = 1;
 			// 
 			// panel38
@@ -1923,7 +1923,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel38.DockPadding.All = 2;
 			this.panel38.Location = new System.Drawing.Point(0, 0);
 			this.panel38.Name = "panel38";
-			this.panel38.Size = new System.Drawing.Size(173, 96);
+			this.panel38.Size = new System.Drawing.Size(173, 113);
 			this.panel38.TabIndex = 4;
 			// 
 			// picVanTaySong2SS
@@ -1933,7 +1933,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.picVanTaySong2SS.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.picVanTaySong2SS.Location = new System.Drawing.Point(2, 2);
 			this.picVanTaySong2SS.Name = "picVanTaySong2SS";
-			this.picVanTaySong2SS.Size = new System.Drawing.Size(167, 67);
+			this.picVanTaySong2SS.Size = new System.Drawing.Size(167, 84);
 			this.picVanTaySong2SS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.picVanTaySong2SS.TabIndex = 2;
 			this.picVanTaySong2SS.TabStop = false;
@@ -1942,7 +1942,7 @@ using System; using System.Drawing; using System.Collections; using System
 			// 
 			this.label46.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.label46.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.label46.Location = new System.Drawing.Point(2, 69);
+			this.label46.Location = new System.Drawing.Point(2, 86);
 			this.label46.Name = "label46";
 			this.label46.Size = new System.Drawing.Size(167, 23);
 			this.label46.TabIndex = 0;
@@ -2003,7 +2003,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.groupBox9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.groupBox9.Location = new System.Drawing.Point(352, 0);
 			this.groupBox9.Name = "groupBox9";
-			this.groupBox9.Size = new System.Drawing.Size(352, 221);
+			this.groupBox9.Size = new System.Drawing.Size(352, 238);
 			this.groupBox9.TabIndex = 1;
 			this.groupBox9.TabStop = false;
 			this.groupBox9.Text = "Ảnh CMND mới";
@@ -2016,7 +2016,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel30.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel30.Location = new System.Drawing.Point(3, 122);
 			this.panel30.Name = "panel30";
-			this.panel30.Size = new System.Drawing.Size(346, 96);
+			this.panel30.Size = new System.Drawing.Size(346, 113);
 			this.panel30.TabIndex = 1;
 			// 
 			// panel31
@@ -2028,7 +2028,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel31.DockPadding.All = 2;
 			this.panel31.Location = new System.Drawing.Point(173, 0);
 			this.panel31.Name = "panel31";
-			this.panel31.Size = new System.Drawing.Size(173, 96);
+			this.panel31.Size = new System.Drawing.Size(173, 113);
 			this.panel31.TabIndex = 5;
 			// 
 			// picCMNDMoi_VanTay2SS
@@ -2038,7 +2038,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.picCMNDMoi_VanTay2SS.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.picCMNDMoi_VanTay2SS.Location = new System.Drawing.Point(2, 2);
 			this.picCMNDMoi_VanTay2SS.Name = "picCMNDMoi_VanTay2SS";
-			this.picCMNDMoi_VanTay2SS.Size = new System.Drawing.Size(167, 67);
+			this.picCMNDMoi_VanTay2SS.Size = new System.Drawing.Size(167, 84);
 			this.picCMNDMoi_VanTay2SS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.picCMNDMoi_VanTay2SS.TabIndex = 2;
 			this.picCMNDMoi_VanTay2SS.TabStop = false;
@@ -2047,7 +2047,7 @@ using System; using System.Drawing; using System.Collections; using System
 			// 
 			this.label41.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.label41.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.label41.Location = new System.Drawing.Point(2, 69);
+			this.label41.Location = new System.Drawing.Point(2, 86);
 			this.label41.Name = "label41";
 			this.label41.Size = new System.Drawing.Size(167, 23);
 			this.label41.TabIndex = 0;
@@ -2063,7 +2063,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel32.DockPadding.All = 2;
 			this.panel32.Location = new System.Drawing.Point(0, 0);
 			this.panel32.Name = "panel32";
-			this.panel32.Size = new System.Drawing.Size(173, 96);
+			this.panel32.Size = new System.Drawing.Size(173, 113);
 			this.panel32.TabIndex = 4;
 			// 
 			// picCMNDMoi_VanTay1SS
@@ -2073,7 +2073,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.picCMNDMoi_VanTay1SS.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.picCMNDMoi_VanTay1SS.Location = new System.Drawing.Point(2, 2);
 			this.picCMNDMoi_VanTay1SS.Name = "picCMNDMoi_VanTay1SS";
-			this.picCMNDMoi_VanTay1SS.Size = new System.Drawing.Size(167, 67);
+			this.picCMNDMoi_VanTay1SS.Size = new System.Drawing.Size(167, 84);
 			this.picCMNDMoi_VanTay1SS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.picCMNDMoi_VanTay1SS.TabIndex = 2;
 			this.picCMNDMoi_VanTay1SS.TabStop = false;
@@ -2082,7 +2082,7 @@ using System; using System.Drawing; using System.Collections; using System
 			// 
 			this.label42.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.label42.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.label42.Location = new System.Drawing.Point(2, 69);
+			this.label42.Location = new System.Drawing.Point(2, 86);
 			this.label42.Name = "label42";
 			this.label42.Size = new System.Drawing.Size(167, 23);
 			this.label42.TabIndex = 0;
@@ -2181,7 +2181,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.groupBox8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.groupBox8.Location = new System.Drawing.Point(0, 0);
 			this.groupBox8.Name = "groupBox8";
-			this.groupBox8.Size = new System.Drawing.Size(352, 221);
+			this.groupBox8.Size = new System.Drawing.Size(352, 238);
 			this.groupBox8.TabIndex = 0;
 			this.groupBox8.TabStop = false;
 			this.groupBox8.Text = "Ảnh CMND cũ";
@@ -2194,7 +2194,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel25.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel25.Location = new System.Drawing.Point(3, 122);
 			this.panel25.Name = "panel25";
-			this.panel25.Size = new System.Drawing.Size(346, 96);
+			this.panel25.Size = new System.Drawing.Size(346, 113);
 			this.panel25.TabIndex = 1;
 			// 
 			// panel29
@@ -2206,7 +2206,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel29.DockPadding.All = 2;
 			this.panel29.Location = new System.Drawing.Point(173, 0);
 			this.panel29.Name = "panel29";
-			this.panel29.Size = new System.Drawing.Size(173, 96);
+			this.panel29.Size = new System.Drawing.Size(173, 113);
 			this.panel29.TabIndex = 5;
 			// 
 			// picCMNDCu_VanTay2SS
@@ -2216,7 +2216,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.picCMNDCu_VanTay2SS.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.picCMNDCu_VanTay2SS.Location = new System.Drawing.Point(2, 2);
 			this.picCMNDCu_VanTay2SS.Name = "picCMNDCu_VanTay2SS";
-			this.picCMNDCu_VanTay2SS.Size = new System.Drawing.Size(167, 67);
+			this.picCMNDCu_VanTay2SS.Size = new System.Drawing.Size(167, 84);
 			this.picCMNDCu_VanTay2SS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.picCMNDCu_VanTay2SS.TabIndex = 2;
 			this.picCMNDCu_VanTay2SS.TabStop = false;
@@ -2225,7 +2225,7 @@ using System; using System.Drawing; using System.Collections; using System
 			// 
 			this.label40.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.label40.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.label40.Location = new System.Drawing.Point(2, 69);
+			this.label40.Location = new System.Drawing.Point(2, 86);
 			this.label40.Name = "label40";
 			this.label40.Size = new System.Drawing.Size(167, 23);
 			this.label40.TabIndex = 0;
@@ -2241,7 +2241,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel28.DockPadding.All = 2;
 			this.panel28.Location = new System.Drawing.Point(0, 0);
 			this.panel28.Name = "panel28";
-			this.panel28.Size = new System.Drawing.Size(173, 96);
+			this.panel28.Size = new System.Drawing.Size(173, 113);
 			this.panel28.TabIndex = 4;
 			// 
 			// picCMNDCu_VanTay1SS
@@ -2251,7 +2251,7 @@ using System; using System.Drawing; using System.Collections; using System
 			this.picCMNDCu_VanTay1SS.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.picCMNDCu_VanTay1SS.Location = new System.Drawing.Point(2, 2);
 			this.picCMNDCu_VanTay1SS.Name = "picCMNDCu_VanTay1SS";
-			this.picCMNDCu_VanTay1SS.Size = new System.Drawing.Size(167, 67);
+			this.picCMNDCu_VanTay1SS.Size = new System.Drawing.Size(167, 84);
 			this.picCMNDCu_VanTay1SS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.picCMNDCu_VanTay1SS.TabIndex = 2;
 			this.picCMNDCu_VanTay1SS.TabStop = false;
@@ -2260,7 +2260,7 @@ using System; using System.Drawing; using System.Collections; using System
 			// 
 			this.label39.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.label39.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.label39.Location = new System.Drawing.Point(2, 69);
+			this.label39.Location = new System.Drawing.Point(2, 86);
 			this.label39.Name = "label39";
 			this.label39.Size = new System.Drawing.Size(167, 23);
 			this.label39.TabIndex = 0;
@@ -2376,6 +2376,23 @@ using System; using System.Drawing; using System.Collections; using System
 			this.panel22.Size = new System.Drawing.Size(280, 240);
 			this.panel22.TabIndex = 0;
 			// 
+			// btnInDanhSach
+			// 
+			this.btnInDanhSach.Anchor = System.Windows.Forms.AnchorStyles.Right;
+			this.btnInDanhSach.BackColor = System.Drawing.SystemColors.ControlLight;
+			this.btnInDanhSach.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnInDanhSach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnInDanhSach.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnInDanhSach.ImageIndex = 35;
+			this.btnInDanhSach.ImageList = this.imageList1;
+			this.btnInDanhSach.Location = new System.Drawing.Point(96, 192);
+			this.btnInDanhSach.Name = "btnInDanhSach";
+			this.btnInDanhSach.Size = new System.Drawing.Size(128, 32);
+			this.btnInDanhSach.TabIndex = 10;
+			this.btnInDanhSach.Text = "In danh sách";
+			this.btnInDanhSach.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnInDanhSach.Click += new System.EventHandler(this.btnInDanhSach_Click);
+			// 
 			// btnTimKiem
 			// 
 			this.btnTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -2458,9 +2475,9 @@ using System; using System.Drawing; using System.Collections; using System
 			// 
 			// tabPage3
 			// 
-			this.tabPage3.Location = new System.Drawing.Point(4, 27);
+			this.tabPage3.Location = new System.Drawing.Point(4, 22);
 			this.tabPage3.Name = "tabPage3";
-			this.tabPage3.Size = new System.Drawing.Size(976, 613);
+			this.tabPage3.Size = new System.Drawing.Size(976, 618);
 			this.tabPage3.TabIndex = 2;
 			this.tabPage3.Text = "Báo cáo ";
 			this.tabPage3.Visible = false;
@@ -2476,23 +2493,6 @@ using System; using System.Drawing; using System.Collections; using System
 			this.lbThongBao.Name = "lbThongBao";
 			this.lbThongBao.Size = new System.Drawing.Size(0, 22);
 			this.lbThongBao.TabIndex = 3;
-			// 
-			// btnInDanhSach
-			// 
-			this.btnInDanhSach.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.btnInDanhSach.BackColor = System.Drawing.SystemColors.ControlLight;
-			this.btnInDanhSach.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnInDanhSach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnInDanhSach.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnInDanhSach.ImageIndex = 35;
-			this.btnInDanhSach.ImageList = this.imageList1;
-			this.btnInDanhSach.Location = new System.Drawing.Point(96, 192);
-			this.btnInDanhSach.Name = "btnInDanhSach";
-			this.btnInDanhSach.Size = new System.Drawing.Size(128, 32);
-			this.btnInDanhSach.TabIndex = 10;
-			this.btnInDanhSach.Text = "In danh sách";
-			this.btnInDanhSach.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnInDanhSach.Click += new System.EventHandler(this.btnInDanhSach_Click);
 			// 
 			// Form1
 			// 
@@ -2813,6 +2813,7 @@ using System; using System.Drawing; using System.Collections; using System
 					strCMNDCu_VanTay2 = CMND + "_CMNDCu_VanTay2.jpg";
 					SaveImage(CMNDCu_VanTay2, strCMNDCu_VanTay2);
 				}
+				//////////////////////////////////////////////////////
 				if(CMNDMoi_MatTruoc != null)
 				{
 					strCMNDMoi_MatTruoc = CMND + "_CMNDMoi_MatTruoc.jpg";
@@ -2961,7 +2962,8 @@ using System; using System.Drawing; using System.Collections; using System
 						SaveImage(CMNDMoi_VanTay2, strCMNDMoi_VanTay2);
 					}
 
-					bus.UpdatePersonal(ma_khang_edit,strHoTen,strTenTat,strNgaySinh,GioiTinh,QuocTich,CMND,HoChieu,SoKhac,ngayCap,noiCap,dcLienHe,dcThuongTru,dcNuocNgoai,dtNha,dtCoQuan,HopThu,DiHoc,DiLam,tuKinhDoanh,nghiHuu,nganhNghe,chucVu,dtCoQuan,tenCoQuan,ttHonNhan,ttHocVan,thuNhap,ref strError);
+					bus.UpdatePersonal(ma_khang_edit,strHoTen,strTenTat,strNgaySinh,GioiTinh,QuocTich,CMND,HoChieu,SoKhac,ngayCap,noiCap,dcLienHe,dcThuongTru,dcNuocNgoai,dtNha,dtCoQuan,HopThu,DiHoc,DiLam,tuKinhDoanh,nghiHuu,nganhNghe,chucVu,dtCoQuan,tenCoQuan,ttHonNhan,ttHocVan,thuNhap,strCMNDMoi_MatTruoc, strCMNDMoi_MatSau, strCMNDMoi_VanTay1, strCMNDMoi_VanTay2, strCMNDCu_MatTruoc, strCMNDCu_MatSau, strCMNDCu_VanTay1, strCMNDCu_VanTay2, ref strError);
+
 					if(strError =="")
 					{
 						SetMessage("Thêm khách hàng thành công!",false);
@@ -3486,8 +3488,8 @@ using System; using System.Drawing; using System.Collections; using System
 		{
 			try
 			{
-				frmDetail_KHang frmDetailKH = new frmDetail_KHang();
-				frmDetailKH.ShowDialog();
+//				frmDetail_KHang frmDetailKH = new frmDetail_KHang();
+//				frmDetailKH.ShowDialog();
 			}
 			catch
 			{
@@ -3561,6 +3563,6 @@ using System; using System.Drawing; using System.Collections; using System
 
 		private void btnInDanhSach_Click(object sender, System.EventArgs e)
 		{
-			frmShowDS_KHang frmShowDSKH = new frmShowDS_KHang();
-			frmShowDSKH.ShowDialog();
+//			frmShowDS_KHang frmShowDSKH = new frmShowDS_KHang();
+//			frmShowDSKH.ShowDialog();
 		} 	} } 
