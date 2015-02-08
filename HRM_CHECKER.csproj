@@ -132,6 +132,16 @@
                     BuildAction = "EmbeddedResource"
                 />
                 <File
+                    RelPath = "frmScanFingerPrint.cs"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "frmScanFingerPrint.resx"
+                    DependentUpon = "frmScanFingerPrint.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
                     RelPath = "frmZoomImage.cs"
                     SubType = "Form"
                     BuildAction = "Compile"
@@ -145,6 +155,170 @@
                     RelPath = "SQLHelper.cs"
                     SubType = "Code"
                     BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "bin\Debug\HRM_CHECKER.exe"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "bin\Debug\HRM_CHECKER.exe.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "bin\Debug\HRM_CHECKER.pdb"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "bin\Debug\log4net.dll"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "bin\Debug\log4net.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "bin\Debug\Scan.vshost.exe.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "bin\Debug\ScanQ2.exe"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "bin\Debug\ScanQ2.exe.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "bin\Debug\ScanQ2.pdb"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "bin\Debug\ScanQ2.vshost.exe"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "bin\Debug\ScanQ2.vshost.exe.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "bin\Debug\ScanQ2.vshost.exe.manifest"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "bin\Debug\TestApp.vshost.exe.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "bin\Debug\TestApp.vshost.exe.manifest"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "bin\Debug\TwainDotNet.dll"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "bin\Debug\TwainDotNet.pdb"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "bin\Debug\TwainDotNet.WinFroms.dll"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "bin\Debug\TwainDotNet.WinFroms.pdb"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "bin\Debug\Scan\20150207171401594_1.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "bin\Debug\Scan\20150207171406004_2.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "bin\Debug\Scan\20150207171553000_1.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "bin\Debug\Scan\20150207171557308_2.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "bin\Debug\Scan\20150207171722139_1.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "bin\Debug\Scan\20150207171727315_2.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "bin\Debug\Scan\20150207171917057_1.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "bin\Debug\Scan\20150207171921507_2.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "bin\Debug\Scan\20150207172042804_1.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "bin\Debug\Scan\20150207172047201_2.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "bin\Debug\Scan\20150207173314072_1.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "bin\Debug\Scan\20150207173318525_2.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "bin\Debug\Scan\20150207174000204_1.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "bin\Debug\Scan\20150207174005025_2.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "bin\Debug\Scan\20150208004445113_1.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "bin\Debug\Scan\20150208004449859_2.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "bin\Debug\Scan\20150208004616803_1.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "bin\Debug\Scan\20150208005137526_1.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "bin\Debug\Scan\20150208005203392_2.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "bin\Debug\Scan\20150208005352558_1.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "bin\Debug\Scan\20150208005354057_2.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "bin\Debug\ScanSelect\MS.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "bin\Debug\ScanSelect\MT.jpg"
+                    BuildAction = "Content"
                 />
             </Include>
         </Files>
