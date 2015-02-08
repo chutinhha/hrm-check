@@ -20,23 +20,25 @@ namespace HRM_CHECKER
 		public int SelectIndex = 0;
 		public Boolean Edit = false;
 
-		string ScanPath =@"D:\ScanDoc";
+		string mt = Application.StartupPath + @"\ScanSelect\MT.jpg";
+		string ms = Application.StartupPath + @"\ScanSelect\MS.jpg";
+		string ScanPath = Application.StartupPath + @"\Scan";
 
 		bool Loading = false;
 		bool Killing = false;
 		Image FileSelected = null;
 		FileInfo[] fileArray;
 		long fileCreateLong = 0;
-
-		int FP1_Width = 190;
-		int FP1_Height = 120;
-		int FP1_X = 25;
-		int FP1_Y = 65;
 		//
-		int FP2_Width = 190;
-		int FP2_Height = 120;
-		int FP2_X = 20;
-		int FP2_Y = 210;
+		int FP1_Width = 270;
+		int FP1_Height = 200;
+		int FP1_X = 25;
+		int FP1_Y = 105;
+		//
+		int FP2_Width = 290;
+		int FP2_Height = 220;
+		int FP2_X = 30;
+		int FP2_Y = 340;
 
 		private System.Windows.Forms.Panel pnControl;
 		private System.Windows.Forms.Panel pnMain;
@@ -50,8 +52,6 @@ namespace HRM_CHECKER
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.Button btnNext;
-		private System.Windows.Forms.Button btnPrevious;
 		private System.Windows.Forms.PictureBox picIMG1;
 		private System.Windows.Forms.PictureBox picIMG2;
 		private System.Windows.Forms.PictureBox picIMG3;
@@ -72,6 +72,10 @@ namespace HRM_CHECKER
 		private System.Windows.Forms.Panel pnFP1;
 		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.Label label11;
+		private System.Windows.Forms.Button btnScan;
+		private System.Windows.Forms.Timer timerScan;
+		private System.Windows.Forms.CheckBox ckbMT;
+		private System.Windows.Forms.CheckBox ckbMS;
 		private System.ComponentModel.IContainer components;
 
 		public frmScan()
@@ -111,9 +115,16 @@ namespace HRM_CHECKER
 			this.components = new System.ComponentModel.Container();
 			System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(frmScan));
 			this.pnControl = new System.Windows.Forms.Panel();
+			this.ckbMT = new System.Windows.Forms.CheckBox();
 			this.btnEnter = new System.Windows.Forms.Button();
 			this.btnDelete = new System.Windows.Forms.Button();
+			this.btnScan = new System.Windows.Forms.Button();
+			this.ckbMS = new System.Windows.Forms.CheckBox();
 			this.pnMain = new System.Windows.Forms.Panel();
+			this.label10 = new System.Windows.Forms.Label();
+			this.label11 = new System.Windows.Forms.Label();
+			this.pnFP2 = new System.Windows.Forms.Panel();
+			this.pnFP1 = new System.Windows.Forms.Panel();
 			this.lkNoneAfter = new System.Windows.Forms.LinkLabel();
 			this.lkNoneBefore = new System.Windows.Forms.LinkLabel();
 			this.lkF6 = new System.Windows.Forms.LinkLabel();
@@ -125,8 +136,6 @@ namespace HRM_CHECKER
 			this.label6 = new System.Windows.Forms.Label();
 			this.picIMG4 = new System.Windows.Forms.PictureBox();
 			this.picIMG3 = new System.Windows.Forms.PictureBox();
-			this.btnPrevious = new System.Windows.Forms.Button();
-			this.btnNext = new System.Windows.Forms.Button();
 			this.picIMG1 = new System.Windows.Forms.PictureBox();
 			this.picIMG2 = new System.Windows.Forms.PictureBox();
 			this.label2 = new System.Windows.Forms.Label();
@@ -140,10 +149,7 @@ namespace HRM_CHECKER
 			this.picFP2 = new System.Windows.Forms.PictureBox();
 			this.timerLoadIMG = new System.Windows.Forms.Timer(this.components);
 			this.timerClosePaint = new System.Windows.Forms.Timer(this.components);
-			this.pnFP2 = new System.Windows.Forms.Panel();
-			this.pnFP1 = new System.Windows.Forms.Panel();
-			this.label10 = new System.Windows.Forms.Label();
-			this.label11 = new System.Windows.Forms.Label();
+			this.timerScan = new System.Windows.Forms.Timer(this.components);
 			this.pnControl.SuspendLayout();
 			this.pnMain.SuspendLayout();
 			this.panel1.SuspendLayout();
@@ -152,13 +158,27 @@ namespace HRM_CHECKER
 			// pnControl
 			// 
 			this.pnControl.BackColor = System.Drawing.SystemColors.Control;
+			this.pnControl.Controls.Add(this.ckbMT);
 			this.pnControl.Controls.Add(this.btnEnter);
 			this.pnControl.Controls.Add(this.btnDelete);
+			this.pnControl.Controls.Add(this.btnScan);
+			this.pnControl.Controls.Add(this.ckbMS);
 			this.pnControl.Dock = System.Windows.Forms.DockStyle.Top;
 			this.pnControl.Location = new System.Drawing.Point(0, 0);
 			this.pnControl.Name = "pnControl";
 			this.pnControl.Size = new System.Drawing.Size(904, 72);
 			this.pnControl.TabIndex = 0;
+			// 
+			// ckbMT
+			// 
+			this.ckbMT.Checked = true;
+			this.ckbMT.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.ckbMT.Location = new System.Drawing.Point(752, 16);
+			this.ckbMT.Name = "ckbMT";
+			this.ckbMT.Size = new System.Drawing.Size(48, 16);
+			this.ckbMT.TabIndex = 3;
+			this.ckbMT.Text = "MT";
+			this.ckbMT.CheckedChanged += new System.EventHandler(this.ckbMT_CheckedChanged);
 			// 
 			// btnEnter
 			// 
@@ -184,6 +204,29 @@ namespace HRM_CHECKER
 			this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
 			// 
+			// btnScan
+			// 
+			this.btnScan.Image = ((System.Drawing.Image)(resources.GetObject("btnScan.Image")));
+			this.btnScan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnScan.Location = new System.Drawing.Point(808, 8);
+			this.btnScan.Name = "btnScan";
+			this.btnScan.Size = new System.Drawing.Size(88, 56);
+			this.btnScan.TabIndex = 2;
+			this.btnScan.Text = "Scan";
+			this.btnScan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnScan.Click += new System.EventHandler(this.btnScan_Click);
+			// 
+			// ckbMS
+			// 
+			this.ckbMS.Checked = true;
+			this.ckbMS.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.ckbMS.Location = new System.Drawing.Point(752, 40);
+			this.ckbMS.Name = "ckbMS";
+			this.ckbMS.Size = new System.Drawing.Size(48, 16);
+			this.ckbMS.TabIndex = 3;
+			this.ckbMS.Text = "MS";
+			this.ckbMS.CheckedChanged += new System.EventHandler(this.ckbMS_CheckedChanged);
+			// 
 			// pnMain
 			// 
 			this.pnMain.BackColor = System.Drawing.Color.White;
@@ -208,13 +251,51 @@ namespace HRM_CHECKER
 			this.pnMain.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pnMain.Location = new System.Drawing.Point(0, 72);
 			this.pnMain.Name = "pnMain";
-			this.pnMain.Size = new System.Drawing.Size(904, 550);
+			this.pnMain.Size = new System.Drawing.Size(904, 562);
 			this.pnMain.TabIndex = 1;
+			// 
+			// label10
+			// 
+			this.label10.AutoSize = true;
+			this.label10.BackColor = System.Drawing.Color.Yellow;
+			this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.label10.Location = new System.Drawing.Point(800, 280);
+			this.label10.Name = "label10";
+			this.label10.Size = new System.Drawing.Size(18, 16);
+			this.label10.TabIndex = 16;
+			this.label10.Text = "F8";
+			this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// label11
+			// 
+			this.label11.AutoSize = true;
+			this.label11.BackColor = System.Drawing.Color.Yellow;
+			this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.label11.Location = new System.Drawing.Point(616, 280);
+			this.label11.Name = "label11";
+			this.label11.Size = new System.Drawing.Size(18, 16);
+			this.label11.TabIndex = 15;
+			this.label11.Text = "F7";
+			this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// pnFP2
+			// 
+			this.pnFP2.Location = new System.Drawing.Point(640, 288);
+			this.pnFP2.Name = "pnFP2";
+			this.pnFP2.Size = new System.Drawing.Size(176, 8);
+			this.pnFP2.TabIndex = 14;
+			// 
+			// pnFP1
+			// 
+			this.pnFP1.Location = new System.Drawing.Point(456, 288);
+			this.pnFP1.Name = "pnFP1";
+			this.pnFP1.Size = new System.Drawing.Size(168, 8);
+			this.pnFP1.TabIndex = 13;
 			// 
 			// lkNoneAfter
 			// 
 			this.lkNoneAfter.AutoSize = true;
-			this.lkNoneAfter.Location = new System.Drawing.Point(792, 288);
+			this.lkNoneAfter.Location = new System.Drawing.Point(872, 288);
 			this.lkNoneAfter.Name = "lkNoneAfter";
 			this.lkNoneAfter.Size = new System.Drawing.Size(24, 16);
 			this.lkNoneAfter.TabIndex = 9;
@@ -225,7 +306,7 @@ namespace HRM_CHECKER
 			// lkNoneBefore
 			// 
 			this.lkNoneBefore.AutoSize = true;
-			this.lkNoneBefore.Location = new System.Drawing.Point(344, 288);
+			this.lkNoneBefore.Location = new System.Drawing.Point(424, 288);
 			this.lkNoneBefore.Name = "lkNoneBefore";
 			this.lkNoneBefore.Size = new System.Drawing.Size(24, 16);
 			this.lkNoneBefore.TabIndex = 8;
@@ -236,7 +317,7 @@ namespace HRM_CHECKER
 			// lkF6
 			// 
 			this.lkF6.AutoSize = true;
-			this.lkF6.Location = new System.Drawing.Point(824, 288);
+			this.lkF6.Location = new System.Drawing.Point(824, 312);
 			this.lkF6.Name = "lkF6";
 			this.lkF6.Size = new System.Drawing.Size(75, 16);
 			this.lkF6.TabIndex = 7;
@@ -247,7 +328,7 @@ namespace HRM_CHECKER
 			// lkF5
 			// 
 			this.lkF5.AutoSize = true;
-			this.lkF5.Location = new System.Drawing.Point(376, 288);
+			this.lkF5.Location = new System.Drawing.Point(376, 312);
 			this.lkF5.Name = "lkF5";
 			this.lkF5.Size = new System.Drawing.Size(75, 16);
 			this.lkF5.TabIndex = 6;
@@ -265,12 +346,10 @@ namespace HRM_CHECKER
 			this.panel1.Controls.Add(this.label6);
 			this.panel1.Controls.Add(this.picIMG4);
 			this.panel1.Controls.Add(this.picIMG3);
-			this.panel1.Controls.Add(this.btnPrevious);
-			this.panel1.Controls.Add(this.btnNext);
 			this.panel1.Controls.Add(this.picIMG1);
 			this.panel1.Controls.Add(this.picIMG2);
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.panel1.Location = new System.Drawing.Point(0, 414);
+			this.panel1.Location = new System.Drawing.Point(0, 426);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(904, 136);
 			this.panel1.TabIndex = 5;
@@ -280,7 +359,7 @@ namespace HRM_CHECKER
 			this.label9.AutoSize = true;
 			this.label9.BackColor = System.Drawing.Color.Yellow;
 			this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.label9.Location = new System.Drawing.Point(744, 96);
+			this.label9.Location = new System.Drawing.Point(256, 104);
 			this.label9.Name = "label9";
 			this.label9.Size = new System.Drawing.Size(18, 16);
 			this.label9.TabIndex = 10;
@@ -292,7 +371,7 @@ namespace HRM_CHECKER
 			this.label8.AutoSize = true;
 			this.label8.BackColor = System.Drawing.Color.Yellow;
 			this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.label8.Location = new System.Drawing.Point(576, 96);
+			this.label8.Location = new System.Drawing.Point(424, 104);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(18, 16);
 			this.label8.TabIndex = 9;
@@ -304,7 +383,7 @@ namespace HRM_CHECKER
 			this.label7.AutoSize = true;
 			this.label7.BackColor = System.Drawing.Color.Yellow;
 			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.label7.Location = new System.Drawing.Point(408, 96);
+			this.label7.Location = new System.Drawing.Point(592, 104);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(18, 16);
 			this.label7.TabIndex = 8;
@@ -316,7 +395,7 @@ namespace HRM_CHECKER
 			this.label6.AutoSize = true;
 			this.label6.BackColor = System.Drawing.Color.Yellow;
 			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.label6.Location = new System.Drawing.Point(240, 96);
+			this.label6.Location = new System.Drawing.Point(760, 104);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(18, 16);
 			this.label6.TabIndex = 7;
@@ -327,9 +406,9 @@ namespace HRM_CHECKER
 			// 
 			this.picIMG4.BackColor = System.Drawing.SystemColors.Control;
 			this.picIMG4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.picIMG4.Location = new System.Drawing.Point(624, 12);
+			this.picIMG4.Location = new System.Drawing.Point(120, 8);
 			this.picIMG4.Name = "picIMG4";
-			this.picIMG4.Size = new System.Drawing.Size(145, 105);
+			this.picIMG4.Size = new System.Drawing.Size(160, 120);
 			this.picIMG4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.picIMG4.TabIndex = 6;
 			this.picIMG4.TabStop = false;
@@ -339,41 +418,21 @@ namespace HRM_CHECKER
 			// 
 			this.picIMG3.BackColor = System.Drawing.SystemColors.Control;
 			this.picIMG3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.picIMG3.Location = new System.Drawing.Point(456, 12);
+			this.picIMG3.Location = new System.Drawing.Point(288, 8);
 			this.picIMG3.Name = "picIMG3";
-			this.picIMG3.Size = new System.Drawing.Size(145, 105);
+			this.picIMG3.Size = new System.Drawing.Size(160, 120);
 			this.picIMG3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.picIMG3.TabIndex = 5;
 			this.picIMG3.TabStop = false;
 			this.picIMG3.Click += new System.EventHandler(this.picIMG3_Click);
 			// 
-			// btnPrevious
-			// 
-			this.btnPrevious.Font = new System.Drawing.Font("Microsoft Sans Serif", 55F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.btnPrevious.Location = new System.Drawing.Point(8, 8);
-			this.btnPrevious.Name = "btnPrevious";
-			this.btnPrevious.Size = new System.Drawing.Size(80, 120);
-			this.btnPrevious.TabIndex = 0;
-			this.btnPrevious.Text = "<";
-			this.btnPrevious.Visible = false;
-			// 
-			// btnNext
-			// 
-			this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 55F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.btnNext.Location = new System.Drawing.Point(816, 8);
-			this.btnNext.Name = "btnNext";
-			this.btnNext.Size = new System.Drawing.Size(80, 120);
-			this.btnNext.TabIndex = 0;
-			this.btnNext.Text = ">";
-			this.btnNext.Visible = false;
-			// 
 			// picIMG1
 			// 
 			this.picIMG1.BackColor = System.Drawing.SystemColors.Control;
 			this.picIMG1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.picIMG1.Location = new System.Drawing.Point(120, 12);
+			this.picIMG1.Location = new System.Drawing.Point(624, 8);
 			this.picIMG1.Name = "picIMG1";
-			this.picIMG1.Size = new System.Drawing.Size(145, 105);
+			this.picIMG1.Size = new System.Drawing.Size(160, 120);
 			this.picIMG1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.picIMG1.TabIndex = 5;
 			this.picIMG1.TabStop = false;
@@ -383,9 +442,9 @@ namespace HRM_CHECKER
 			// 
 			this.picIMG2.BackColor = System.Drawing.SystemColors.Control;
 			this.picIMG2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.picIMG2.Location = new System.Drawing.Point(288, 12);
+			this.picIMG2.Location = new System.Drawing.Point(456, 8);
 			this.picIMG2.Name = "picIMG2";
-			this.picIMG2.Size = new System.Drawing.Size(145, 105);
+			this.picIMG2.Size = new System.Drawing.Size(160, 120);
 			this.picIMG2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.picIMG2.TabIndex = 6;
 			this.picIMG2.TabStop = false;
@@ -473,7 +532,7 @@ namespace HRM_CHECKER
 			this.picFP1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.picFP1.Location = new System.Drawing.Point(456, 296);
 			this.picFP1.Name = "picFP1";
-			this.picFP1.Size = new System.Drawing.Size(160, 112);
+			this.picFP1.Size = new System.Drawing.Size(176, 120);
 			this.picFP1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.picFP1.TabIndex = 4;
 			this.picFP1.TabStop = false;
@@ -484,9 +543,9 @@ namespace HRM_CHECKER
 			this.picFP2.BackColor = System.Drawing.SystemColors.Control;
 			this.picFP2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picFP2.BackgroundImage")));
 			this.picFP2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.picFP2.Location = new System.Drawing.Point(624, 296);
+			this.picFP2.Location = new System.Drawing.Point(640, 296);
 			this.picFP2.Name = "picFP2";
-			this.picFP2.Size = new System.Drawing.Size(160, 112);
+			this.picFP2.Size = new System.Drawing.Size(176, 120);
 			this.picFP2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.picFP2.TabIndex = 4;
 			this.picFP2.TabStop = false;
@@ -504,52 +563,20 @@ namespace HRM_CHECKER
 			this.timerClosePaint.Interval = 500;
 			this.timerClosePaint.Tick += new System.EventHandler(this.timerClosePaint_Tick);
 			// 
-			// pnFP2
+			// timerScan
 			// 
-			this.pnFP2.Location = new System.Drawing.Point(624, 288);
-			this.pnFP2.Name = "pnFP2";
-			this.pnFP2.Size = new System.Drawing.Size(160, 8);
-			this.pnFP2.TabIndex = 14;
-			// 
-			// pnFP1
-			// 
-			this.pnFP1.Location = new System.Drawing.Point(456, 288);
-			this.pnFP1.Name = "pnFP1";
-			this.pnFP1.Size = new System.Drawing.Size(160, 8);
-			this.pnFP1.TabIndex = 13;
-			// 
-			// label10
-			// 
-			this.label10.AutoSize = true;
-			this.label10.BackColor = System.Drawing.Color.Yellow;
-			this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.label10.Location = new System.Drawing.Point(768, 280);
-			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(18, 16);
-			this.label10.TabIndex = 16;
-			this.label10.Text = "F8";
-			this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label11
-			// 
-			this.label11.AutoSize = true;
-			this.label11.BackColor = System.Drawing.Color.Yellow;
-			this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.label11.Location = new System.Drawing.Point(600, 280);
-			this.label11.Name = "label11";
-			this.label11.Size = new System.Drawing.Size(18, 16);
-			this.label11.TabIndex = 15;
-			this.label11.Text = "F7";
-			this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.timerScan.Interval = 1000;
+			this.timerScan.Tick += new System.EventHandler(this.timerScan_Tick);
 			// 
 			// frmScan
 			// 
 			this.AcceptButton = this.btnEnter;
 			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-			this.ClientSize = new System.Drawing.Size(904, 622);
+			this.ClientSize = new System.Drawing.Size(904, 634);
 			this.Controls.Add(this.pnMain);
 			this.Controls.Add(this.pnControl);
 			this.KeyPreview = true;
+			this.MaximizeBox = false;
 			this.Name = "frmScan";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "frmScan";
@@ -729,6 +756,7 @@ namespace HRM_CHECKER
 					picIDSelect(1);
 					GetFP(1, FP1_Width, FP1_Height, FP1_X, FP1_Y);
 					GetFP(2, FP2_Width, FP2_Height, FP2_X, FP2_Y);
+					picFP1_Click(sender, e);
 				}
 				return;
 			}
@@ -805,8 +833,51 @@ namespace HRM_CHECKER
 				{
 					FP2_Y +=10;
 					GetFP(2, FP2_Width, FP2_Height, FP2_X, FP2_Y);
-				}				
+				}
 			}
+			if(e.KeyCode == Keys.PageUp)
+			{
+				if(pnFP1.BackColor == Color.Blue)
+				{
+					FP1_X +=5;
+					FP1_Y += 5;
+					FP1_Width -=10;
+					FP1_Height -= 10;
+					GetFP(1, FP1_Width, FP1_Height, FP1_X, FP1_Y);
+				}
+				if(pnFP2.BackColor == Color.Blue)
+				{
+					FP2_X +=5;
+					FP2_Y += 5;
+					FP2_Width -=10;
+					FP2_Height -= 10;
+					GetFP(2, FP2_Width, FP2_Height, FP2_X, FP2_Y);
+				}
+			}
+			if(e.KeyCode == Keys.PageDown)
+			{
+				if(pnFP1.BackColor == Color.Blue)
+				{
+					FP1_X -=5;
+					FP1_Y -= 5;
+					FP1_Width +=10;
+					FP1_Height += 10;
+					GetFP(1, FP1_Width, FP1_Height, FP1_X, FP1_Y);
+				}
+				if(pnFP2.BackColor == Color.Blue)
+				{
+					FP2_X -=5;
+					FP2_Y -= 5;
+					FP2_Width +=10;
+					FP2_Height += 10;
+					GetFP(2, FP2_Width, FP2_Height, FP2_X, FP2_Y);
+				}
+			}
+			
+			if(e.KeyCode == Keys.F9)
+			{
+				btnScan_Click(sender, e);
+			}				
 		}
 
 		private void GetFP(int fpIndex, int XwidthThird, int XheightThird, int FP1_X, int FP1_Y)
@@ -835,51 +906,55 @@ namespace HRM_CHECKER
 		{
 			if(MessageBox.Show("Delete image?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 			{
-				if(picIMG4.BorderStyle == BorderStyle.Fixed3D)
+				try
 				{
-					picIMG4.Image = null;
-					if(fileArray != null)
+					if(picIMG4.BorderStyle == BorderStyle.Fixed3D)
 					{
-						if(fileArray.Length > 0)
+						picIMG4.Image = null;
+						if(fileArray != null)
 						{
-							fileArray[0].Delete();
+							if(fileArray.Length > 0)
+							{
+								File.Delete(fileArray[0].FullName);
+							}
 						}
 					}
-				}
-				if(picIMG3.BorderStyle == BorderStyle.Fixed3D)
-				{
-					picIMG3.Image = null;
-					if(fileArray != null)
+					if(picIMG3.BorderStyle == BorderStyle.Fixed3D)
 					{
-						if(fileArray.Length > 1)
+						picIMG3.Image = null;
+						if(fileArray != null)
 						{
-							fileArray[1].Delete();
+							if(fileArray.Length > 1)
+							{
+								File.Delete(fileArray[1].FullName);
+							}
 						}
 					}
-				}
-				if(picIMG2.BorderStyle == BorderStyle.Fixed3D)
-				{
-					picIMG2.Image = null;
-					if(fileArray != null)
+					if(picIMG2.BorderStyle == BorderStyle.Fixed3D)
 					{
-						if(fileArray.Length > 2)
+						picIMG2.Image = null;
+						if(fileArray != null)
 						{
-							fileArray[2].Delete();
+							if(fileArray.Length > 2)
+							{
+								File.Delete(fileArray[2].FullName);
+							}
 						}
 					}
-				}
-				if(picIMG1.BorderStyle == BorderStyle.Fixed3D)
-				{
-					picIMG1.Image = null;
-					if(fileArray != null)
+					if(picIMG1.BorderStyle == BorderStyle.Fixed3D)
 					{
-						if(fileArray.Length > 3)
+						picIMG1.Image = null;
+						if(fileArray != null)
 						{
-							fileArray[3].Delete();
+							if(fileArray.Length > 3)
+							{
+								File.Delete(fileArray[3].FullName);
+							}
 						}
 					}
+					fileCreateLong = 0;
 				}
-				fileCreateLong = 0;
+				catch{}
 			}
 		}
 		private void RefreshBorderImage()
@@ -964,7 +1039,14 @@ namespace HRM_CHECKER
 			if(FileSelected != null)
 				picBefore.Image = FileSelected;
 		}
-
+		void CutFP()
+		{
+			if(picAfter.Image != null)
+			{
+				GetFP(1, FP1_Width, FP1_Height, FP1_X, FP1_Y);
+				GetFP(2, FP2_Width, FP2_Height, FP2_X, FP2_Y);				
+			}
+		}
 		private void lkF6_LinkClicked(object sender, System.Windows.Forms.LinkLabelLinkClickedEventArgs e)
 		{
 			if(FileSelected != null)
@@ -972,6 +1054,7 @@ namespace HRM_CHECKER
 				picAfter.Image = FileSelected;
 				GetFP(1, FP1_Width, FP1_Height, FP1_X, FP1_Y);
 				GetFP(2, FP2_Width, FP2_Height, FP2_X, FP2_Y);
+				picFP1_Click(sender, e);
 			}
 		}
 
@@ -1037,6 +1120,7 @@ namespace HRM_CHECKER
 
 		private void frmScan_Load(object sender, System.EventArgs e)
 		{
+			DeleteImageScaned();
 			try
 			{
 				if(IDBefore != null)
@@ -1069,6 +1153,97 @@ namespace HRM_CHECKER
 			{
 				pnFP1.BackColor = Color.White;
 				pnFP2.BackColor = Color.Blue;
+			}
+		}
+
+		private void btnScan_Click(object sender, System.EventArgs e)
+		{
+			btnEnter.Focus();
+			btnScan.Enabled = false;
+			Application.DoEvents();
+			this.Cursor = Cursors.WaitCursor;
+			try
+			{
+				foreach (Process processKill in Process.GetProcessesByName("ScanQ2"))
+				{
+					processKill.Kill();
+				}
+			}
+			catch{}
+
+			DeleteImageScaned();
+			string filename = Application.StartupPath + @"\ScanQ2.exe";
+			System.Diagnostics.Process.Start(filename);
+			timerScan.Enabled = true;
+			btnScan.Enabled = true;
+		}
+
+		void DeleteImageScaned()
+		{
+			if (File.Exists(mt))
+			{
+				File.Delete(mt);
+			}
+			if (File.Exists(ms))
+			{
+				File.Delete(ms);
+			}
+		}
+		private void timerScan_Tick(object sender, System.EventArgs e)
+		{
+			try
+			{
+				if (File.Exists(mt))
+				{
+					if(ckbMT.Checked)
+					{
+						using (System.IO.FileStream fs = new System.IO.FileStream(mt, FileMode.Open))
+						{
+							Bitmap bmp = new Bitmap(fs);
+							picBefore.Image = (Bitmap)bmp.Clone();
+						}
+					}
+				}
+				if (File.Exists(ms))
+				{
+					if(ckbMS.Checked)
+					{
+						using (System.IO.FileStream fs = new System.IO.FileStream(ms, FileMode.Open))
+						{
+							Bitmap bmp = new Bitmap(fs);
+							picAfter.Image = (Bitmap)bmp.Clone();
+							CutFP();
+							picFP1_Click(sender, e);
+						}
+					}
+					timerScan.Enabled = false;
+					this.Cursor = Cursors.Default;
+				}
+			}
+			catch
+			{
+				timerScan.Enabled = false;
+			}
+		}
+
+		private void ckbMT_CheckedChanged(object sender, System.EventArgs e)
+		{
+			if(ckbMT.Checked == false)
+			{
+				if(ckbMS.Checked == false)
+				{
+					ckbMS.Checked = true;
+				}
+			}
+		}
+		private void ckbMS_CheckedChanged(object sender, System.EventArgs e)
+		{
+			if(ckbMS.Checked == false)
+			{
+				if(ckbMT.Checked == false)
+				{
+					ckbMT.Checked = true;
+				}
 			}
 		}
 	}

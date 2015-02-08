@@ -60,20 +60,19 @@ namespace HRM_CHECKER
 			this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pictureBox1.Location = new System.Drawing.Point(0, 0);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(416, 338);
+			this.pictureBox1.Size = new System.Drawing.Size(474, 338);
 			this.pictureBox1.TabIndex = 0;
 			this.pictureBox1.TabStop = false;
 			// 
 			// frmZoomImage
 			// 
 			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-			this.ClientSize = new System.Drawing.Size(416, 338);
+			this.ClientSize = new System.Drawing.Size(474, 338);
 			this.Controls.Add(this.pictureBox1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
 			this.Name = "frmZoomImage";
-			this.Opacity = 0.9;
 			this.ShowInTaskbar = false;
 			this.Text = "frmZoomImage";
 			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmZoomImage_KeyDown);

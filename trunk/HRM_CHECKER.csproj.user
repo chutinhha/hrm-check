@@ -1,7 +1,7 @@
 <VisualStudioProject>
     <CSHARP LastOpenVersion = "7.10.3077" >
         <Build>
-            <Settings ReferencePath = "" >
+            <Settings ReferencePath = "E:\0. Lam viec\FP\Source Internet\twaindotnet-master\twaindotnet-master\src\packages\log4net.2.0.0\lib\net11-full\" >
                 <Config
                     Name = "Debug"
                     EnableASPDebugging = "false"
