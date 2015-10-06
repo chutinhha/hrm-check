@@ -1,0 +1,1 @@
+Quản lý nhân sự với vân tay, scan
